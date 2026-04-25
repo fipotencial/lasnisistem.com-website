@@ -1,0 +1,204 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-gold: #C1A452;
+  --color-charcoal: #1A1A1A;
+  --color-sand: #F5F2ED;
+  --color-black: #000000;
+  --color-white: #FFFFFF;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-charcoal);
+  color: var(--color-sand);
+  font-family: 'Inter', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background-color: var(--color-gold);
+  color: var(--color-charcoal);
+}
+
+::-moz-selection {
+  background-color: var(--color-gold);
+  color: var(--color-charcoal);
+}
+
+/* Utility classes */
+.font-cormorant {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+}
+
+.font-inter {
+  font-family: 'Inter', system-ui, sans-serif;
+}
+
+.text-gold {
+  color: var(--color-gold);
+}
+
+.bg-charcoal {
+  background-color: var(--color-charcoal);
+}
+
+/* Gold rule */
+.gold-rule {
+  display: block;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--color-gold), transparent);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-charcoal);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-gold);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #d4b865;
+}
+
+/* Up arrow */
+::-webkit-scrollbar-button:vertical:decrement {
+  height: 14px;
+  background-color: #2a2826;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath d='M5 0L10 6H0Z' fill='%23C1A452'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+  border-bottom: 1px solid #3a3632;
+}
+
+::-webkit-scrollbar-button:vertical:decrement:hover {
+  background-color: #353230;
+}
+
+/* Down arrow */
+::-webkit-scrollbar-button:vertical:increment {
+  height: 14px;
+  background-color: #2a2826;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath d='M5 6L0 0H10Z' fill='%23C1A452'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+  border-top: 1px solid #3a3632;
+}
+
+::-webkit-scrollbar-button:vertical:increment:hover {
+  background-color: #353230;
+}
+
+/* Blog article content styles (light theme) */
+.blog-content h2 {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: clamp(1.8rem, 3.5vw, 2.4rem);
+  font-weight: 400;
+  line-height: 1.2;
+  color: #1A1A1A;
+  margin: 2.5rem 0 1.2rem 0;
+  letter-spacing: -0.01em;
+}
+
+.blog-content h2:first-child {
+  margin-top: 0;
+}
+
+.blog-content h3 {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: clamp(1.3rem, 2.5vw, 1.7rem);
+  font-weight: 500;
+  line-height: 1.3;
+  color: #1A1612;
+  margin: 2rem 0 0.8rem 0;
+}
+
+.blog-content p {
+  margin: 0 0 1.2rem 0;
+}
+
+.blog-content strong {
+  color: #1A1A1A;
+  font-weight: 600;
+}
+
+.blog-content ul,
+.blog-content ol {
+  margin: 0 0 1.5rem 0;
+  padding-left: 1.5rem;
+}
+
+.blog-content li {
+  margin-bottom: 0.5rem;
+  line-height: 1.75;
+}
+
+.blog-content ul li::marker {
+  color: var(--color-gold);
+}
+
+.blog-content ol li::marker {
+  color: var(--color-gold);
+  font-weight: 500;
+}
+
+.blog-content blockquote {
+  margin: 1.5rem 0;
+  padding: 1.2rem 1.5rem;
+  border-left: 3px solid var(--color-gold);
+  background: rgba(193,164,82,0.06);
+  border-radius: 0 4px 4px 0;
+  font-style: italic;
+  color: #5A5248;
+}
+
+.blog-content a {
+  color: #6B6155;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color 0.2s ease;
+}
+
+.blog-content a:hover {
+  color: #1A1A1A;
+}
+
+.blog-content .media-timeline ul {
+  list-style: none;
+  padding-left: 0;
+  border-left: 2px solid rgba(193,164,82,0.25);
+}
+
+.blog-content .media-timeline li {
+  padding-left: 1.5rem;
+  position: relative;
+  margin-bottom: 0.6rem;
+}
+
+.blog-content .media-timeline li::before {
+  content: '';
+  position: absolute;
+  left: -5px;
+  top: 0.6em;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--color-gold);
+}
+

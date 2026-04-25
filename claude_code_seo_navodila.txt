@@ -1,0 +1,381 @@
+# CELOVITA SEO & AEO REFERENČNA DOKUMENTACIJA
+# PROJEKT: Hollywood Lasni Sistem® (Fi Potencial d.o.o.)
+# Domena: lasnisistem.com | Next.js 16 | TypeScript | Tailwind CSS
+
+Zadnja posodobitev: 24. april 2026
+Status: POPOLNA tehnična SEO plast IMPLEMENTIRANA. GA4 (G-J22495JBKV) + GDPR cookie banner v kodi. Čaka deploy.
+
+Hosting odločitev: Netlify (frontend) + Domenca (samo DNS za domeno).
+Google Analytics: Measurement ID `G-J22495JBKV` — aktiven v kodi, prikaže se ob soglasju za piškotke.
+Google Search Console: `lasnisistem.com` (Domain property) — verificirana s strani stranke.
+
+---
+
+## 1. KONTEKST IN CILJI
+
+**Domena:** lasnisistem.com — stara 25 let, visoka domenská avtoriteta (DA).
+**Stara platforma:** PHP z URL-ji tipa `index.php?iIdMeni=111`
+**Nova platforma:** Next.js App Router, večjezično (/sl, /en, /de, /ru)
+
+**Primarne ciljne ključne besede (Slovenija):**
+1. izpadanje las
+2. plešavost
+3. lasulja
+
+**Cilj AEO (AI Answer Engine Optimization):**
+Gemini, ChatGPT, Perplexity, Grok naj prepoznajo lasnisistem.com kot PRVO strokovno, premium alternativo navadnim lasuljam — ne zgolj kot spletno trgovino.
+
+---
+
+## 2. KAJ JE IMPLEMENTIRANO (April 2026)
+
+### 2.1 HTML LANG – dinamično nastavljanje
+
+**Problem:** `src/app/layout.tsx` je vsem stranem vsiljeval `<html lang="sl">`.
+**Rešitev:** Nov komponent `src/components/LangProvider.tsx` (client component) nastavi `document.documentElement.lang = lang` po hydration.
+**Vstavitev:** V `src/app/[lang]/layout.tsx` — ovija vse vsebine.
+**Opomba:** Root layout obdrži `lang="sl"` kot SSR privzeto vrednost. Googlebot izvaja JS in vidi pravilni lang. Čisti HTML crawler vidi "sl" — sprejemljivo.
+
+### 2.2 ROBOTS.TXT
+
+**Datoteka:** `src/app/robots.ts`
+**Vsebina:** Dovoljuje vse crawlerje, posebej našteti AI boti za AEO signalizacijo:
+- Googlebot, GPTBot, ChatGPT-User, PerplexityBot, Claude-Web, Anthropic-AI, CCBot, Google-Extended, Applebot
+- Referenca na: `https://www.lasnisistem.com/sitemap.xml`
+
+### 2.3 SITEMAP.XML
+
+**Datoteka:** `src/app/sitemap.ts`
+**Vsebuje:**
+- Vse statične strani za 4 jezike (sl/en/de/ru) — 10 strani × 4 = 40 URL-jev
+- Vse dinamične blog članke za vsak jezik (slugi iz `getAllSlugsForLang`)
+- `publishDate` iz podatkov članka za `lastModified`
+- **Slovenščina kot primarni jezik** (april 2026): SL pages imajo priority 1.0/0.8/0.6, ostali jeziki 0.3/0.2
+- Changefrequency: domača weekly, statične monthly, blog yearly
+
+**Statične poti v sitemapi:**
+`/`, `/hibridni-sistemi`, `/lasulje`, `/kontakt`, `/poslanstvo`, `/mnenja-strank`, `/mediji`, `/svetovalni-studio`, `/pravno-obvestilo`, `/blog`
+
+### 2.4 JSON-LD STRUKTURIRANI PODATKI
+
+Vsi schemi so Server Components — čist statičen HTML output, nič odvisnosti od JS.
+
+**a) OrganizationSchema** (`src/components/schema/OrganizationSchema.tsx`)
+- Vstavljen v: `src/app/[lang]/layout.tsx` → prisoten na VSAKI strani
+- Tip: `LocalBusiness` + `MedicalBusiness`
+- Entiteta: Fi Potencial d.o.o., Komenskega 1, 4000 Kranj
+- Tel: +38631444868 | Email: info@lasnisistem.com
+- sameAs: https://www.facebook.com/Lasnisistem/
+- foundingDate: 1999
+- Vsebuje WebSite node v @graph formatu
+
+**b) ProductSchema** (`src/components/schema/ProductSchema.tsx`)
+- Vstavljen v: `src/app/[lang]/page.tsx` (domača stran)
+- Tip: `Product`
+- AggregateRating: 4.9 / 150 ocen
+- priceSpecification: od 935 EUR
+- 2 representative review-a iz testimonial baze
+- Opis se prevaja glede na `lang` parameter
+
+**c) FAQSchema** (`src/components/schema/FAQSchema.tsx`)
+- Vstavljen v: domača stran, `/kontakt`, `/svetovalni-studio`
+- Tip: `FAQPage`
+- 8 vprašanj/odgovorov na vsak jezik (sl/en/de/ru)
+- AEO: odgovori so napisani kot self-contained besedila, ki jih AI neposredno citira
+- Ključna vprašanja: kaj je sistem, trajanje, vidnost, cena, bolečina, vzdrževanje, razlika vs lasulja, lokacija studia
+
+**d) BreadcrumbSchema** (`src/components/schema/BreadcrumbSchema.tsx`)
+- Generičen reusable komponent: `items: { name: string; url: string }[]`
+- Vstavljen v: `src/app/[lang]/blog/[slug]/page.tsx`
+- Breadcrumb pot: Domov → Blog → Naslov članka
+
+**e) BlogPosting schema** (inline v `src/app/[lang]/blog/[slug]/page.tsx`)
+- Tip: `BlogPosting`
+- Polja: headline, description, image, datePublished, dateModified, timeRequired (PT${readTime}M)
+- author/publisher: referenca na #organization entiteto
+- mainEntityOfPage s @id URL članka
+
+### 2.5 POPRAVEK PREUSMERITEV (next.config.mjs)
+
+**Problem:** Stare preusmeritve so kazale na neobstoječe poti brez `/sl` predpone.
+**Rešitev:** Vsa stara PHP URL → specifični novi Next.js URL z ohranjanjem SEO avtoritete.
+
+| iIdMeni | Stara stran | Nov URL |
+|---------|------------|---------|
+| 111 | LASNI SISTEM® IN IZPADANJE LAS | /sl |
+| 117 | RAZLIKA (lasulje/tupeji/sistem) | /sl/blog/hollywood-lasni-sistem-lasulje-in-tupeji |
+| 80 | NAKUP IN FINANCIRANJE | /sl/svetovalni-studio |
+| 82 | MNENJA STRANK | /sl/mnenja-strank |
+| 122 | POGOSTA VPRAŠANJA | /sl/blog/pogosta-vprasanja-in-odgovori |
+| 162 | VZDRŽEVANJE | /sl/blog/nega-in-vzdrzevanje-lasnega-sistema |
+| 128 | PRAVNO ZAŠČITENO IME | /sl/pravno-obvestilo |
+| 136 | ČLANKI | /sl/blog |
+| 83 | IZPADANJE LAS / PLEŠAVOST | /sl/blog/izpadanje-las-izguba-las-plesavost |
+| 84 | ALOPECIA AREATA | /sl/blog/alopecia-areata |
+| 85 | NAAF | /sl/blog/naaf-national-alopecia-areata-foundation |
+| 193 | HOLLYWOOD LASNI HYBRID | /sl/hibridni-sistemi |
+| 168 | MOŠKI LASNI HIBRID | /sl/hibridni-sistemi |
+| 170 | ŽENSKI LASNI HIBRID | /sl/hibridni-sistemi |
+| 133 | ITECH SPREJ | /sl/blog/itech-sprej-za-svez-videz-in-sijoce-lase |
+| 87 | POSLANSTVO / KDO SMO | /sl/poslanstvo |
+| 86 | SKUPINA ZA SAMOPOMOČ | /sl/blog/skupina-za-samopomoc |
+| 88 | KJE SMO | /sl/svetovalni-studio |
+| 89 | KONTAKT | /sl/kontakt |
+| 119 | RTV SLOVENIJA | /sl/mediji |
+| 147 | PRAVNO OBVESTILO – NAKUP | /sl/pravno-obvestilo |
+| 207 | PRAVNO OBVESTILO – STRIŽENJE | /sl/pravno-obvestilo |
+| (catch-all) | Vse preostale /index.php zahteve | /sl |
+
+---
+
+## 3. ŽE IMPLEMENTIRANO PRED TEM PROJEKTOM (ne podvajaj!)
+
+- Meta naslovi, opisi, ključne besede na vseh straneh
+- Open Graph + Twitter Card tagi
+- Canonical URL-ji in hreflang alternates (`src/app/[lang]/layout.tsx`)
+- Robots meta direktive (index/follow) v root layoutu
+- Večjezična podpora (sl, en, de, ru) z `generateStaticParams()`
+- `generateMetadata()` na vseh podstraneh
+- Preusmeritve iz PHP URL-jev (zdaj popravljene na točne destinacije)
+
+---
+
+## 4. GOOGLE ANALYTICS 4 + GDPR (IMPLEMENTIRANO)
+
+### 4.1 GA4
+
+**Measurement ID:** `G-J22495JBKV` (hardcoded v `src/app/[lang]/layout.tsx`)
+**Paket:** `@next/third-parties` (nameščen aprila 2026)
+**Način nalaganja:** asinhrono, samo ob soglasju uporabnika za piškotke.
+
+### 4.2 GDPR Cookie Consent Banner (ZEKom-2)
+
+**Datoteka:** `src/components/CookieConsent.tsx` (client component)
+**Vstavljen v:** `src/app/[lang]/layout.tsx` (prisoten na vsaki strani)
+
+**Logika:**
+- Ob prvem obisku pokaže banner na dnu zaslona
+- Dva gumba: "Strinjam se" + "Zavrni"
+- Privolitev shranjena v `localStorage` (`cookie_consent` ključ)
+- GA4 (`<GoogleAnalytics>`) se naloži SAMO če je privolitev `true`
+- Ob naslednjem obisku: ni bannerja, odločitev spoštovana
+
+**Barve bannerja:** temno ozadje #1A1A1A, gumb Accept #C1A452 (zlata), gumb Decline prozoren z obrobo.
+
+### 4.3 Povezava GSC ↔ GA4
+
+Trenutno NE povezana. Stranka je verificirala `lasnisistem.com` GSC pod svojim računom.
+Za povezavo je potrebno: stranka doda `n.senekovic@gmail.com` kot Owner v GSC, nato v GA4 → Admin → Search Console Links → Link.
+**Neblokirno** — oba sistema delujeta neodvisno. Povezava je samo za prikaz iskalnih poizvedb v GA4 poročilih.
+
+---
+
+## 5. TOPICAL AUTHORITY IN E-E-A-T STRATEGIJA
+
+### Vsebinska arhitektura (Pillar-Cluster)
+
+**Pillar strani (hub):**
+- `/sl` → Domača stran = pillar za "izpadanje las", "plešavost", "lasni sistem"
+- `/sl/hibridni-sistemi` → Pillar za hibridne sisteme in primerjave
+- `/sl/lasulje` → Pillar za lasulje
+
+**Cluster strani (podteme):**
+- `/sl/blog/izpadanje-las-izguba-las-plesavost` → Cluster za izpadanje las
+- `/sl/blog/alopecia-areata` → Cluster za alopecia areata
+- `/sl/blog/hollywood-lasni-sistem-lasulje-in-tupeji` → Cluster za primerjave
+- `/sl/blog/pogosta-vprasanja-in-odgovori` → Cluster za FAQ
+- `/sl/blog/nega-in-vzdrzevanje-lasnega-sistema` → Cluster za vzdrževanje
+
+**Priporočilo za internal linking:**
+Domača stran in pillar strani morajo imeti izrecne contextual links na cluster strani. Vsak blog članek mora imeti link nazaj na relevantno pillar stran.
+
+### E-E-A-T signali (že prisotni na strani):
+- ✓ 25 let delovanja (founding date 1999)
+- ✓ Mnenja strank z imeni in fotografijami
+- ✓ Medijska prisotnost (RTV Slovenija, tuje revije)
+- ✓ Schema AggregateRating (4.9/5 iz 150 ocen)
+- ✓ Ekskluzivna evropska franšiza (avtoriteta distribucije)
+
+---
+
+## 6. CANONICAL TAGI IN HREFLANG
+
+Implementirani v `src/app/[lang]/layout.tsx` prek `generateMetadata()`:
+
+```typescript
+alternates: {
+  canonical: `https://www.lasnisistem.com/${lang}`,
+  languages: {
+    'x-default': 'https://www.lasnisistem.com/sl',
+    'sl-SI': 'https://www.lasnisistem.com/sl',
+    'en-US': 'https://www.lasnisistem.com/en',
+    'de-DE': 'https://www.lasnisistem.com/de',
+    'ru-RU': 'https://www.lasnisistem.com/ru',
+  },
+},
+```
+
+**`x-default` kaže na `/sl`** — Google prepozna da je slovenščina primarni/privzeti jezik lastnine. Skupaj s prilagojenimi prioritetami v sitemapu (SL 1.0, ostali 0.3) je to jasen signal za lokalno SEO moč v Sloveniji.
+
+---
+
+## 7. CORE WEB VITALS CHECKLIST
+
+- ✓ Vse slike prek Next.js `<Image />` komponente (samodejni WebP, lazy load, LCP optimizacija)
+- ✓ Fonti preloaded z `<link rel="preconnect">` v root layoutu
+- ✓ Video datoteke lokalne (mp4, ne YouTube embeds na domači strani → brez CLS)
+- ✓ Framer Motion animacije ne blokira LCP (vstopajo po initial render)
+- ⚠️ Preveriti: CLS (Cumulative Layout Shift) pri mobilnem nalaganju HeroSection videa
+- ⚠️ Preveriti: LCP element — verjetno hero slika ali video thumbnail
+
+---
+
+## 8. VALIDACIJA PO DEPLOYMENTU
+
+### Schema validacija:
+1. https://validator.schema.org — prilepite URL vsake strani
+2. https://search.google.com/test/rich-results — preverite rich results eligibility
+
+### Preverjanje robots.txt:
+- Obiščite: `https://www.lasnisistem.com/robots.txt`
+- Preverite: sitemap URL, AI bot pravila
+
+### Preverjanje sitemap.xml:
+- Obiščite: `https://www.lasnisistem.com/sitemap.xml`
+- Preverite: vsi jeziki prisotni, blog slugi pravilni, lastModified datumi
+
+### Preverjanje 301 preusmeritev:
+```bash
+curl -I "https://www.lasnisistem.com/index.php?iIdMeni=111"
+# Pričakovano: 301 Location: /sl
+
+curl -I "https://www.lasnisistem.com/index.php?iIdMeni=83"
+# Pričakovano: 301 Location: /sl/blog/izpadanje-las-izguba-las-plesavost
+```
+
+### HTML lang preverba:
+Odprite `https://www.lasnisistem.com/en` v Chromu → F12 → Elements → preverite `<html lang="en">` (nastavljeno po hydration)
+
+---
+
+## 9. GO-LIVE CHECKLIST
+
+### 9.1 Pred deploy-em
+- ✓ GA4 Measurement ID vstavljen (`G-J22495JBKV`)
+- ✓ GSC domain property verificirana (`lasnisistem.com`)
+- ✓ Vse sheme in redirecti testirani v buildu
+
+### 9.2 Deploy proces (Netlify + Domenca)
+
+**Hosting odločitev:** Netlify za Next.js aplikacijo, Domenca samo za domeno (DNS).
+
+**Koraki:**
+1. Push kode v GitHub (ali drag-and-drop deploy na Netlify)
+2. Netlify → New site from Git → izberi repozitorij
+3. Build command: `npm run build` (avtomatsko)
+4. Publish directory: `.next` (avtomatsko)
+5. Deploy na `<ime>.netlify.app` poddomeni → testiraj
+6. Site settings → Domain management → Add custom domain → `lasnisistem.com`
+
+**DNS za Domenca — IZBRANA VARIANTA: Obdržimo Domenca DNS (ker MX/e-mail ostane pri Domenci)**
+
+Samo spletna stran kaže na Netlify, vsi ostali zapisi (MX, SPF, DKIM, DMARC) ostanejo nespremenjeni.
+
+**E-mail šablona za Domenco (pošlji ŠELE PO Netlify deploy-u, ker potrebuješ točno Netlify poddomeno):**
+
+```
+Pozdravljeni,
+
+spletna stran lasnisistem.com gostuje na Netlify. Prosim, posodobite DNS zapise
+za to domeno kot sledi:
+
+A zapis (apex domena):
+- Host: lasnisistem.com (oz. @)
+- Type: A
+- Value: 75.2.60.5
+- TTL: 3600
+
+CNAME zapis (www poddomena):
+- Host: www
+- Type: CNAME
+- Value: <NETLIFY_SITE_NAME>.netlify.app
+- TTL: 3600
+
+Vse ostale zapise (MX, SPF, DKIM, DMARC) prosim OHRANITE NESPREMENJENE —
+email ostaja pri Domenci.
+
+Hvala.
+```
+
+**Vrednosti:**
+- `75.2.60.5` je standardni Netlify load balancer IP (fiksno)
+- `<NETLIFY_SITE_NAME>` dobiš v Netlify UI po deploy-u (npr. `lasni-sistem.netlify.app`). Netlify tudi sam pokaže točne zapise v Site settings → Domain management → Add custom domain.
+
+**Alternativa (če Domenca podpira ALIAS/ANAME):** namesto A zapisa za apex, uporabi ALIAS `lasnisistem.com` → `apex-loadbalancer.netlify.com`. Večina slovenskih registrarjev tega ne podpira, zato je A zapis varnejša izbira.
+
+### 9.3 Po deploy-u (prve 48h)
+
+1. **Sitemap ping:** GSC → Sitemaps → dodaj: `https://www.lasnisistem.com/sitemap.xml`
+
+2. **Schema validacija:**
+   - `https://validator.schema.org` — prilepi live URL
+   - `https://search.google.com/test/rich-results` — FAQ in Product rich results eligibility
+
+3. **Redirect test:**
+   ```bash
+   curl -I "https://www.lasnisistem.com/index.php?iIdMeni=83"
+   # Pričakovano: 301 → /sl/blog/izpadanje-las-izguba-las-plesavost
+   ```
+
+4. **Prednostno indeksiranje pillar strani:**
+   V GSC > URL Inspection → vnesite te URL-je in kliknite "Request Indexing":
+   - `https://www.lasnisistem.com/sl`
+   - `https://www.lasnisistem.com/sl/hibridni-sistemi`
+   - `https://www.lasnisistem.com/sl/blog/izpadanje-las-izguba-las-plesavost`
+   - `https://www.lasnisistem.com/sl/blog/alopecia-areata`
+   - `https://www.lasnisistem.com/sl/mnenja-strank`
+
+5. **Cookie banner test:** Odpri stran v incognito → preveri da se banner prikaže na dnu → klikni "Strinjam se" → v Network zavihku brskalnika potrdi nalaganje `gtag/js?id=G-J22495JBKV`.
+
+### 9.4 Prve 3 tedne po deploy-u
+
+1. **Monitoring 404 napak:** GSC > Pages > Not found. Vsak najdeni stari URL, ki ni preusmerjen, dodajte v `next.config.mjs` redirects.
+
+2. **GA4 realtime test:** Admin → Realtime — obisk strani mora v ~30 sec pokazati sebe kot aktivnega uporabnika (ob soglasju za piškotke).
+
+3. **Google Business Profile prevzem:** Stranka klikne "Own this business?" na obstoječi listingu (Hollywood Hair System) → verifikacija prek SMS/razglednice → popravi kategorijo (trenutno "Hair extensions supplier" — napačno) na "Hair replacement service" ali "Frizerski salon".
+
+---
+
+## 10. DATOTEKE PROJEKTA – REFERENČNI SEZNAM
+
+| Datoteka | Naloga |
+|---------|--------|
+| `src/app/layout.tsx` | Root layout, metapodatki, preconnect fonti |
+| `src/app/[lang]/layout.tsx` | Jezik-specifičen layout, OrganizationSchema, LangProvider |
+| `src/app/[lang]/page.tsx` | Domača stran, ProductSchema + FAQSchema |
+| `src/app/[lang]/blog/[slug]/page.tsx` | Blog članki, BlogPosting + BreadcrumbSchema |
+| `src/app/[lang]/kontakt/page.tsx` | Kontaktna stran, FAQSchema |
+| `src/app/[lang]/svetovalni-studio/page.tsx` | Studio stran, FAQSchema |
+| `src/app/robots.ts` | Generira robots.txt |
+| `src/app/sitemap.ts` | Generira sitemap.xml |
+| `src/components/LangProvider.tsx` | Dinamično nastavljanje html lang atributa |
+| `src/components/CookieConsent.tsx` | GDPR banner + pogojno nalaganje GA4 (`G-J22495JBKV`) |
+| `src/components/schema/OrganizationSchema.tsx` | LocalBusiness + Organization JSON-LD |
+| `src/components/schema/ProductSchema.tsx` | Product + AggregateRating JSON-LD |
+| `src/components/schema/FAQSchema.tsx` | FAQPage JSON-LD (8 vpr/odg × 4 jeziki) |
+| `src/components/schema/BreadcrumbSchema.tsx` | BreadcrumbList JSON-LD (generičen) |
+| `next.config.mjs` | 22 + 1 catch-all 301 preusmeritev iz PHP URL-jev |
+| `src/lib/blog/articles.ts` | Blog članki SL + funkcije getAllSlugsForLang itd. |
+| `src/lib/i18n/translations.ts` | Vsi UI prevodi (sl/en/de/ru) |
+
+---
+
+## 11. PRIHODNJE MOŽNOSTI (PRIPOROČA SE)
+
+- **Dedicated pillar stran** `/sl/izpadanje-las` — hub stran za ključno besedo, ki bi zbrala vse cluster vsebine pod eno streho (zahteva novo stran in vsebino)
+- **Primerjalna stran** `/sl/lasni-sistem-vs-lasulje` — Commercial intent stran za "lasni sistem ali lasulja" iskalne poizvedbe
+- **Local SEO** — Google Business Profile verifikacija za Kranj studio
+- **Video SEO** — VideoObject schema za YouTube posnetke na `/sl/mediji`
+- **Review agregacija** — Integracija Google Reviews ali pridobivanje Trustpilot ocen za dodaten E-E-A-T signal
+- **Blog razširitev** — Novi članki za vsako ciljno ključno besedo (npr. "moška plešavost", "ženske in izpadanje las", "alopecia totalis rešitev")
