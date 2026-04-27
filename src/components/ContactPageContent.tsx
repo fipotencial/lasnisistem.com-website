@@ -160,8 +160,7 @@ export default function ContactPageContent({ lang }: Props) {
     setSending(true)
 
     const formData = new FormData(e.currentTarget)
-    // Replace this with your actual Web3Forms Access Key
-    formData.append('access_key', 'YOUR_WEB3FORMS_ACCESS_KEY_HERE')
+    formData.append('access_key', process.env.NEXT_PUBLIC_WEB3FORMS_KEY || '')
 
     try {
       const response = await fetch('https://api.web3forms.com/submit', {
