@@ -2,12 +2,14 @@
 # PROJEKT: Hollywood Lasni Sistem® (Fi Potencial d.o.o.)
 # Domena: lasnisistem.com | Next.js 16 | TypeScript | Tailwind CSS
 
-Zadnja posodobitev: 24. april 2026
-Status: POPOLNA tehnična SEO plast IMPLEMENTIRANA. GA4 (G-J22495JBKV) + GDPR cookie banner v kodi. Čaka deploy.
+Zadnja posodobitev: 28. april 2026
+Status: PROJEKT ZAKLJUČEN. Stran je LIVE na lasnisistem.com. GA4 deluje. GSC sitemap oddan. Redirecti z izpadanje-las.si aktivni.
 
-Hosting odločitev: Netlify (frontend) + Domenca (samo DNS za domeno).
-Google Analytics: Measurement ID `G-J22495JBKV` — aktiven v kodi, prikaže se ob soglasju za piškotke.
-Google Search Console: `lasnisistem.com` (Domain property) — verificirana s strani stranke.
+Hosting: Netlify (frontend) + Domenca (samo DNS za domeno + email).
+GitHub: git@github.com:fipotencial/lasnisistem.com-website.git (branch: main)
+Google Analytics: Measurement ID `G-J22495JBKV` — aktiven, deluje ob soglasju za piškotke.
+Google Search Console: `lasnisistem.com` (Domain property) — verificirana. Sitemap oddan 28.4.2026 (77 strani).
+Kontaktni obrazec: Web3Forms, access key v Netlify env var `NEXT_PUBLIC_WEB3FORMS_KEY`.
 
 ---
 
