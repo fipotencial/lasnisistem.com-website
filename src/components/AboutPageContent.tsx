@@ -274,7 +274,7 @@ export default function AboutPageContent({ lang }: Props) {
                 <p>{at.spelaSemeP3}</p>
 
                 <Link
-                  href={`/${lang}/blog/skupina-za-samopomoc`}
+                  href={`/${lang}/blog/${lang === 'de' ? 'selbsthilfegruppe' : lang === 'en' || lang === 'ru' ? 'support-group' : 'skupina-za-samopomoc'}`}
                   style={{
                     display: 'inline-flex',
                     alignItems: 'center',
