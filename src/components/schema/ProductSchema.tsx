@@ -27,13 +27,12 @@ export default function ProductSchema({ lang }: { lang: string }) {
     url: `https://www.lasnisistem.com/${lang}`,
     offers: {
       '@type': 'Offer',
+      price: '935',
       priceCurrency: 'EUR',
-      priceSpecification: {
-        '@type': 'PriceSpecification',
-        minPrice: '935',
-        priceCurrency: 'EUR',
-      },
+      priceValidUntil: '2027-12-31',
       availability: 'https://schema.org/InStock',
+      itemCondition: 'https://schema.org/NewCondition',
+      url: `https://www.lasnisistem.com/${lang}`,
       seller: { '@id': 'https://www.lasnisistem.com/#organization' },
     },
     aggregateRating: {
