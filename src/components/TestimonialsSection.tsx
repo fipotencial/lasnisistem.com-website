@@ -3,7 +3,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
-import { useRef, useCallback } from 'react'
+import { useRef, useCallback, useState } from 'react'
 import type { Translation, LangCode } from '@/lib/i18n/translations'
 
 type Props = {
@@ -438,9 +438,20 @@ function TestimonialCarousel({ lang }: { lang: LangCode }) {
   const testimonials = shortTestimonialsMap[lang] || shortTestimonialsMap.sl
   const items = [...testimonials, ...testimonials, ...testimonials]
   const rmLabel = readMoreLabel[lang] || readMoreLabel.sl
+  const [paused, setPaused] = useState(false)
 
   return (
-    <div style={{ width: '100%', overflow: 'hidden', position: 'relative' }}>
+    <div
+      style={{ width: '100%', overflow: 'hidden', position: 'relative' }}
+      onMouseEnter={() => setPaused(true)}
+      onMouseLeave={() => setPaused(false)}
+    >
+      <style>{`
+        @keyframes testimonial-scroll {
+          from { transform: translateX(0); }
+          to   { transform: translateX(-33.333%); }
+        }
+      `}</style>
       <div
         style={{
           position: 'absolute', left: 0, top: 0, bottom: 0, width: '10%',
@@ -456,14 +467,14 @@ function TestimonialCarousel({ lang }: { lang: LangCode }) {
         }}
       />
 
-      <motion.div
-        animate={{ x: ['0%', '-33.33%'] }}
-        transition={{ x: { duration: 120, repeat: Infinity, ease: 'linear' } }}
+      <div
         style={{
           display: 'flex',
           alignItems: 'flex-start',
           gap: '1.5rem',
           width: 'max-content',
+          animation: 'testimonial-scroll 120s linear infinite',
+          animationPlayState: paused ? 'paused' : 'running',
         }}
       >
         {items.map((item, i) => {
@@ -587,7 +598,7 @@ function TestimonialCarousel({ lang }: { lang: LangCode }) {
             </GlowCard>
           )
         })}
-      </motion.div>
+      </div>
     </div>
   )
 }

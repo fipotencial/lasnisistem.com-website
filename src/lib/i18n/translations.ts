@@ -109,7 +109,7 @@ export const translations: Record<LangCode, Translation> = {
     },
     credibility: {
       kicker: 'Ekskluzivni evropski distributer',
-      subtitle: 'Že več kot 25 let pomagamo ljudem z najboljšimi rešitvami za izpadanje las na trgu, v sodelovanju z Hairart Inc. ~ vodilnim svetovnim proizvajalcem lasnih sistemov od leta 1977.',
+      subtitle: 'Že več kot 25 let pomagamo ljudem z najboljšimi rešitvami za izpadanje las na trgu, v sodelovanju s Hairart Inc. ~ vodilnim svetovnim proizvajalcem lasnih sistemov od leta 1977.',
       years: '25',
       yearsLabel: 'let delovanja',
       experience: '40',
