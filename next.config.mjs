@@ -9,6 +9,13 @@ const nextConfig = {
   },
   async redirects() {
     return [
+      // ─── KORENSKI URL → privzeti jezik (server-level 308) ────────────
+      {
+        source: '/',
+        destination: '/sl',
+        permanent: true,
+      },
+
       // ─── LASNI SISTEM® IN IZPADANJE LAS (iIdMeni=111) ───────────────
       // Glavna stran o lasnem sistemu → domača stran
       {
