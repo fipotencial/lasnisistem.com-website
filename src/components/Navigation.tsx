@@ -328,8 +328,33 @@ export default function Navigation({ lang, t, variant = 'dark' }: Props) {
           })}
         </nav>
 
-        {/* Right: Language Letters */}
+        {/* Right: Phone + Language Letters */}
         <div className="hidden lg:flex items-center" style={{ gap: '14px' }}>
+          <a
+            href="tel:+38631444868"
+            style={{
+              fontFamily: 'Inter, system-ui, sans-serif',
+              fontSize: '0.72rem',
+              fontWeight: 600,
+              letterSpacing: '0.08em',
+              color: linkColor,
+              textDecoration: 'none',
+              display: 'flex',
+              alignItems: 'center',
+              gap: '0.45rem',
+              whiteSpace: 'nowrap',
+              transition: 'color 0.2s ease',
+            }}
+            onMouseEnter={e => { e.currentTarget.style.color = '#B09140' }}
+            onMouseLeave={e => { e.currentTarget.style.color = linkColor }}
+            aria-label="Pokličite nas: +386 31 444 868"
+          >
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+            </svg>
+            +386 31 444 868
+          </a>
+          <span style={{ width: 1, height: 16, background: 'rgba(176,145,64,0.35)' }} />
           {languages.map(l => {
             const label = l.code === 'sl' ? 'SLO' : l.code === 'en' ? 'ENG' : l.code === 'de' ? 'GER' : 'RUS'
             return (
@@ -492,6 +517,28 @@ export default function Navigation({ lang, t, variant = 'dark' }: Props) {
               </div>
 
               <div style={{ height: 1, background: 'rgba(26,26,26,0.08)' }} />
+
+              <a
+                href="tel:+38631444868"
+                style={{
+                  fontFamily: 'Inter, system-ui, sans-serif',
+                  fontSize: '0.85rem',
+                  fontWeight: 600,
+                  letterSpacing: '0.06em',
+                  color: '#B09140',
+                  textDecoration: 'none',
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '0.5rem',
+                  paddingTop: '0.5rem',
+                }}
+                aria-label="Pokličite nas: +386 31 444 868"
+              >
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                </svg>
+                +386 31 444 868
+              </a>
 
               <div style={{ display: 'flex', gap: '16px', paddingTop: '0.5rem' }}>
                 {languages.map(l => {
