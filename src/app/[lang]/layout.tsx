@@ -28,19 +28,26 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     ru: 'ru_RU',
   }
 
+  const locale = langLabels[lang] || 'sl_SI'
+
   return {
-    alternates: {
-      canonical: `https://www.lasnisistem.com/${lang}`,
-      languages: {
-        'x-default': 'https://www.lasnisistem.com/sl',
-        'sl-SI': 'https://www.lasnisistem.com/sl',
-        'en-US': 'https://www.lasnisistem.com/en',
-        'de-DE': 'https://www.lasnisistem.com/de',
-        'ru-RU': 'https://www.lasnisistem.com/ru',
-      },
-    },
+    // alternates (canonical + hreflang) are set per-page via src/lib/seo.ts —
+    // setting them here made every sub-page canonicalize to the homepage.
+    // openGraph must be a complete object: Next.js replaces (not deep-merges)
+    // the root layout's openGraph, so a partial one here would drop the image.
     openGraph: {
-      locale: langLabels[lang] || 'sl_SI',
+      type: 'website',
+      siteName: 'Lasni Sistem®',
+      locale,
+      alternateLocale: ['sl_SI', 'en_US', 'de_DE', 'ru_RU'].filter((l) => l !== locale),
+      images: [
+        {
+          url: '/og-image.jpg',
+          width: 1200,
+          height: 630,
+          alt: 'Lasni Sistem®',
+        },
+      ],
     },
   }
 }

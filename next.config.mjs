@@ -16,6 +16,20 @@ const nextConfig = {
         permanent: true,
       },
 
+      // ─── STARI GOLI URL-JI (GSC 404) ─────────────────────────────────
+      // Star URL brez /sl/blog predpone (iz stare strani)
+      {
+        source: '/naaf-national-alopecia-areata-foundation',
+        destination: '/sl/blog/naaf-national-alopecia-areata-foundation',
+        permanent: true,
+      },
+      // Slovenski slug pod ruskim jezikom → ruski slug (GSC 404)
+      {
+        source: '/ru/blog/skupina-za-samopomoc',
+        destination: '/ru/blog/support-group',
+        permanent: true,
+      },
+
       // ─── LASNI SISTEM® IN IZPADANJE LAS (iIdMeni=111) ───────────────
       // Glavna stran o lasnem sistemu → domača stran
       {

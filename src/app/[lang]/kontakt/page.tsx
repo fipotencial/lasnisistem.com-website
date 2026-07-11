@@ -3,6 +3,7 @@ import Footer from '@/components/Footer'
 import ContactPageContent from '@/components/ContactPageContent'
 import FAQSchema from '@/components/schema/FAQSchema'
 import { translations, languages } from '@/lib/i18n/translations'
+import { buildAlternates } from '@/lib/seo'
 import type { Metadata } from 'next'
 
 type Props = {
@@ -18,15 +19,23 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const t = translations[lang as keyof typeof translations] || translations.sl
 
   const titles: Record<string, string> = {
-    sl: 'Kontakt | Lasni Sistem®',
-    en: 'Contact | Hollywood Hair System®',
-    de: 'Kontakt | Hollywood Hair System®',
-    ru: 'Контакт | Hollywood Hair System®',
+    sl: 'Kontakt',
+    en: 'Contact',
+    de: 'Kontakt',
+    ru: 'Контакт',
+  }
+
+  const descriptions: Record<string, string> = {
+    sl: 'Stopite v stik z nami – brezplačno in diskretno svetovanje o rešitvah za izpadanje las. Tel: +386 31 444 868, svetovalni studio v Kranju.',
+    en: 'Get in touch – free and discreet consultation about hair loss solutions. Tel: +386 31 444 868, consulting studio in Kranj, Slovenia.',
+    de: 'Kontaktieren Sie uns – kostenlose und diskrete Beratung zu Lösungen bei Haarausfall. Tel: +386 31 444 868, Beratungsstudio in Kranj, Slowenien.',
+    ru: 'Свяжитесь с нами – бесплатная и деликатная консультация по решениям при выпадении волос. Тел: +386 31 444 868, студия в Словении.',
   }
 
   return {
     title: titles[lang] || titles.sl,
-    description: t.hero.body,
+    description: descriptions[lang] || descriptions.sl,
+    alternates: buildAlternates(lang, '/kontakt'),
   }
 }
 

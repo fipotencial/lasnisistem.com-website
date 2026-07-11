@@ -2,6 +2,7 @@ import Navigation from '@/components/Navigation'
 import Footer from '@/components/Footer'
 import HybridPageContent from '@/components/HybridPageContent'
 import { translations, languages } from '@/lib/i18n/translations'
+import { buildAlternates } from '@/lib/seo'
 import type { Metadata } from 'next'
 
 type Props = {
@@ -15,10 +16,10 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { lang } = await params
   const titles: Record<string, string> = {
-    sl: 'Hibridni sistemi | Lasni Sistem®',
-    en: 'Hybrid Systems | Hollywood Hair System®',
-    de: 'Hybridsysteme | Hollywood Hair System®',
-    ru: 'Гибридные системы | Hollywood Hair System®',
+    sl: 'Hibridni lasni sistemi za moške in ženske',
+    en: 'Hybrid Hair Systems for Men and Women',
+    de: 'Hybrid-Haarsysteme für Männer und Frauen',
+    ru: 'Гибридные системы волос',
   }
   const descriptions: Record<string, string> = {
     sl: 'Hibridni sistemi za moške in ženske iz najkvalitetnejših evropskih las. Cenovno ugodnejši od Hollywood Lasnega sistema®.',
@@ -29,6 +30,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: titles[lang] || titles.sl,
     description: descriptions[lang] || descriptions.sl,
+    alternates: buildAlternates(lang, '/hibridni-sistemi'),
   }
 }
 

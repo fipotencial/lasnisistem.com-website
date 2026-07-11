@@ -2,6 +2,7 @@ import Navigation from '@/components/Navigation'
 import Footer from '@/components/Footer'
 import BlogListPage from '@/components/BlogListPage'
 import { translations, languages } from '@/lib/i18n/translations'
+import { buildAlternates } from '@/lib/seo'
 import type { Metadata } from 'next'
 
 type Props = {
@@ -16,14 +17,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { lang } = await params
 
   const titles: Record<string, string> = {
-    sl: 'Blog – Članki o izpadanju las | Lasni Sistem®',
-    en: 'Blog – Hair Loss Articles | Hollywood Hair System®',
-    de: 'Blog – Artikel über Haarausfall | Hollywood Hair System®',
-    ru: 'Блог – Статьи о выпадении волос | Hollywood Hair System®',
+    sl: 'Blog – članki o izpadanju las in plešavosti',
+    en: 'Blog – Hair Loss Articles',
+    de: 'Blog – Artikel über Haarausfall',
+    ru: 'Блог – статьи о выпадении волос',
   }
 
   const descriptions: Record<string, string> = {
-    sl: 'Strokovni članki o izpadanju las, Lasnem sistemu®, alopeciji in negi. Preberite naše vodiče in spoznajte rešitve.',
+    sl: 'Strokovni članki o izpadanju las, plešavosti, alopeciji, lasuljah in Lasnem sistemu®. Preberite naše vodiče in spoznajte rešitve.',
     en: 'Expert articles on hair loss, Hair System®, alopecia and care. Read our guides and discover solutions.',
     de: 'Fachartikel über Haarausfall, Haarsystem®, Alopezie und Pflege. Lesen Sie unsere Leitfäden und entdecken Sie Lösungen.',
     ru: 'Экспертные статьи о выпадении волос, системе волос, алопеции и уходе. Читайте наши руководства и откройте решения.',
@@ -32,6 +33,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: titles[lang] || titles.sl,
     description: descriptions[lang] || descriptions.sl,
+    alternates: buildAlternates(lang, '/blog'),
   }
 }
 

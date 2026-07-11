@@ -54,15 +54,9 @@ export const metadata: Metadata = {
       'max-snippet': -1,
     },
   },
-  alternates: {
-    canonical: 'https://www.lasnisistem.com',
-    languages: {
-      'sl-SI': 'https://www.lasnisistem.com/sl',
-      'en-US': 'https://www.lasnisistem.com/en',
-      'de-DE': 'https://www.lasnisistem.com/de',
-      'ru-RU': 'https://www.lasnisistem.com/ru',
-    },
-  },
+  // alternates (canonical + hreflang) are set per-page via src/lib/seo.ts —
+  // a layout-level canonical would be inherited by every page and mark them
+  // all as duplicates of the homepage.
 }
 
 export default function RootLayout({

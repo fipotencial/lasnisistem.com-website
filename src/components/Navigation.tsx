@@ -57,6 +57,7 @@ export default function Navigation({ lang, t, variant = 'dark' }: Props) {
   const lasniSistemLabel: Record<string, string> = { sl: 'Lasni sistem', en: 'Hair System', de: 'Haarsystem', ru: 'Система волос' }
   const hibridniLabel: Record<string, string> = { sl: 'Hibridni sistemi', en: 'Hybrid Systems', de: 'Hybridsysteme', ru: 'Гибридные системы' }
   const lasuljeLabel: Record<string, string> = { sl: 'Lasulje', en: 'Wigs', de: 'Perücken', ru: 'Парики' }
+  const plesavostLabel: Record<string, string> = { sl: 'Plešavost', en: 'Baldness', de: 'Kahlheit', ru: 'Облысение' }
   const kontaktLabel: Record<string, string> = { sl: 'Kontakt', en: 'Contact', de: 'Kontakt', ru: 'Контакт' }
 
   const isLandingPage = pathname === `/${lang}` || pathname === `/${lang}/`
@@ -73,6 +74,10 @@ export default function Navigation({ lang, t, variant = 'dark' }: Props) {
     {
       label: lasuljeLabel[lang] || 'Lasulje',
       href: `/${lang}/lasulje`,
+    },
+    {
+      label: plesavostLabel[lang] || 'Plešavost',
+      href: `/${lang}/plesavost`,
     },
     {
       label: oNasLabel[lang] || 'O nas',

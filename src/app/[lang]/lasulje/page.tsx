@@ -2,6 +2,7 @@ import Navigation from '@/components/Navigation'
 import Footer from '@/components/Footer'
 import WigsPageContent from '@/components/WigsPageContent'
 import { translations, languages } from '@/lib/i18n/translations'
+import { buildAlternates } from '@/lib/seo'
 import type { Metadata } from 'next'
 
 type Props = {
@@ -15,13 +16,13 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { lang } = await params
   const titles: Record<string, string> = {
-    sl: 'Lasulje | Lasni Sistem®',
-    en: 'Wigs | Hollywood Hair System®',
-    de: 'Perücken | Hollywood Hair System®',
-    ru: 'Парики | Hollywood Hair System®',
+    sl: 'Lasulje po meri iz evropskih las',
+    en: 'Wigs – Custom European Hair',
+    de: 'Perücken – Europäisches Echthaar',
+    ru: 'Парики из европейских волос',
   }
   const descriptions: Record<string, string> = {
-    sl: 'Lasulje iz evropskih las, na voljo v različnih modelih in bazah. Izboljšajte svoj videz z našimi vrhunskimi ženskimi lasuljami in lasnimi vložki.',
+    sl: 'Vrhunska lasulja iz 100 % evropskih las – ženske lasulje, lasni vložki in baze po meri. Naraven videz in diskretno svetovanje v Kranju.',
     en: 'European hair wigs, available in various models and bases. Elevate your look with our premium women\'s wigs and hair toppers.',
     de: 'Europäische Echthaarperücken, in verschiedenen Modellen und Basen erhältlich. Werten Sie Ihren Look mit unseren Premium-Perücken für Damen auf.',
     ru: 'Парики из европейских волос, доступны в различных моделях и основах. Подчеркните свой образ нашими премиальными женскими париками.',
@@ -29,6 +30,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: titles[lang] || titles.sl,
     description: descriptions[lang] || descriptions.sl,
+    alternates: buildAlternates(lang, '/lasulje'),
   }
 }
 

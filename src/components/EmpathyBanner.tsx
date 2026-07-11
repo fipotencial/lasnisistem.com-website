@@ -1,6 +1,7 @@
 'use client'
 
 import { useRef, useCallback } from 'react'
+import Link from 'next/link'
 import { motion } from 'framer-motion'
 import type { Translation, LangCode } from '@/lib/i18n/translations'
 
@@ -9,7 +10,14 @@ type Props = {
   t: Translation
 }
 
-export default function EmpathyBanner({ t }: Props) {
+const plesavostLinkLabel: Record<string, string> = {
+  sl: 'Spoznajte vzroke in rešitve za plešavost →',
+  en: 'Explore the causes of and solutions for baldness →',
+  de: 'Ursachen und Lösungen bei Kahlheit entdecken →',
+  ru: 'Узнайте о причинах и решениях облысения →',
+}
+
+export default function EmpathyBanner({ lang, t }: Props) {
   const e = t.empathy
 
   const sectionRef = useRef<HTMLElement>(null)
@@ -117,6 +125,33 @@ export default function EmpathyBanner({ t }: Props) {
         >
           {e.body}
         </p>
+
+        <Link
+          href={`/${lang}/plesavost`}
+          style={{
+            display: 'inline-block',
+            marginTop: '1.6rem',
+            fontFamily: 'Inter, system-ui, sans-serif',
+            fontSize: '0.82rem',
+            fontWeight: 500,
+            letterSpacing: '0.08em',
+            color: '#C1A452',
+            textDecoration: 'none',
+            borderBottom: '1px solid rgba(193,164,82,0.4)',
+            paddingBottom: '0.2rem',
+            transition: 'all 0.25s ease',
+          }}
+          onMouseEnter={(evt) => {
+            evt.currentTarget.style.color = '#D4AF37'
+            evt.currentTarget.style.borderBottomColor = '#D4AF37'
+          }}
+          onMouseLeave={(evt) => {
+            evt.currentTarget.style.color = '#C1A452'
+            evt.currentTarget.style.borderBottomColor = 'rgba(193,164,82,0.4)'
+          }}
+        >
+          {plesavostLinkLabel[lang] || plesavostLinkLabel.sl}
+        </Link>
 
         {/* Bottom decorative line */}
         <motion.div

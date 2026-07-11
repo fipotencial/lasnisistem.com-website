@@ -11,6 +11,7 @@ type Props = {
   lang: LangCode
   t: Translation
   article: BlogArticle
+  related?: BlogArticle[]
 }
 
 const categoryLabels: Record<string, Record<LangCode, string>> = {
@@ -26,6 +27,7 @@ const pageLabels: Record<LangCode, {
   ctaTitle: string
   ctaBody: string
   ctaButton: string
+  relatedTitle: string
 }> = {
   sl: {
     backToBlog: 'Vsi članki',
@@ -33,6 +35,7 @@ const pageLabels: Record<LangCode, {
     ctaTitle: 'Želite izvedeti več?',
     ctaBody: 'Naročite se na diskretno in strokovno individualno konzultacijo.',
     ctaButton: 'Rezervirajte posvet',
+    relatedTitle: 'Preberite tudi',
   },
   en: {
     backToBlog: 'All articles',
@@ -40,6 +43,7 @@ const pageLabels: Record<LangCode, {
     ctaTitle: 'Want to learn more?',
     ctaBody: 'Book a discreet and professional individual consultation.',
     ctaButton: 'Book a consultation',
+    relatedTitle: 'Related articles',
   },
   de: {
     backToBlog: 'Alle Artikel',
@@ -47,6 +51,7 @@ const pageLabels: Record<LangCode, {
     ctaTitle: 'Möchten Sie mehr erfahren?',
     ctaBody: 'Buchen Sie eine diskrete und professionelle individuelle Beratung.',
     ctaButton: 'Beratung buchen',
+    relatedTitle: 'Das könnte Sie auch interessieren',
   },
   ru: {
     backToBlog: 'Все статьи',
@@ -54,10 +59,11 @@ const pageLabels: Record<LangCode, {
     ctaTitle: 'Хотите узнать больше?',
     ctaBody: 'Запишитесь на конфиденциальную и профессиональную индивидуальную консультацию.',
     ctaButton: 'Записаться на консультацию',
+    relatedTitle: 'Читайте также',
   },
 }
 
-export default function BlogArticlePage({ lang, article }: Props) {
+export default function BlogArticlePage({ lang, article, related }: Props) {
   const labels = pageLabels[lang]
   const catLabel = categoryLabels[article.category]?.[lang] || article.category
   const [lightboxSrc, setLightboxSrc] = useState<string | null>(null)
@@ -374,6 +380,83 @@ export default function BlogArticlePage({ lang, article }: Props) {
             }}
           />
         </motion.div>
+
+        {/* ── Related articles ───────────────────────────────────── */}
+        {related && related.length > 0 && (
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.45 }}
+            style={{
+              marginTop: 'clamp(3.5rem, 6vw, 5rem)',
+              maxWidth: '780px',
+            }}
+          >
+            <h2 style={{
+              fontFamily: "'Cormorant Garamond', Georgia, serif",
+              fontSize: 'clamp(1.5rem, 2.5vw, 1.9rem)',
+              fontWeight: 400,
+              color: '#1A1A1A',
+              margin: '0 0 1.5rem 0',
+            }}>
+              {labels.relatedTitle}
+            </h2>
+            <div style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))',
+              gap: '1rem',
+            }}>
+              {related.map((rel) => (
+                <Link
+                  key={rel.slug}
+                  href={`/${lang}/blog/${rel.slug}`}
+                  style={{
+                    display: 'block',
+                    padding: '1.4rem 1.5rem',
+                    background: '#FFFFFF',
+                    borderRadius: '4px',
+                    border: '1px solid rgba(193,164,82,0.18)',
+                    textDecoration: 'none',
+                    transition: 'all 0.25s ease',
+                  }}
+                  onMouseEnter={e => {
+                    e.currentTarget.style.borderColor = '#C1A452'
+                    e.currentTarget.style.boxShadow = '0 6px 20px rgba(140,120,60,0.1)'
+                  }}
+                  onMouseLeave={e => {
+                    e.currentTarget.style.borderColor = 'rgba(193,164,82,0.18)'
+                    e.currentTarget.style.boxShadow = 'none'
+                  }}
+                >
+                  <span style={{
+                    display: 'block',
+                    fontFamily: "'Cormorant Garamond', Georgia, serif",
+                    fontSize: '1.15rem',
+                    fontWeight: 500,
+                    lineHeight: 1.3,
+                    color: '#1A1A1A',
+                    marginBottom: '0.5rem',
+                  }}>
+                    {rel.title}
+                  </span>
+                  <span style={{
+                    fontFamily: 'Inter, system-ui, sans-serif',
+                    fontSize: '0.85rem',
+                    fontWeight: 300,
+                    lineHeight: 1.55,
+                    color: '#6B6155',
+                    overflow: 'hidden',
+                    display: '-webkit-box',
+                    WebkitLineClamp: 3,
+                    WebkitBoxOrient: 'vertical',
+                  } as React.CSSProperties}>
+                    {rel.excerpt}
+                  </span>
+                </Link>
+              ))}
+            </div>
+          </motion.div>
+        )}
 
         {/* ── CTA Section ────────────────────────────────────────── */}
         <motion.div

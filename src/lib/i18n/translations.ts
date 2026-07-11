@@ -99,7 +99,7 @@ export const translations: Record<LangCode, Translation> = {
       kontakt: 'Kontakt',
     },
     hero: {
-      headline: 'Standard, ki mu zaupa Hollywood.',
+      headline: 'Rešitev za izpadanje las, ki ji zaupa Hollywood.',
       tagline: 'Rešitev, ki jo čutite kot svoje lase.',
       body: 'Ekskluzivna tehnologija vodilne ameriške hiše Hairart.\nŽe 25 let postavljamo merila naravnega videza v Sloveniji.',
       cta: 'Rezervirajte posvet',

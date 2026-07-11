@@ -25,7 +25,7 @@ export const blogArticles: BlogArticle[] = [
     image: '/images/blog/hair-system-comparison.png',
     content: `<h2>Razlika: HOLLYWOOD LASNI SISTEM® & lasulje in tupeji</h2>
 
-<p>Večina cenejših kopij ali na oko podobnih izdelkov ima namesto naravnih, nikoli obdelanih (nebarvanih) las, obdelane azijske lase ali celo sintetične, kar pomeni, da nikoli ne bodo zdržali do 4 leta! Večina kopij razpade po nekaj mesecih in so BREZ GARANCIJE!<br>Lasni Sistem® ne poškoduje vaših las, jih ne zateguje in s tem posledično puli ter oslabi vaše lase. Ravno tako jih ne duši, kot po meri narejene lasulje s silikonsko ali kakšno drugo osnovo, saj mikromrežica s cca. 1mm velikimi luknjicami omogoča največje možno dihanje lasišča.</p>
+<p>Večina cenejših kopij ali na oko podobnih izdelkov ima namesto naravnih, nikoli obdelanih (nebarvanih) las, obdelane azijske lase ali celo sintetične, kar pomeni, da nikoli ne bodo zdržali do 4 leta! Večina kopij razpade po nekaj mesecih in so BREZ GARANCIJE!<br>Lasni Sistem® ne poškoduje vaših las, jih ne zateguje in s tem posledično puli ter oslabi vaše lase. Ravno tako jih ne duši, kot po meri narejene <a href="/sl/lasulje">lasulje</a> s silikonsko ali kakšno drugo osnovo, saj mikromrežica s cca. 1mm velikimi luknjicami omogoča največje možno dihanje lasišča.</p>
 
 <h3>Razlika - Lastnosti Lasnega Sistema® v primerjavi z najboljšimi lasuljami ali vložki iz naravnih las:</h3>
 <ul>
@@ -74,7 +74,7 @@ export const blogArticles: BlogArticle[] = [
     image: '/images/hair system with graphics.png',
     content: `<h2>Hollywood Lasni sistem® – najboljša rešitev!</h2>
 
-<p>Lasni sistem® je najsodobnejša alternativa presajanju las, ki v Slovenijo prihaja iz ZDA in spreminja življenje osebam, ki trpijo zaradi izpadanja las – izgube las.</p>
+<p>Lasni sistem® je najsodobnejša alternativa presajanju las, ki v Slovenijo prihaja iz ZDA in spreminja življenje osebam, ki trpijo zaradi <a href="/sl/plesavost">izpadanja las – izgube las</a>.</p>
 
 <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin: 3rem 0;">
   <figure style="margin: 0; display: flex; flex-direction: column; align-items: center;">
@@ -91,7 +91,7 @@ export const blogArticles: BlogArticle[] = [
   </figure>
 </div>
 
-<p>Ni niti kirurški poseg niti lasulja. Gre za prozorno mikromrežico, ki je izdelana v Švici po meri posameznika s pomočjo predhodno odvzetega mavčnega kalupa. Nanjo so lasje ročno pritrjeni. Eden po eden, s posebnimi, s patentom zaščitenimi vozliči, s čimer se doseže enkratni učinek naravne gostote las. Bolj jih češeš, bolj se vozel zateza, kar pomeni znatno manjšo izgubo las, kot so jih sposobne doseči najboljše lasulje. To seveda pomeni tudi za dvakrat do osemkrat daljšo dobo trajanja od najboljših lasulj, saj lahko uporabljate Lasni sistem® ob pravilni negi kar do štiri leta ali celo več (odvisno od pogostosti in načina nošenja ter pravilne nege).</p>
+<p>Ni niti kirurški poseg niti lasulja. Gre za prozorno mikromrežico, ki je izdelana v Švici po meri posameznika s pomočjo predhodno odvzetega mavčnega kalupa. Nanjo so lasje ročno pritrjeni. Eden po eden, s posebnimi, s patentom zaščitenimi vozliči, s čimer se doseže enkratni učinek naravne gostote las. Bolj jih češeš, bolj se vozel zateza, kar pomeni znatno manjšo izgubo las, kot so jih sposobne doseči <a href="/sl/lasulje">najboljše lasulje</a>. To seveda pomeni tudi za dvakrat do osemkrat daljšo dobo trajanja od najboljših lasulj, saj lahko uporabljate Lasni sistem® ob pravilni negi kar do štiri leta ali celo več (odvisno od pogostosti in načina nošenja ter pravilne nege).</p>
 
 <h3>Revolucionarna pritrditev in nevidni robovi</h3>
 
@@ -209,7 +209,7 @@ export const blogArticles: BlogArticle[] = [
 
 <p>Izpadanje las pri moških – moška plešavost oziroma <strong>androgena alopecija</strong> je pogost pojav. Začetni znaki se pojavijo pri skoraj vsakem drugem moškem do 50. leta, pri ženskah pa se redčenje las pojavi pri skoraj celotni populaciji do 60. leta starosti.</p>
 
-<p>Prvi znaki sprememb na lasišču se lahko pojavijo že pri 20. letih in potem s staranjem napredujejo. Začetni simptom je običajno tanjšanje las, ki postajajo vedno krajši in svetleje pigmentirani. Z napredovanjem te bolezni pa se lasje postopoma redčijo, pojavi se vidno izpadanje las – vse dokler ne nastopi popolna plešavost.</p>
+<p>Prvi znaki sprememb na lasišču se lahko pojavijo že pri 20. letih in potem s staranjem napredujejo. Začetni simptom je običajno tanjšanje las, ki postajajo vedno krajši in svetleje pigmentirani. Z napredovanjem te bolezni pa se lasje postopoma redčijo, pojavi se vidno izpadanje las – vse dokler ne nastopi popolna <a href="/sl/plesavost">plešavost</a>.</p>
 
 <h3>Vzroki moške plešavosti</h3>
 <p>Vzrok nastanka moške plešavosti je vpliv moških spolnih hormonov. Plešavost je tudi dedna. Hitrost in obseg izpadanja las sta odvisna od posameznika in jih je zaradi različnih genskih zasnov težko predvideti.</p>
@@ -246,7 +246,7 @@ export const blogArticles: BlogArticle[] = [
 </ul>
 
 <h3>Naša rešitev</h3>
-<p>V našem svetovalnem studiu priporočamo uporabo <strong>Lasnega sistema®</strong>, ki na neboleč in nekirurški način zagotovi naravne lase, ki so najbližje možne gostote, strukture in barve, kot so (bili) človekovi lastni.</p>
+<p>V našem svetovalnem studiu priporočamo uporabo <strong>Lasnega sistema®</strong>, ki na neboleč in nekirurški način zagotovi naravne lase, ki so najbližje možne gostote, strukture in barve, kot so (bili) človekovi lastni. Za ženske so na voljo tudi <a href="/sl/lasulje">vrhunske lasulje iz evropskih las</a> in <a href="/sl/hibridni-sistemi">hibridni sistemi</a>.</p>
 
 <p>Izguba las, posebej če je le-ta prezgodnja, čezmerna ali pa vodi do nezadovoljstva, je zadosten razlog, da se oglasite pri nas, kjer boste deležni individualnega svetovanja.</p>`,
   },
@@ -278,7 +278,7 @@ export const blogArticles: BlogArticle[] = [
 <p>Natančen vzrok alopecije areate ni dokončno pojasnjen. Znanstveniki menijo, da gre za kombinacijo genetskih in okoljskih dejavnikov, ki sprožijo avoimunski odziv. Stres, okužbe in drugi dejavniki so lahko sprožitveni faktorji.</p>
 
 <h3>Zdravljenje in rešitve</h3>
-<p>Čeprav za alopecijo areato trenutno ni dokončnega zdravila, obstajajo različni pristopi k obvladovanju stanja. Za mnoge prizadete je <strong>Lasni sistem®</strong> idealna estetska rešitev, ki omogoča normalno kakovost življenja – vključno z vsemi športnimi aktivnostmi.</p>
+<p>Čeprav za alopecijo areato trenutno ni dokončnega zdravila, obstajajo različni pristopi k obvladovanju stanja. Alopecia areata je le eden od vzrokov za <a href="/sl/plesavost">plešavost in izpadanje las</a>. Za mnoge prizadete je <strong>Lasni sistem®</strong> idealna estetska rešitev, ki omogoča normalno kakovost življenja – vključno z vsemi športnimi aktivnostmi. Pri popolni izgubi las je odlična izbira tudi <a href="/sl/lasulje">lasulja iz naravnih evropskih las</a>.</p>
 
 <p>V našem svetovalnem studiu imamo bogate izkušnje s pomočjo osebam z alopecijo areato. Vabimo vas na <strong>diskretno in individualno konzultacijo</strong>.</p>`,
   },

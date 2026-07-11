@@ -10,6 +10,7 @@ import CtaStrip from '@/components/CtaStrip'
 import TestimonialsSection from '@/components/TestimonialsSection'
 import Footer from '@/components/Footer'
 import { translations, languages } from '@/lib/i18n/translations'
+import { buildAlternates } from '@/lib/seo'
 import type { Metadata } from 'next'
 
 type Props = {
@@ -22,11 +23,24 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { lang } = await params
-  const t = translations[lang as keyof typeof translations] || translations.sl
+
+  const titles: Record<string, string> = {
+    sl: 'Rešitev za izpadanje las | Hollywood Lasni Sistem®',
+    en: 'Hair Loss Solution | Hollywood Hair System®',
+    de: 'Lösung bei Haarausfall | Hollywood Hair System®',
+    ru: 'Решение при выпадении волос | Hollywood Hair System®',
+  }
+  const descriptions: Record<string, string> = {
+    sl: 'Izpadanje las in plešavost nista več usoda. Hollywood Lasni Sistem® – diskretna, naravna rešitev za izpadanje las. Že 25 let izkušenj, svetovalni studio v Kranju.',
+    en: 'Hair loss is no longer your destiny. Hollywood Hair System® – the discreet, natural hair loss solution. 25 years of experience, consulting studio in Kranj, Slovenia.',
+    de: 'Haarausfall ist kein Schicksal mehr. Hollywood Hair System® – die diskrete, natürliche Lösung bei Haarausfall. 25 Jahre Erfahrung, Beratungsstudio in Kranj, Slowenien.',
+    ru: 'Выпадение волос — больше не приговор. Hollywood Hair System® — деликатное, естественное решение. 25 лет опыта, студия консультаций в Словении.',
+  }
 
   return {
-    title: `Lasni Sistem® | ${t.hero.headline}`,
-    description: t.hero.body,
+    title: { absolute: titles[lang] || titles.sl },
+    description: descriptions[lang] || descriptions.sl,
+    alternates: buildAlternates(lang, ''),
   }
 }
 

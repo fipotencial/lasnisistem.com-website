@@ -2,6 +2,7 @@ import Navigation from '@/components/Navigation'
 import Footer from '@/components/Footer'
 import MediaPageContent from '@/components/MediaPageContent'
 import { translations, languages } from '@/lib/i18n/translations'
+import { buildAlternates } from '@/lib/seo'
 import type { Metadata } from 'next'
 
 type Props = {
@@ -15,13 +16,21 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { lang } = await params
   const titles: Record<string, string> = {
-    sl: 'Mediji o nas | Lasni Sistem®',
-    en: 'Media about us | Hollywood Hair System®',
-    de: 'Medien über uns | Hollywood Hair System®',
-    ru: 'СМИ о нас | Hollywood Hair System®',
+    sl: 'Mediji o nas',
+    en: 'Media about us',
+    de: 'Medien über uns',
+    ru: 'СМИ о нас',
+  }
+  const descriptions: Record<string, string> = {
+    sl: 'RTV Slovenija, TV prispevki in revije o Hollywood Lasnem sistemu®. Poglejte, kaj o rešitvah za izpadanje las poročajo mediji.',
+    en: 'TV features and magazine coverage of the Hollywood Hair System®. See what the media report about hair loss solutions.',
+    de: 'TV-Beiträge und Magazine über das Hollywood Hair System®. Sehen Sie, was die Medien über Lösungen bei Haarausfall berichten.',
+    ru: 'ТВ-сюжеты и журналы о Hollywood Hair System®. Узнайте, что СМИ сообщают о решениях при выпадении волос.',
   }
   return {
     title: titles[lang] || titles.sl,
+    description: descriptions[lang] || descriptions.sl,
+    alternates: buildAlternates(lang, '/mediji'),
   }
 }
 

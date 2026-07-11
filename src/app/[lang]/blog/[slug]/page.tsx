@@ -3,7 +3,8 @@ import Footer from '@/components/Footer'
 import BlogArticlePage from '@/components/BlogArticlePage'
 import BreadcrumbSchema from '@/components/schema/BreadcrumbSchema'
 import { translations, languages } from '@/lib/i18n/translations'
-import { getArticleBySlugAndLang, getAllSlugsForLang } from '@/lib/blog/articles'
+import { getArticleBySlugAndLang, getAllSlugsForLang, getArticlesByLang } from '@/lib/blog/articles'
+import { buildBlogAlternates } from '@/lib/seo'
 import { notFound } from 'next/navigation'
 import type { Metadata } from 'next'
 
@@ -28,8 +29,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!article) return {}
 
   return {
-    title: `${article.title} | Lasni Sistem®`,
+    title: article.title,
     description: article.excerpt,
+    alternates: buildBlogAlternates(lang, slug),
   }
 }
 
@@ -45,6 +47,13 @@ export default async function BlogArticleRoute({ params }: Props) {
   }
 
   const t = translations[lang]
+
+  // Related articles: same category first, then others (internal linking)
+  const allArticles = getArticlesByLang(lang)
+  const related = [
+    ...allArticles.filter((a) => a.slug !== slug && a.category === article.category),
+    ...allArticles.filter((a) => a.slug !== slug && a.category !== article.category),
+  ].slice(0, 3)
 
   const BASE_URL = 'https://www.lasnisistem.com'
 
@@ -96,7 +105,7 @@ export default async function BlogArticleRoute({ params }: Props) {
         ]}
       />
       <Navigation lang={lang} t={t} variant="light" />
-      <BlogArticlePage lang={lang} t={t} article={article} />
+      <BlogArticlePage lang={lang} t={t} article={article} related={related} />
       <Footer lang={lang} t={t} />
     </main>
   )

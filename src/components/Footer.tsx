@@ -137,6 +137,12 @@ function MailIcon() {
 
 export default function Footer({ lang }: Props) {
   const ft = footerTranslations[lang] || footerTranslations.sl
+  const plesavostLabel: Record<string, string> = {
+    sl: 'Plešavost in izpadanje las',
+    en: 'Baldness & Hair Loss',
+    de: 'Kahlheit & Haarausfall',
+    ru: 'Облысение и выпадение волос',
+  }
 
   return (
     <footer style={{ background: '#141210' }}>
@@ -278,6 +284,7 @@ export default function Footer({ lang }: Props) {
                 { label: ft.hairSystem, href: `/${lang}/#lasni-sistem` },
                 { label: ft.hairLoss, href: `/${lang}/hibridni-sistemi` },
                 { label: ft.hollywoodHybrid, href: `/${lang}/lasulje` },
+                { label: plesavostLabel[lang] || plesavostLabel.sl, href: `/${lang}/plesavost` },
                 { label: ft.aboutUs, href: `/${lang}/poslanstvo` },
                 { label: ft.blog, href: `/${lang}/blog` },
                 { label: ft.contact, href: `/${lang}/kontakt` },

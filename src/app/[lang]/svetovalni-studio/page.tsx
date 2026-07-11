@@ -3,6 +3,7 @@ import Footer from '@/components/Footer'
 import Image from 'next/image'
 import FAQSchema from '@/components/schema/FAQSchema'
 import { translations, languages } from '@/lib/i18n/translations'
+import { buildAlternates } from '@/lib/seo'
 import type { Metadata } from 'next'
 
 type Props = {
@@ -16,14 +17,15 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { lang } = await params
   const titles: Record<string, string> = {
-    sl: 'Svetovalni studio | Lasni Sistem®',
-    en: 'Consulting Studio | Hollywood Hair System®',
-    de: 'Beratungsstudio | Hollywood Hair System®',
-    ru: 'Консультационная студия | Hollywood Hair System®',
+    sl: 'Svetovalni studio Kranj',
+    en: 'Consulting Studio',
+    de: 'Beratungsstudio',
+    ru: 'Консультационная студия',
   }
   return {
     title: titles[lang] || titles.sl,
-    description: 'Obiščite naš svetovalni studio v Kranju za diskretno in individualno svetovanje o Lasnem sistemu®.',
+    description: 'Obiščite naš svetovalni studio v Kranju za diskretno in individualno svetovanje o rešitvah za izpadanje las in plešavost.',
+    alternates: buildAlternates(lang, '/svetovalni-studio'),
   }
 }
 

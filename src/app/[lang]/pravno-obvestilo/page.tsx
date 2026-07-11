@@ -1,6 +1,7 @@
 import Navigation from '@/components/Navigation'
 import Footer from '@/components/Footer'
 import { translations, languages, LangCode } from '@/lib/i18n/translations'
+import { buildAlternates } from '@/lib/seo'
 import type { Metadata } from 'next'
 
 type Props = {
@@ -14,15 +15,16 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { lang } = await params
   const titles: Record<string, string> = {
-    sl: 'Pravno obvestilo | Lasni Sistem®',
-    en: 'Legal Notice | Hollywood Hair System®',
-    de: 'Rechtlicher Hinweis | Hollywood Hair System®',
-    ru: 'Правовое уведомление | Hollywood Hair System®',
+    sl: 'Pravno obvestilo',
+    en: 'Legal Notice',
+    de: 'Rechtlicher Hinweis',
+    ru: 'Правовое уведомление',
   }
 
   return {
     title: titles[lang] || titles.sl,
     description: 'Pravno obvestilo, nakup in vračilo lasnega sistema, odstop od pogodbe in pogoji uporabe.',
+    alternates: buildAlternates(lang, '/pravno-obvestilo'),
   }
 }
 

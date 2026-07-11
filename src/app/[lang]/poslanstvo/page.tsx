@@ -2,6 +2,7 @@ import Navigation from '@/components/Navigation'
 import Footer from '@/components/Footer'
 import AboutPageContent from '@/components/AboutPageContent'
 import { translations, languages } from '@/lib/i18n/translations'
+import { buildAlternates } from '@/lib/seo'
 import type { Metadata } from 'next'
 
 type Props = {
@@ -15,15 +16,16 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { lang } = await params
   const titles: Record<string, string> = {
-    sl: 'Kdo smo / Naše poslanstvo | Lasni Sistem®',
-    en: 'Who We Are / Our Mission | Hollywood Hair System®',
-    de: 'Wer Wir Sind / Unsere Mission | Hollywood Hair System®',
-    ru: 'Кто Мы / Наша миссия | Hollywood Hair System®',
+    sl: 'Kdo smo / Naše poslanstvo',
+    en: 'Who We Are / Our Mission',
+    de: 'Wer Wir Sind / Unsere Mission',
+    ru: 'Кто Мы / Наша миссия',
   }
 
   return {
     title: titles[lang] || titles.sl,
     description: 'Smo lastniki franšize za prodajo Hollywood Lasnih sistemov® za področje celotne Evrope. Spoznajte našo ekipo in poslanstvo.',
+    alternates: buildAlternates(lang, '/poslanstvo'),
   }
 }
 
