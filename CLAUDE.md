@@ -42,6 +42,7 @@ Prevodi so v `src/lib/i18n/translations.ts`
 /sl                        — domača stran (pillar: izpadanje las)
 /sl/hibridni-sistemi       — pillar: hibridni sistemi
 /sl/lasulje                — pillar: lasulje
+/sl/plesavost              — pillar: plešavost (4 jeziki, isti slug povsod; v nav + footerju)
 /sl/kontakt                — kontakt + Web3Forms obrazec
 /sl/poslanstvo             — o podjetju
 /sl/mnenja-strank          — testimoniali
@@ -54,7 +55,9 @@ Prevodi so v `src/lib/i18n/translations.ts`
 
 ## Blog članki
 
-Shranjeni v `src/lib/blog/articles.ts`. Za dodajanje novega članka dodaj objekt v array z: `slug`, `title`, `excerpt`, `content`, `publishDate`, `readTime`, `image`.
+Shranjeni v `src/lib/blog/articles.ts` (+ `articles-en/de/ru.ts` za ostale jezike). Za dodajanje novega članka dodaj objekt v array z: `slug`, `title`, `excerpt`, `content`, `publishDate`, `readTime`, `image`.
+
+**Pomembno:** članki se med jeziki mapirajo PO INDEKSU v arrayu — vrstni red mora biti enak v vseh 4 datotekah. Nov članek dodaj v vse štiri hkrati (SL-only članki so dovoljeni samo na koncu arraya), sicer se index mapping premakne.
 
 ## Kako deployati spremembe
 
@@ -76,7 +79,9 @@ Stari PHP URL-ji (`?iIdMeni=XXX`) so redirectani v `next.config.mjs` (22 pravil 
 | Datoteka | Namen |
 |---------|-------|
 | `src/app/robots.ts` | robots.txt (AI boti dovoljeni) |
-| `src/app/sitemap.ts` | sitemap.xml (77 strani, 4 jeziki) |
+| `src/app/sitemap.ts` | sitemap.xml (81 strani, 4 jeziki) |
+| `src/lib/seo.ts` | `buildAlternates`/`buildBlogAlternates` — canonical+hreflang helperji; VSAKA nova `page.tsx` mora klicati `buildAlternates` v `generateMetadata` |
+| `src/lib/plesavostFaq.ts` | FAQ vir za `/plesavost` stran + FAQPage JSON-LD |
 | `src/components/schema/OrganizationSchema.tsx` | LocalBusiness JSON-LD |
 | `src/components/schema/ProductSchema.tsx` | Product + AggregateRating JSON-LD |
 | `src/components/schema/FAQSchema.tsx` | FAQPage JSON-LD (8 vpr × 4 jeziki) |
@@ -85,13 +90,21 @@ Stari PHP URL-ji (`?iIdMeni=XXX`) so redirectani v `next.config.mjs` (22 pravil 
 | `src/components/LangProvider.tsx` | Dinamični html lang atribut |
 | `next.config.mjs` | 301 redirecti iz PHP URL-jev |
 
-## Status (april 2026)
+**Gotcha (root cause avg position 44, popravljeno 13.7.2026):** Next.js metadata NE deep-mergea nested objektov — `alternates`/`openGraph` nastavljen na layout nivoju se podeduje/prepiše kot celota, ne po ključih. Posledica: vse podstrani so kanonizirale na homepage. Pravilo: `alternates` se NIKOLI ne nastavi v layoutu, vedno per-page prek `buildAlternates`.
+
+**Title suffix:** root layout ima template `'%s | Lasni Sistem®'` — posamezni page title NE sme sam vsebovati brand suffixa (povzroči podvojen suffix). Homepage uporablja `title.absolute`.
+
+## Status (13. julij 2026)
 
 - ✅ Stran live na lasnisistem.com
 - ✅ SSL aktiven (Netlify)
 - ✅ GA4 deluje (ob cookie consent)
-- ✅ GSC sitemap oddan (77 strani)
+- ✅ GSC sitemap oddan (81 strani), resubmitted + reindex requested 13.7.2026
 - ✅ Kontaktni obrazec deluje (Web3Forms)
 - ✅ Redirecti z izpadanje-las.si aktivni
-- ⏳ Google indeksacija v teku (1-4 tedne)
-- ⏳ Google Business Profile — odloženo
+- ✅ SEO overhaul deployed 13.7.2026 (commits 104e132, dbf8ac9 — canonical/hreflang fix, /plesavost pillar, interno linkanje)
+- 👀 Spremljaj "plešavost" impressions v GSC od cca. konca julija 2026
+- ⏳ Google Business Profile — odloženo (največji off-site lever)
+- ⏳ Google Ads — potrebno conversion tracking + Consent Mode v2 pred spendom
+- ⏳ Mesečni lasulje buyer-guide blog posti — planirano
+- ⏳ `/sl/lasulje` vsebinska globina vs. lasulje.si — TBD
