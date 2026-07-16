@@ -27,7 +27,7 @@ const W = 212   // single image width px
 const LABEL_BASE: React.CSSProperties = {
   position: 'absolute',
   bottom: 10,
-  fontFamily: 'Inter, system-ui, sans-serif',
+  fontFamily: 'var(--font-inter), system-ui, sans-serif',
   fontSize: '0.58rem',
   fontWeight: 600,
   letterSpacing: '0.18em',
@@ -56,7 +56,7 @@ export default function BeforeAfterCarousel() {
       {/* Heading */}
       <div style={{ textAlign: 'center', marginBottom: '3rem', padding: '0 1.5rem' }}>
         <p style={{
-          fontFamily: 'Inter, system-ui, sans-serif',
+          fontFamily: 'var(--font-inter), system-ui, sans-serif',
           fontSize: '0.68rem',
           fontWeight: 500,
           letterSpacing: '0.25em',
@@ -67,7 +67,7 @@ export default function BeforeAfterCarousel() {
           Rezultati
         </p>
         <h2 style={{
-          fontFamily: "'Cormorant Garamond', Georgia, serif",
+          fontFamily: 'var(--font-cormorant), Georgia, serif',
           fontSize: 'clamp(2.2rem, 3.5vw, 3rem)',
           fontWeight: 400,
           color: '#FAF8F5',
@@ -197,7 +197,7 @@ export default function BeforeAfterCarousel() {
                   bottom: 14,
                   left: '50%',
                   transform: 'translateX(-50%)',
-                  fontFamily: 'Inter, system-ui, sans-serif',
+                  fontFamily: 'var(--font-inter), system-ui, sans-serif',
                   fontSize: '0.65rem',
                   fontWeight: 600,
                   letterSpacing: '0.2em',

@@ -5,6 +5,7 @@ import Link from 'next/link'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useState, useCallback, useRef } from 'react'
 import type { LangCode } from '@/lib/i18n/translations'
+import { lasuljeFaq } from '@/lib/lasuljeFaq'
 
 /* ─── Image data ─── */
 
@@ -244,7 +245,7 @@ function WigsGallery() {
           background: 'linear-gradient(to top, rgba(0,0,0,0.5), transparent)',
         }}>
           <span style={{
-            fontFamily: "'Cormorant Garamond', Georgia, serif",
+            fontFamily: 'var(--font-cormorant), Georgia, serif',
             fontSize: '1.4rem',
             fontWeight: 500,
             color: '#FFFFFF',
@@ -259,7 +260,7 @@ function WigsGallery() {
       <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
         <ArrowButton direction="left" onClick={prev} />
         <span style={{
-          fontFamily: 'Inter, system-ui, sans-serif',
+          fontFamily: 'var(--font-inter), system-ui, sans-serif',
           fontSize: '0.8rem',
           fontWeight: 400,
           color: '#8B8178',
@@ -311,7 +312,7 @@ export default function WigsPageContent({ lang }: { lang: LangCode }) {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
               style={{
-                fontFamily: 'Inter, system-ui, sans-serif',
+                fontFamily: 'var(--font-inter), system-ui, sans-serif',
                 fontSize: '0.72rem',
                 fontWeight: 500,
                 letterSpacing: '0.2em',
@@ -329,7 +330,7 @@ export default function WigsPageContent({ lang }: { lang: LangCode }) {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.1 }}
               style={{
-                fontFamily: "'Cormorant Garamond', Georgia, serif",
+                fontFamily: 'var(--font-cormorant), Georgia, serif',
                 fontSize: 'clamp(2.4rem, 5vw, 3.8rem)',
                 fontWeight: 300,
                 color: '#1A1A1A',
@@ -345,7 +346,7 @@ export default function WigsPageContent({ lang }: { lang: LangCode }) {
               animate={{ opacity: 1 }}
               transition={{ duration: 0.7, delay: 0.25 }}
               style={{
-                fontFamily: 'Inter, system-ui, sans-serif',
+                fontFamily: 'var(--font-inter), system-ui, sans-serif',
                 fontSize: '1.1rem',
                 fontWeight: 300,
                 color: '#6B6155',
@@ -404,7 +405,7 @@ export default function WigsPageContent({ lang }: { lang: LangCode }) {
             }} />
 
             <h2 style={{
-              fontFamily: "'Cormorant Garamond', Georgia, serif",
+              fontFamily: 'var(--font-cormorant), Georgia, serif',
               fontSize: 'clamp(1.8rem, 3vw, 2.6rem)',
               fontWeight: 400,
               color: '#1C1917',
@@ -416,7 +417,7 @@ export default function WigsPageContent({ lang }: { lang: LangCode }) {
 
             <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
               <p style={{
-                fontFamily: 'Inter, system-ui, sans-serif',
+                fontFamily: 'var(--font-inter), system-ui, sans-serif',
                 fontSize: '1.05rem', fontWeight: 300,
                 lineHeight: 1.8, color: 'rgba(28,25,23,0.65)',
                 margin: 0,
@@ -425,7 +426,7 @@ export default function WigsPageContent({ lang }: { lang: LangCode }) {
               </p>
               
               <p style={{
-                fontFamily: 'Inter, system-ui, sans-serif',
+                fontFamily: 'var(--font-inter), system-ui, sans-serif',
                 fontSize: '1.05rem', fontWeight: 300,
                 lineHeight: 1.8, color: 'rgba(28,25,23,0.65)',
                 margin: 0,
@@ -443,7 +444,7 @@ export default function WigsPageContent({ lang }: { lang: LangCode }) {
                 <div style={{ display: 'flex', gap: '0.8rem', alignItems: 'flex-start' }}>
                   <GoldDot />
                   <p style={{
-                    fontFamily: 'Inter, system-ui, sans-serif',
+                    fontFamily: 'var(--font-inter), system-ui, sans-serif',
                     fontSize: '1rem', fontWeight: 500,
                     lineHeight: 1.6, color: '#44403C',
                     margin: 0,
@@ -456,6 +457,143 @@ export default function WigsPageContent({ lang }: { lang: LangCode }) {
           </motion.div>
         </div>
       </section>
+
+      {lang === 'sl' && (
+        <>
+          {/* ─── SLOVENIAN BUYER GUIDE ─── */}
+          <section style={{ background: '#F3F0EB' }}>
+            <div style={{
+              width: '88%', maxWidth: 900, margin: '0 auto',
+              padding: 'clamp(3rem, 5vw, 5rem) 0',
+            }}>
+              <motion.div
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: '-80px' }}
+                transition={{ duration: 0.7 }}
+              >
+                <h2 style={{
+                  fontFamily: 'var(--font-cormorant), Georgia, serif',
+                  fontSize: 'clamp(1.8rem, 3vw, 2.6rem)',
+                  fontWeight: 400,
+                  color: '#1C1917',
+                  lineHeight: 1.15,
+                  marginBottom: '2rem',
+                }}>
+                  Kako izbrati pravo lasuljo?
+                </h2>
+
+                <p style={{
+                  fontFamily: 'var(--font-inter), system-ui, sans-serif',
+                  fontSize: '1.05rem', fontWeight: 300,
+                  lineHeight: 1.8, color: 'rgba(28,25,23,0.65)',
+                  marginBottom: '1.5rem',
+                }}>
+                  Dobra lasulja ni samo pričeska. Na naraven videz in udobje vplivajo izvor ter obdelava las, konstrukcija baze, gostota, barva, velikost in način pritrditve. Pri osebi z lastnimi lasmi so zahteve drugačne kot pri popolni izgubi las zaradi <Link href="/sl/blog/alopecia-areata" style={{ color: '#6B6155', textDecoration: 'underline', textUnderlineOffset: 3 }}>alopecije</Link> ali onkološkega zdravljenja.
+                </p>
+
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '1rem', marginTop: '2rem' }}>
+                  {[
+                    {
+                      title: 'Lasulja iz naravnih las',
+                      text: 'Omogoča striženje, barvno prilagoditev in več načinov oblikovanja. Evropski lasje so lahko posebej primerni, ko želimo fino strukturo in naraven padec, podoben lasem številnih evropskih uporabnic.',
+                    },
+                    {
+                      title: 'Sintetična lasulja',
+                      text: 'Običajno je cenovno dostopnejša in po pranju lažje ohrani obliko. Omejitve so manj naraven občutek pri nekaterih vlaknih, manj možnosti oblikovanja in občutljivost na toploto.',
+                    },
+                    {
+                      title: 'Lasni vložek ali topper',
+                      text: 'Primeren je, ko je izguba las omejena predvsem na prečo ali teme in je dovolj lastnih las za povezavo. Doda gostoto brez prekrivanja celotnega lasišča.',
+                    },
+                  ].map((item) => (
+                    <div key={item.title} style={{
+                      background: '#FFFFFF',
+                      borderRadius: '1rem',
+                      border: '1px solid rgba(193,164,82,0.15)',
+                      padding: '1.6rem',
+                      boxShadow: '0 4px 24px rgba(140,120,60,0.05)',
+                    }}>
+                      <h3 style={{
+                        fontFamily: 'var(--font-cormorant), Georgia, serif',
+                        fontSize: '1.35rem',
+                        fontWeight: 500,
+                        color: '#1C1917',
+                        marginBottom: '0.7rem',
+                      }}>
+                        {item.title}
+                      </h3>
+                      <p style={{
+                        fontFamily: 'var(--font-inter), system-ui, sans-serif',
+                        fontSize: '0.95rem', fontWeight: 300,
+                        lineHeight: 1.7, color: 'rgba(28,25,23,0.65)',
+                        margin: 0,
+                      }}>
+                        {item.text}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              </motion.div>
+            </div>
+          </section>
+
+          <section style={{ background: '#FEFEFE' }}>
+            <div style={{
+              width: '88%', maxWidth: 900, margin: '0 auto',
+              padding: 'clamp(3rem, 5vw, 5rem) 0',
+            }}>
+              <motion.div
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: '-80px' }}
+                transition={{ duration: 0.7 }}
+              >
+                <h2 style={{
+                  fontFamily: 'var(--font-cormorant), Georgia, serif',
+                  fontSize: 'clamp(1.8rem, 3vw, 2.6rem)',
+                  fontWeight: 400,
+                  color: '#1C1917',
+                  lineHeight: 1.15,
+                  marginBottom: '2rem',
+                }}>
+                  Kaj preveriti pred nakupom lasulje
+                </h2>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+                  {[
+                    ['Prileganje in velikost', 'Lasulja ne sme drseti, pritiskati ali povzročati bolečine. Velikost in oblika baze morata ustrezati obsegu ter obliki glave.'],
+                    ['Baza in zračnost', 'French top, silk top, mrežica spredaj, silikon in elastični deli imajo različne prednosti. Izbira je odvisna od količine lastnih las, občutljivosti kože in načina pritrditve.'],
+                    ['Gostota in linija las', 'Pregosta lasulja je lahko manj naravna. Gostoto, prečo in sprednjo linijo je smiselno prilagoditi obrazu, starosti ter želeni pričeski.'],
+                    ['Nega in stroški skozi čas', 'Poleg začetne cene upoštevajte pranje, oblikovanje, morebitne prilagoditve ter pričakovano življenjsko dobo. Naravni lasje zahtevajo nežno nego in zaščito pred visoko toploto.'],
+                  ].map(([title, text]) => (
+                    <div key={title} style={{ display: 'flex', gap: '0.8rem', alignItems: 'flex-start' }}>
+                      <GoldDot />
+                      <p style={{
+                        fontFamily: 'var(--font-inter), system-ui, sans-serif',
+                        fontSize: '1rem', fontWeight: 300,
+                        lineHeight: 1.75, color: '#44403C',
+                        margin: 0,
+                      }}>
+                        <strong style={{ fontWeight: 500, color: '#1C1917' }}>{title}.</strong>{' '}
+                        {text}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+
+                <p style={{
+                  fontFamily: 'var(--font-inter), system-ui, sans-serif',
+                  fontSize: '1.05rem', fontWeight: 300,
+                  lineHeight: 1.8, color: 'rgba(28,25,23,0.65)',
+                  margin: '2rem 0 0',
+                }}>
+                  Cena je odvisna od vrste in dolžine las, konstrukcije baze, izdelave po meri ter potrebnih prilagoditev. Zato brez izbire modela ne navajamo ene splošne cene. Na osebnem posvetu lahko primerjate možnosti in dobite jasno ponudbo pred naročilom. Če še ne veste, ali potrebujete lasuljo, vložek ali drug lasni nadomestek, preberite tudi vodič o <Link href="/sl/blog/izpadanje-las-vzroki-vrste-in-resitve" style={{ color: '#6B6155', textDecoration: 'underline', textUnderlineOffset: 3 }}>vzrokih in rešitvah za izpadanje las</Link>.
+                </p>
+              </motion.div>
+            </div>
+          </section>
+        </>
+      )}
 
       {/* ─── GALLERY SECTION ─── */}
       <section style={{ background: '#F5F2ED' }}>
@@ -470,7 +608,7 @@ export default function WigsPageContent({ lang }: { lang: LangCode }) {
             transition={{ duration: 0.7 }}
           >
             <h3 style={{
-              fontFamily: "'Cormorant Garamond', Georgia, serif",
+              fontFamily: 'var(--font-cormorant), Georgia, serif',
               fontSize: 'clamp(2rem, 3vw, 2.8rem)',
               fontWeight: 400,
               color: '#1C1917',
@@ -502,7 +640,7 @@ export default function WigsPageContent({ lang }: { lang: LangCode }) {
             }}
           >
             <p style={{
-              fontFamily: 'Inter, system-ui, sans-serif',
+              fontFamily: 'var(--font-inter), system-ui, sans-serif',
               fontSize: '1rem', fontWeight: 300,
               lineHeight: 1.7, color: '#44403C',
               marginBottom: '1.5rem',
@@ -523,7 +661,7 @@ export default function WigsPageContent({ lang }: { lang: LangCode }) {
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{
-                  fontFamily: 'Inter, system-ui, sans-serif',
+                  fontFamily: 'var(--font-inter), system-ui, sans-serif',
                   fontSize: '0.78rem', fontWeight: 500,
                   letterSpacing: '0.12em', textTransform: 'uppercase',
                   color: '#1C1917', backgroundColor: '#C1A452',
@@ -539,7 +677,7 @@ export default function WigsPageContent({ lang }: { lang: LangCode }) {
 
             {/* CTA text + contact button */}
             <p style={{
-              fontFamily: 'Inter, system-ui, sans-serif',
+              fontFamily: 'var(--font-inter), system-ui, sans-serif',
               fontSize: '0.95rem', fontWeight: 300,
               lineHeight: 1.7, color: '#6B6155',
               marginBottom: '1.5rem',
@@ -551,7 +689,7 @@ export default function WigsPageContent({ lang }: { lang: LangCode }) {
             <Link
               href={`/${lang}/kontakt`}
               style={{
-                fontFamily: 'Inter, system-ui, sans-serif',
+                fontFamily: 'var(--font-inter), system-ui, sans-serif',
                 fontSize: '0.72rem', fontWeight: 500,
                 letterSpacing: '0.18em', textTransform: 'uppercase',
                 color: '#FFFFFF', backgroundColor: '#1C1917',
@@ -567,6 +705,57 @@ export default function WigsPageContent({ lang }: { lang: LangCode }) {
           </motion.div>
         </div>
       </section>
+
+      {lang === 'sl' && (
+        <section style={{ background: '#FEFEFE' }}>
+          <div style={{
+            width: '88%', maxWidth: 900, margin: '0 auto',
+            padding: 'clamp(3rem, 5vw, 5rem) 0',
+          }}>
+            <h2 style={{
+              fontFamily: 'var(--font-cormorant), Georgia, serif',
+              fontSize: 'clamp(1.8rem, 3vw, 2.6rem)',
+              fontWeight: 400,
+              color: '#1C1917',
+              lineHeight: 1.15,
+              marginBottom: '2rem',
+            }}>
+              Pogosta vprašanja o lasuljah
+            </h2>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+              {lasuljeFaq.map((item) => (
+                <div key={item.question} style={{
+                  background: '#F5F2ED',
+                  borderRadius: '1rem',
+                  border: '1px solid rgba(193,164,82,0.15)',
+                  padding: '1.6rem 1.8rem',
+                }}>
+                  <h3 style={{
+                    fontFamily: 'var(--font-cormorant), Georgia, serif',
+                    fontSize: '1.25rem',
+                    fontWeight: 500,
+                    color: '#1C1917',
+                    marginBottom: '0.6rem',
+                    lineHeight: 1.3,
+                  }}>
+                    {item.question}
+                  </h3>
+                  <p style={{
+                    fontFamily: 'var(--font-inter), system-ui, sans-serif',
+                    fontSize: '0.95rem',
+                    fontWeight: 300,
+                    lineHeight: 1.75,
+                    color: 'rgba(28,25,23,0.65)',
+                    margin: 0,
+                  }}>
+                    {item.answer}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
     </>
   )
 }

@@ -20,10 +20,16 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     de: 'Rechtlicher Hinweis',
     ru: 'Правовое уведомление',
   }
+  const descriptions: Record<string, string> = {
+    sl: 'Pravno obvestilo, nakup in vračilo lasnega sistema, odstop od pogodbe in pogoji uporabe.',
+    en: 'Legal notice, purchasing and returns, withdrawal rights and terms of use for Lasni Sistem® services and products.',
+    de: 'Rechtliche Hinweise, Kauf und Rückgabe, Widerrufsrecht und Nutzungsbedingungen für Lasni Sistem® Produkte und Dienstleistungen.',
+    ru: 'Правовая информация, покупка и возврат, право на отказ и условия использования продуктов и услуг Lasni Sistem®.',
+  }
 
   return {
     title: titles[lang] || titles.sl,
-    description: 'Pravno obvestilo, nakup in vračilo lasnega sistema, odstop od pogodbe in pogoji uporabe.',
+    description: descriptions[lang] || descriptions.sl,
     alternates: buildAlternates(lang, '/pravno-obvestilo'),
   }
 }
@@ -52,7 +58,7 @@ export default async function LegalPage({ params }: Props) {
           <div className="flex flex-col items-center text-center">
             <h1
               style={{
-                fontFamily: "'Cormorant Garamond', Georgia, serif",
+                fontFamily: 'var(--font-cormorant), Georgia, serif',
                 fontSize: 'clamp(2.8rem, 5.5vw, 4.2rem)',
                 fontWeight: 500,
                 color: '#1A1A1A',
@@ -86,7 +92,7 @@ export default async function LegalPage({ params }: Props) {
           <div
             className="prose prose-lg"
             style={{
-              fontFamily: 'Inter, system-ui, sans-serif',
+              fontFamily: 'var(--font-inter), system-ui, sans-serif',
               fontWeight: 300,
               color: 'rgba(26,26,26,0.7)',
               lineHeight: 1.7,
@@ -94,7 +100,7 @@ export default async function LegalPage({ params }: Props) {
             }}
           >
             {/* Section 1 */}
-            <h2 style={{ fontFamily: "'Cormorant Garamond', Georgia, serif", fontSize: '1.8rem', fontWeight: 600, color: '#1A1A1A', marginBottom: '1.2rem', marginTop: 0 }}>
+            <h2 style={{ fontFamily: 'var(--font-cormorant), Georgia, serif', fontSize: '1.8rem', fontWeight: 600, color: '#1A1A1A', marginBottom: '1.2rem', marginTop: 0 }}>
               NAKUP ALI VRAČILO LASNEGA SISTEMA
             </h2>
             <p style={{ marginBottom: '1rem' }}>
@@ -114,7 +120,7 @@ export default async function LegalPage({ params }: Props) {
             </p>
 
             {/* Section 2 */}
-            <h2 style={{ fontFamily: "'Cormorant Garamond', Georgia, serif", fontSize: '1.8rem', fontWeight: 600, color: '#1A1A1A', marginBottom: '1.2rem' }}>
+            <h2 style={{ fontFamily: 'var(--font-cormorant), Georgia, serif', fontSize: '1.8rem', fontWeight: 600, color: '#1A1A1A', marginBottom: '1.2rem' }}>
               Odstop potrošnika od pogodbe
             </h2>
             <p style={{ marginBottom: '1rem' }}>
@@ -137,7 +143,7 @@ export default async function LegalPage({ params }: Props) {
             </p>
 
             {/* Section 3 */}
-            <h2 style={{ fontFamily: "'Cormorant Garamond', Georgia, serif", fontSize: '1.8rem', fontWeight: 600, color: '#1A1A1A', marginBottom: '1.2rem' }}>
+            <h2 style={{ fontFamily: 'var(--font-cormorant), Georgia, serif', fontSize: '1.8rem', fontWeight: 600, color: '#1A1A1A', marginBottom: '1.2rem' }}>
               Obrazec za odstop potrošnika od pogodbe
             </h2>
             <div style={{ background: '#F9F8F6', padding: '1.5rem', borderRadius: '0.8rem', marginBottom: '3rem', border: '1px solid rgba(0,0,0,0.04)' }}>
@@ -160,7 +166,7 @@ export default async function LegalPage({ params }: Props) {
                     display: 'inline-flex',
                     alignItems: 'center',
                     gap: '0.5rem',
-                    fontFamily: 'Inter, system-ui, sans-serif',
+                    fontFamily: 'var(--font-inter), system-ui, sans-serif',
                     fontSize: '0.8rem',
                     fontWeight: 600,
                     letterSpacing: '0.08em',
@@ -184,7 +190,7 @@ export default async function LegalPage({ params }: Props) {
             </div>
 
             {/* Section 4 */}
-            <h2 style={{ fontFamily: "'Cormorant Garamond', Georgia, serif", fontSize: '1.8rem', fontWeight: 600, color: '#1A1A1A', marginBottom: '1.2rem' }}>
+            <h2 style={{ fontFamily: 'var(--font-cormorant), Georgia, serif', fontSize: '1.8rem', fontWeight: 600, color: '#1A1A1A', marginBottom: '1.2rem' }}>
               STRIŽENJE IN OBLIKOVANJE LASNEGA SISTEMA
             </h2>
             <p style={{ marginBottom: '1rem' }}>

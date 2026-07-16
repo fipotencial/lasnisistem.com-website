@@ -1,7 +1,6 @@
 import Navigation from '@/components/Navigation'
 import Footer from '@/components/Footer'
 import Image from 'next/image'
-import FAQSchema from '@/components/schema/FAQSchema'
 import { translations, languages } from '@/lib/i18n/translations'
 import { buildAlternates } from '@/lib/seo'
 import type { Metadata } from 'next'
@@ -22,9 +21,15 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     de: 'Beratungsstudio',
     ru: 'Консультационная студия',
   }
+  const descriptions: Record<string, string> = {
+    sl: 'Obiščite naš svetovalni studio v Kranju za diskretno in individualno svetovanje o rešitvah za izpadanje las in plešavost.',
+    en: 'Visit our consulting studio in Kranj for discreet, individual advice on hair loss, wigs and custom hair systems.',
+    de: 'Besuchen Sie unser Beratungsstudio in Kranj für eine diskrete, individuelle Beratung zu Haarausfall, Perücken und Haarsystemen.',
+    ru: 'Посетите нашу студию в Кране для конфиденциальной индивидуальной консультации по выпадению волос, парикам и системам волос.',
+  }
   return {
     title: titles[lang] || titles.sl,
-    description: 'Obiščite naš svetovalni studio v Kranju za diskretno in individualno svetovanje o rešitvah za izpadanje las in plešavost.',
+    description: descriptions[lang] || descriptions.sl,
     alternates: buildAlternates(lang, '/svetovalni-studio'),
   }
 }
@@ -88,7 +93,6 @@ export default async function StudioPage({ params }: Props) {
 
   return (
     <main>
-      <FAQSchema lang={lang} />
       <Navigation lang={lang} t={t} variant="light" />
       <section style={{
         minHeight: '100vh',
@@ -100,7 +104,7 @@ export default async function StudioPage({ params }: Props) {
           {/* Header */}
           <div style={{ marginBottom: 'clamp(3rem, 5vw, 4.5rem)' }}>
             <h1 style={{
-              fontFamily: "'Cormorant Garamond', Georgia, serif",
+              fontFamily: 'var(--font-cormorant), Georgia, serif',
               fontSize: 'clamp(3rem, 6vw, 5rem)',
               fontWeight: 300,
               color: '#1A1A1A',
@@ -109,7 +113,7 @@ export default async function StudioPage({ params }: Props) {
               {labels.title}
             </h1>
             <p style={{
-              fontFamily: 'Inter, system-ui, sans-serif',
+              fontFamily: 'var(--font-inter), system-ui, sans-serif',
               fontSize: '1.05rem',
               fontWeight: 300,
               color: '#5A5248',
@@ -172,7 +176,7 @@ export default async function StudioPage({ params }: Props) {
           }}>
             <div style={{ order: 1 }}>
               <h2 style={{
-                fontFamily: "'Cormorant Garamond', Georgia, serif",
+                fontFamily: 'var(--font-cormorant), Georgia, serif',
                 fontSize: 'clamp(2rem, 4vw, 3rem)',
                 fontWeight: 400,
                 color: '#1A1A1A',
@@ -187,7 +191,7 @@ export default async function StudioPage({ params }: Props) {
                 marginBottom: '1.5rem',
               }} />
               <p style={{
-                fontFamily: 'Inter, system-ui, sans-serif',
+                fontFamily: 'var(--font-inter), system-ui, sans-serif',
                 fontSize: '1rem',
                 fontWeight: 300,
                 color: '#5A5248',
@@ -230,7 +234,7 @@ export default async function StudioPage({ params }: Props) {
           }}>
             <div>
               <h3 style={{
-                fontFamily: "'Cormorant Garamond', Georgia, serif",
+                fontFamily: 'var(--font-cormorant), Georgia, serif',
                 fontSize: '1.4rem',
                 fontWeight: 500,
                 color: '#1A1A1A',
@@ -239,7 +243,7 @@ export default async function StudioPage({ params }: Props) {
                 {labels.location}
               </h3>
               <p style={{
-                fontFamily: 'Inter, system-ui, sans-serif',
+                fontFamily: 'var(--font-inter), system-ui, sans-serif',
                 fontSize: '0.92rem',
                 fontWeight: 300,
                 color: '#5A5248',
@@ -252,7 +256,7 @@ export default async function StudioPage({ params }: Props) {
             </div>
             <div>
               <h3 style={{
-                fontFamily: "'Cormorant Garamond', Georgia, serif",
+                fontFamily: 'var(--font-cormorant), Georgia, serif',
                 fontSize: '1.4rem',
                 fontWeight: 500,
                 color: '#1A1A1A',
@@ -261,7 +265,7 @@ export default async function StudioPage({ params }: Props) {
                 {labels.contact}
               </h3>
               <p style={{
-                fontFamily: 'Inter, system-ui, sans-serif',
+                fontFamily: 'var(--font-inter), system-ui, sans-serif',
                 fontSize: '0.92rem',
                 fontWeight: 300,
                 color: '#5A5248',
@@ -274,7 +278,7 @@ export default async function StudioPage({ params }: Props) {
             </div>
             <div>
               <h3 style={{
-                fontFamily: "'Cormorant Garamond', Georgia, serif",
+                fontFamily: 'var(--font-cormorant), Georgia, serif',
                 fontSize: '1.4rem',
                 fontWeight: 500,
                 color: '#1A1A1A',
@@ -283,7 +287,7 @@ export default async function StudioPage({ params }: Props) {
                 {labels.hours}
               </h3>
               <p style={{
-                fontFamily: 'Inter, system-ui, sans-serif',
+                fontFamily: 'var(--font-inter), system-ui, sans-serif',
                 fontSize: '0.92rem',
                 fontWeight: 300,
                 color: '#5A5248',

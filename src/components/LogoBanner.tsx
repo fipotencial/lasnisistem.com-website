@@ -45,7 +45,7 @@ export default function LogoBanner({ t }: Props) {
         {/* Label */}
         <span
           style={{
-            fontFamily: 'Inter, system-ui, sans-serif',
+            fontFamily: 'var(--font-inter), system-ui, sans-serif',
             fontSize: '0.64rem',
             fontWeight: 500,
             letterSpacing: '0.35em',

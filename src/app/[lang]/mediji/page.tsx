@@ -79,7 +79,7 @@ export default async function MediaPage({ params }: Props) {
               {pt.eyebrow1}
             </div>
             <h1 style={{
-              fontFamily: "'Cormorant Garamond', Georgia, serif",
+              fontFamily: 'var(--font-cormorant), Georgia, serif',
               fontSize: 'clamp(3.5rem, 6vw, 5.5rem)',
               fontWeight: 300,
               color: '#111827',
@@ -112,7 +112,7 @@ export default async function MediaPage({ params }: Props) {
                 {pt.eyebrow2}
               </div>
               <h2 style={{
-                fontFamily: "'Cormorant Garamond', Georgia, serif",
+                fontFamily: 'var(--font-cormorant), Georgia, serif',
                 fontSize: 'clamp(3rem, 5vw, 4.5rem)',
                 fontWeight: 300,
                 color: '#111827',
@@ -151,7 +151,7 @@ export default async function MediaPage({ params }: Props) {
                     />
                   </div>
                   <h3 style={{
-                    fontFamily: "'Cormorant Garamond', Georgia, serif",
+                    fontFamily: 'var(--font-cormorant), Georgia, serif',
                     fontSize: '1.2rem',
                     fontWeight: 600,
                     color: '#6B6155',

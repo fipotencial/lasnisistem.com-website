@@ -1,7 +1,6 @@
 import Navigation from '@/components/Navigation'
 import Footer from '@/components/Footer'
 import ContactPageContent from '@/components/ContactPageContent'
-import FAQSchema from '@/components/schema/FAQSchema'
 import { translations, languages } from '@/lib/i18n/translations'
 import { buildAlternates } from '@/lib/seo'
 import type { Metadata } from 'next'
@@ -49,7 +48,6 @@ export default async function ContactPage({ params }: Props) {
 
   return (
     <main>
-      <FAQSchema lang={lang} />
       <Navigation lang={lang} t={t} variant="light" />
       <ContactPageContent lang={lang} t={t} />
       <Footer lang={lang} t={t} />

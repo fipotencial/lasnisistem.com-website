@@ -76,7 +76,7 @@ export default function VideoSection({ t }: Props) {
             
             <h3
               style={{
-                fontFamily: "'Cormorant Garamond', Georgia, serif",
+                fontFamily: 'var(--font-cormorant), Georgia, serif',
                 fontSize: 'clamp(1.75rem, 2.5vw, 2.75rem)',
                 fontWeight: 500,
                 color: '#0A0A0A',
@@ -89,7 +89,7 @@ export default function VideoSection({ t }: Props) {
             
             <p
               style={{
-                fontFamily: 'Inter, system-ui, sans-serif',
+                fontFamily: 'var(--font-inter), system-ui, sans-serif',
                 fontSize: '0.9rem',
                 fontWeight: 300,
                 color: 'rgba(10, 10, 10, 0.65)',

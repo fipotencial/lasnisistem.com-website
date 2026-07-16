@@ -1,0 +1,114 @@
+# Predlagana .htaccess pravila za staro domeno izpadanje-las.si.
+# Datoteka je priprava za ročni prenos na stari strežnik in sama po sebi ni aktivna.
+# Backup stare strani ostane na strežniku; za ponovni vklop se ta blok odstrani.
+
+RewriteEngine On
+
+# Canonical host + protokol obravnava ciljni lasnisistem.com.
+# QSD odstrani stare query parametre, da na cilju ne nastajajo podvojeni URL-ji.
+
+# Stari PHP iIdMeni URL-ji
+RewriteCond %{QUERY_STRING} (^|&)iIdMeni=111(&|$) [NC]
+RewriteRule ^(?:index\.php)?$ https://www.lasnisistem.com/sl [R=301,L,NE,QSD]
+
+RewriteCond %{QUERY_STRING} (^|&)iIdMeni=117(&|$) [NC]
+RewriteRule ^(?:index\.php)?$ https://www.lasnisistem.com/sl/blog/hollywood-lasni-sistem-lasulje-in-tupeji [R=301,L,NE,QSD]
+
+RewriteCond %{QUERY_STRING} (^|&)iIdMeni=80(&|$) [NC]
+RewriteRule ^(?:index\.php)?$ https://www.lasnisistem.com/sl/svetovalni-studio [R=301,L,NE,QSD]
+
+RewriteCond %{QUERY_STRING} (^|&)iIdMeni=82(&|$) [NC]
+RewriteRule ^(?:index\.php)?$ https://www.lasnisistem.com/sl/mnenja-strank [R=301,L,NE,QSD]
+
+RewriteCond %{QUERY_STRING} (^|&)iIdMeni=122(&|$) [NC]
+RewriteRule ^(?:index\.php)?$ https://www.lasnisistem.com/sl/blog/pogosta-vprasanja-in-odgovori [R=301,L,NE,QSD]
+
+RewriteCond %{QUERY_STRING} (^|&)iIdMeni=162(&|$) [NC]
+RewriteRule ^(?:index\.php)?$ https://www.lasnisistem.com/sl/blog/nega-in-vzdrzevanje-lasnega-sistema [R=301,L,NE,QSD]
+
+RewriteCond %{QUERY_STRING} (^|&)iIdMeni=128(&|$) [NC]
+RewriteRule ^(?:index\.php)?$ https://www.lasnisistem.com/sl/pravno-obvestilo [R=301,L,NE,QSD]
+
+RewriteCond %{QUERY_STRING} (^|&)iIdMeni=136(&|$) [NC]
+RewriteRule ^(?:index\.php)?$ https://www.lasnisistem.com/sl/blog [R=301,L,NE,QSD]
+
+RewriteCond %{QUERY_STRING} (^|&)iIdMeni=83(&|$) [NC]
+RewriteRule ^(?:index\.php)?$ https://www.lasnisistem.com/sl/blog/izpadanje-las-izguba-las-plesavost [R=301,L,NE,QSD]
+
+RewriteCond %{QUERY_STRING} (^|&)iIdMeni=84(&|$) [NC]
+RewriteRule ^(?:index\.php)?$ https://www.lasnisistem.com/sl/blog/alopecia-areata [R=301,L,NE,QSD]
+
+RewriteCond %{QUERY_STRING} (^|&)iIdMeni=85(&|$) [NC]
+RewriteRule ^(?:index\.php)?$ https://www.lasnisistem.com/sl/blog/naaf-national-alopecia-areata-foundation [R=301,L,NE,QSD]
+
+RewriteCond %{QUERY_STRING} (^|&)iIdMeni=(193|168|170)(&|$) [NC]
+RewriteRule ^(?:index\.php)?$ https://www.lasnisistem.com/sl/hibridni-sistemi [R=301,L,NE,QSD]
+
+RewriteCond %{QUERY_STRING} (^|&)iIdMeni=133(&|$) [NC]
+RewriteRule ^(?:index\.php)?$ https://www.lasnisistem.com/sl/blog/itech-sprej-za-svez-videz-in-sijoce-lase [R=301,L,NE,QSD]
+
+RewriteCond %{QUERY_STRING} (^|&)iIdMeni=87(&|$) [NC]
+RewriteRule ^(?:index\.php)?$ https://www.lasnisistem.com/sl/poslanstvo [R=301,L,NE,QSD]
+
+RewriteCond %{QUERY_STRING} (^|&)iIdMeni=86(&|$) [NC]
+RewriteRule ^(?:index\.php)?$ https://www.lasnisistem.com/sl/blog/skupina-za-samopomoc [R=301,L,NE,QSD]
+
+RewriteCond %{QUERY_STRING} (^|&)iIdMeni=88(&|$) [NC]
+RewriteRule ^(?:index\.php)?$ https://www.lasnisistem.com/sl/svetovalni-studio [R=301,L,NE,QSD]
+
+RewriteCond %{QUERY_STRING} (^|&)iIdMeni=89(&|$) [NC]
+RewriteRule ^(?:index\.php)?$ https://www.lasnisistem.com/sl/kontakt [R=301,L,NE,QSD]
+
+RewriteCond %{QUERY_STRING} (^|&)iIdMeni=119(&|$) [NC]
+RewriteRule ^(?:index\.php)?$ https://www.lasnisistem.com/sl/mediji [R=301,L,NE,QSD]
+
+RewriteCond %{QUERY_STRING} (^|&)iIdMeni=(147|207)(&|$) [NC]
+RewriteRule ^(?:index\.php)?$ https://www.lasnisistem.com/sl/pravno-obvestilo [R=301,L,NE,QSD]
+
+# Slovenski vsebinski URL-ji (vključno s staro /sl_si/ predpono)
+RewriteRule ^(?:sl_si/)?(?:hollywood-lasni-sistem|hollywood-lasni-sistem1|lasni-sistem)/?$ https://www.lasnisistem.com/sl [R=301,L,NE,QSD]
+RewriteRule ^(?:sl_si/)?(?:hibridni-sistemi|hibridni-sistemi-1|moski-hibridi|zenski-hibridi|moski-lasni-hibrid-katalog)/?$ https://www.lasnisistem.com/sl/hibridni-sistemi [R=301,L,NE,QSD]
+RewriteRule ^(?:sl_si/)?(?:lasulje|french-tops|lace-top|silk-top|tops|mens-pieces|klasicna-baza|mesanica-silikona|mrezica-spredaj|naravni-lasje)/?$ https://www.lasnisistem.com/sl/lasulje [R=301,L,NE,QSD]
+RewriteRule ^(?:sl_si/)?(?:moska-plesavost|zenska-plesavost)/?$ https://www.lasnisistem.com/sl/plesavost [R=301,L,NE,QSD]
+RewriteRule ^(?:sl_si/)?(?:ob-izpadanju-las|proti-izguba-las|proti-izpadanju-las)/?$ https://www.lasnisistem.com/sl/blog/izpadanje-las-vzroki-vrste-in-resitve [R=301,L,NE,QSD]
+RewriteRule ^(?:sl_si/)?(?:alopecia-areata|alopecija-areata)/?$ https://www.lasnisistem.com/sl/blog/alopecia-areata [R=301,L,NE,QSD]
+RewriteRule ^(?:sl_si/)?razlika-lasni-sistem-lasulje/?$ https://www.lasnisistem.com/sl/blog/hollywood-lasni-sistem-lasulje-in-tupeji [R=301,L,NE,QSD]
+RewriteRule ^(?:sl_si/)?nega-in-vzdrzevanje/?$ https://www.lasnisistem.com/sl/blog/nega-in-vzdrzevanje-lasnega-sistema [R=301,L,NE,QSD]
+RewriteRule ^(?:sl_si/)?pogosta-vprasanja/?$ https://www.lasnisistem.com/sl/blog/pogosta-vprasanja-in-odgovori [R=301,L,NE,QSD]
+RewriteRule ^(?:sl_si/)?itech-sprej/?$ https://www.lasnisistem.com/sl/blog/itech-sprej-za-svez-videz-in-sijoce-lase [R=301,L,NE,QSD]
+RewriteRule ^(?:sl_si/)?(?:o-nas|blagovna-znamka)/?$ https://www.lasnisistem.com/sl/poslanstvo [R=301,L,NE,QSD]
+RewriteRule ^(?:sl_si/)?(?:center-kranj|svetovalni-studio|svetovalni-studio-v-kranju|nakup-lasni-sistem|lasni-sistem-nakup)/?$ https://www.lasnisistem.com/sl/svetovalni-studio [R=301,L,NE,QSD]
+RewriteRule ^(?:sl_si/)?(?:kontakt|kontaktiraj-nas)/?$ https://www.lasnisistem.com/sl/kontakt [R=301,L,NE,QSD]
+RewriteRule ^(?:sl_si/)?mnenja-strank/?$ https://www.lasnisistem.com/sl/mnenja-strank [R=301,L,NE,QSD]
+RewriteRule ^(?:sl_si/)?(?:mediji|clanki-iz-medijev|oddaje-o-lasnem-sistemu|mediji-oddaja-alopecia-areata|mediji-oddaja-radio-rtv-1|mediji-rtv-slo-2|mediji-tednik-rtvslo|videoposnetki|fotogalerija)/?$ https://www.lasnisistem.com/sl/mediji [R=301,L,NE,QSD]
+RewriteRule ^(?:sl_si/)?(?:pravno-obvestilo|splosni-pogoji|piskotki|cookie-policy)/?$ https://www.lasnisistem.com/sl/pravno-obvestilo [R=301,L,NE,QSD]
+RewriteRule ^(?:sl_si/)?(?:blog|category/izpadanjelas|category/news|category/popust|tag/hibridni-sistemi)/?$ https://www.lasnisistem.com/sl/blog [R=301,L,NE,QSD]
+
+# Angleški vsebinski URL-ji
+RewriteRule ^en/?$ https://www.lasnisistem.com/en [R=301,L,NE,QSD]
+RewriteRule ^en/(?:hollywood-lasni-sistem|blagovna-znamka)/?$ https://www.lasnisistem.com/en [R=301,L,NE,QSD]
+RewriteRule ^en/(?:hibridni-sistemi|moski-hibridi|zenski-hibridi)/?$ https://www.lasnisistem.com/en/hibridni-sistemi [R=301,L,NE,QSD]
+RewriteRule ^en/(?:lasulje|illusya|klasicna-baza|mesanica-silikona|mrezica-spredaj|naravni-lasje|podaljski)/?$ https://www.lasnisistem.com/en/lasulje [R=301,L,NE,QSD]
+RewriteRule ^en/(?:moska-plesavost|zenska-plesavost|ob-izpadanju-las)/?$ https://www.lasnisistem.com/en/plesavost [R=301,L,NE,QSD]
+RewriteRule ^en/alopecija-areata/?$ https://www.lasnisistem.com/en/blog/alopecia-areata [R=301,L,NE,QSD]
+RewriteRule ^en/razlika-lasni-sistem-lasulje/?$ https://www.lasnisistem.com/en/blog/hollywood-hair-system-vs-wigs-and-toupees [R=301,L,NE,QSD]
+RewriteRule ^en/nega-in-vzdrzevanje/?$ https://www.lasnisistem.com/en/blog/care-and-maintenance [R=301,L,NE,QSD]
+RewriteRule ^en/pogosta-vprasanja/?$ https://www.lasnisistem.com/en/blog/frequently-asked-questions [R=301,L,NE,QSD]
+RewriteRule ^en/(?:center-kranj|svetovalni-studio|nakup-lasni-sistem)/?$ https://www.lasnisistem.com/en/svetovalni-studio [R=301,L,NE,QSD]
+RewriteRule ^en/kontaktiraj-nas/?$ https://www.lasnisistem.com/en/kontakt [R=301,L,NE,QSD]
+RewriteRule ^en/mnenja-strank/?$ https://www.lasnisistem.com/en/mnenja-strank [R=301,L,NE,QSD]
+RewriteRule ^en/o-nas/?$ https://www.lasnisistem.com/en/poslanstvo [R=301,L,NE,QSD]
+RewriteRule ^en/(?:clanki-iz-medijev|videoposnetki|fotogalerija)/?$ https://www.lasnisistem.com/en/mediji [R=301,L,NE,QSD]
+RewriteRule ^en/(?:pravno-obvestilo|piskotki)/?$ https://www.lasnisistem.com/en/pravno-obvestilo [R=301,L,NE,QSD]
+RewriteRule ^en/blog/?$ https://www.lasnisistem.com/en/blog [R=301,L,NE,QSD]
+
+# Te strani nimajo vsebinsko ustreznega naslednika. 410 prepreči soft-404 in
+# lažno konsolidacijo signalov na nepovezano domačo stran.
+RewriteRule ^(?:sl_si/|en/)?(?:dermmatch|hair-prepare-nanogen|intervention-za-moske|intervention-za-zenske|izdelki-proti-izpadanju-las|korektor-obrvi-eyepower|laserski-glavnik-hairbelle|lastnosti-daily-volume|lastnosti-follicle-defence|lastnosti-locking-mist-plus|lastnosti-scalp-ease-mdl|lastnosti-serum-vegf|lastonosti-nanofibres|oblikovanje-frizure|obnova-in-odebelitev-las|obnova-lasisca-in-las|samolepilne-trepalnice|sampon-proti-izpadanju-las|scalproller-sanitising-solution|this-is-a-test)/?$ - [G,L]
+RewriteRule ^(?:author|category|tag)/ - [G,L]
+RewriteRule ^(?:comments/)?feed/?$ - [G,L]
+RewriteRule ^(?:sl_si/|en/)?(?:comments/)?feed/?$ - [G,L]
+
+# Koren stare domene je zadnje specifično pravilo. Ni catch-all preusmeritve:
+# neznane poti naj ostanejo 404, dokler se jim ne določi resnično enakovreden cilj.
+RewriteRule ^$ https://www.lasnisistem.com/sl [R=301,L,NE,QSD]

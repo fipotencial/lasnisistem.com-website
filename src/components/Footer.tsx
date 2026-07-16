@@ -181,7 +181,7 @@ export default function Footer({ lang }: Props) {
               display: 'inline-flex',
               alignItems: 'center',
               gap: '0.6rem',
-              fontFamily: 'Inter, system-ui, sans-serif',
+              fontFamily: 'var(--font-inter), system-ui, sans-serif',
               fontSize: '0.78rem',
               fontWeight: 500,
               letterSpacing: '0.08em',
@@ -222,7 +222,7 @@ export default function Footer({ lang }: Props) {
           <div style={{ maxWidth: 300 }}>
             <p
               style={{
-                fontFamily: "'Cormorant Garamond', Georgia, serif",
+                fontFamily: 'var(--font-cormorant), Georgia, serif',
                 fontSize: '1.15rem',
                 fontWeight: 400,
                 fontStyle: 'italic',
@@ -268,7 +268,7 @@ export default function Footer({ lang }: Props) {
           <div>
             <p
               style={{
-                fontFamily: 'Inter, system-ui, sans-serif',
+                fontFamily: 'var(--font-inter), system-ui, sans-serif',
                 fontSize: '0.7rem',
                 fontWeight: 600,
                 letterSpacing: '0.14em',
@@ -293,7 +293,7 @@ export default function Footer({ lang }: Props) {
                   key={item.label}
                   href={item.href}
                   style={{
-                    fontFamily: 'Inter, system-ui, sans-serif',
+                    fontFamily: 'var(--font-inter), system-ui, sans-serif',
                     fontSize: '0.85rem',
                     fontWeight: 300,
                     color: 'rgba(255,255,255,0.85)',
@@ -314,7 +314,7 @@ export default function Footer({ lang }: Props) {
           <div>
             <p
               style={{
-                fontFamily: 'Inter, system-ui, sans-serif',
+                fontFamily: 'var(--font-inter), system-ui, sans-serif',
                 fontSize: '0.7rem',
                 fontWeight: 600,
                 letterSpacing: '0.14em',
@@ -334,7 +334,7 @@ export default function Footer({ lang }: Props) {
                   display: 'flex',
                   alignItems: 'flex-start',
                   gap: '0.5rem',
-                  fontFamily: 'Inter, system-ui, sans-serif',
+                  fontFamily: 'var(--font-inter), system-ui, sans-serif',
                   fontSize: '0.85rem',
                   fontWeight: 300,
                   color: 'rgba(255,255,255,0.85)',
@@ -353,7 +353,7 @@ export default function Footer({ lang }: Props) {
                   display: 'flex',
                   alignItems: 'flex-start',
                   gap: '0.5rem',
-                  fontFamily: 'Inter, system-ui, sans-serif',
+                  fontFamily: 'var(--font-inter), system-ui, sans-serif',
                   fontSize: '0.85rem',
                   fontWeight: 300,
                   color: 'rgba(255,255,255,0.85)',
@@ -371,7 +371,7 @@ export default function Footer({ lang }: Props) {
                   display: 'flex',
                   alignItems: 'flex-start',
                   gap: '0.5rem',
-                  fontFamily: 'Inter, system-ui, sans-serif',
+                  fontFamily: 'var(--font-inter), system-ui, sans-serif',
                   fontSize: '0.85rem',
                   fontWeight: 300,
                   color: 'rgba(255,255,255,0.85)',
@@ -390,7 +390,7 @@ export default function Footer({ lang }: Props) {
           <div>
             <p
               style={{
-                fontFamily: 'Inter, system-ui, sans-serif',
+                fontFamily: 'var(--font-inter), system-ui, sans-serif',
                 fontSize: '0.7rem',
                 fontWeight: 600,
                 letterSpacing: '0.14em',
@@ -403,7 +403,7 @@ export default function Footer({ lang }: Props) {
             </p>
             <p
               style={{
-                fontFamily: 'Inter, system-ui, sans-serif',
+                fontFamily: 'var(--font-inter), system-ui, sans-serif',
                 fontSize: '0.85rem',
                 fontWeight: 300,
                 lineHeight: 1.7,
@@ -433,7 +433,7 @@ export default function Footer({ lang }: Props) {
         >
           <span
             style={{
-              fontFamily: 'Inter, system-ui, sans-serif',
+              fontFamily: 'var(--font-inter), system-ui, sans-serif',
               fontSize: '0.72rem',
               fontWeight: 300,
               color: 'rgba(255,255,255,0.6)',
@@ -445,7 +445,7 @@ export default function Footer({ lang }: Props) {
             <Link
               href={`/${lang}/pravno-obvestilo`}
               style={{
-                fontFamily: 'Inter, system-ui, sans-serif',
+                fontFamily: 'var(--font-inter), system-ui, sans-serif',
                 fontSize: '0.72rem',
                 fontWeight: 300,
                 color: 'rgba(255,255,255,0.6)',

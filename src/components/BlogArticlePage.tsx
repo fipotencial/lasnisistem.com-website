@@ -24,6 +24,9 @@ const categoryLabels: Record<string, Record<LangCode, string>> = {
 const pageLabels: Record<LangCode, {
   backToBlog: string
   minRead: string
+  by: string
+  published: string
+  updated: string
   ctaTitle: string
   ctaBody: string
   ctaButton: string
@@ -32,6 +35,9 @@ const pageLabels: Record<LangCode, {
   sl: {
     backToBlog: 'Vsi članki',
     minRead: 'min branja',
+    by: 'Avtor',
+    published: 'Objavljeno',
+    updated: 'Posodobljeno',
     ctaTitle: 'Želite izvedeti več?',
     ctaBody: 'Naročite se na diskretno in strokovno individualno konzultacijo.',
     ctaButton: 'Rezervirajte posvet',
@@ -40,6 +46,9 @@ const pageLabels: Record<LangCode, {
   en: {
     backToBlog: 'All articles',
     minRead: 'min read',
+    by: 'By',
+    published: 'Published',
+    updated: 'Updated',
     ctaTitle: 'Want to learn more?',
     ctaBody: 'Book a discreet and professional individual consultation.',
     ctaButton: 'Book a consultation',
@@ -48,6 +57,9 @@ const pageLabels: Record<LangCode, {
   de: {
     backToBlog: 'Alle Artikel',
     minRead: 'Min. Lesezeit',
+    by: 'Autor',
+    published: 'Veröffentlicht',
+    updated: 'Aktualisiert',
     ctaTitle: 'Möchten Sie mehr erfahren?',
     ctaBody: 'Buchen Sie eine diskrete und professionelle individuelle Beratung.',
     ctaButton: 'Beratung buchen',
@@ -56,6 +68,9 @@ const pageLabels: Record<LangCode, {
   ru: {
     backToBlog: 'Все статьи',
     minRead: 'мин чтения',
+    by: 'Автор',
+    published: 'Опубликовано',
+    updated: 'Обновлено',
     ctaTitle: 'Хотите узнать больше?',
     ctaBody: 'Запишитесь на конфиденциальную и профессиональную индивидуальную консультацию.',
     ctaButton: 'Записаться на консультацию',
@@ -92,7 +107,7 @@ export default function BlogArticlePage({ lang, article, related }: Props) {
               display: 'inline-flex',
               alignItems: 'center',
               gap: '0.6rem',
-              fontFamily: 'Inter, system-ui, sans-serif',
+              fontFamily: 'var(--font-inter), system-ui, sans-serif',
               fontSize: '0.78rem',
               fontWeight: 500,
               letterSpacing: '0.08em',
@@ -128,7 +143,7 @@ export default function BlogArticlePage({ lang, article, related }: Props) {
               marginBottom: '1.5rem',
             }}>
               <span style={{
-                fontFamily: 'Inter, system-ui, sans-serif',
+                fontFamily: 'var(--font-inter), system-ui, sans-serif',
                 fontSize: '0.72rem',
                 fontWeight: 600,
                 letterSpacing: '0.14em',
@@ -142,18 +157,34 @@ export default function BlogArticlePage({ lang, article, related }: Props) {
                 background: 'rgba(26,26,26,0.2)',
               }} />
               <span style={{
-                fontFamily: 'Inter, system-ui, sans-serif',
+                fontFamily: 'var(--font-inter), system-ui, sans-serif',
                 fontSize: '0.78rem',
                 fontWeight: 400,
                 color: '#8A8070',
               }}>
                 {article.readTime} {labels.minRead}
               </span>
+              {article.author && (
+                <>
+                  <span style={{
+                    width: '3px', height: '3px', borderRadius: '50%',
+                    background: 'rgba(26,26,26,0.2)',
+                  }} />
+                  <span style={{
+                    fontFamily: 'var(--font-inter), system-ui, sans-serif',
+                    fontSize: '0.78rem',
+                    fontWeight: 400,
+                    color: '#8A8070',
+                  }}>
+                    {labels.by}: {article.author}
+                  </span>
+                </>
+              )}
             </div>
 
             {/* Title */}
             <h1 style={{
-              fontFamily: "'Cormorant Garamond', Georgia, serif",
+              fontFamily: 'var(--font-cormorant), Georgia, serif',
               fontSize: 'clamp(2.4rem, 5vw, 3.8rem)',
               fontWeight: 400,
               lineHeight: 1.1,
@@ -167,7 +198,7 @@ export default function BlogArticlePage({ lang, article, related }: Props) {
 
             {/* Excerpt */}
             <p style={{
-              fontFamily: 'Inter, system-ui, sans-serif',
+              fontFamily: 'var(--font-inter), system-ui, sans-serif',
               fontSize: 'clamp(1.05rem, 1.5vw, 1.15rem)',
               fontWeight: 300,
               lineHeight: 1.7,
@@ -177,6 +208,29 @@ export default function BlogArticlePage({ lang, article, related }: Props) {
             }}>
               {article.excerpt}
             </p>
+
+            {(article.updatedDate || article.author) && (
+              <p style={{
+                fontFamily: 'var(--font-inter), system-ui, sans-serif',
+                fontSize: '0.76rem',
+                fontWeight: 400,
+                color: '#8A8070',
+                margin: '1rem 0 0',
+              }}>
+                {labels.published}:{' '}
+                <time dateTime={article.publishDate}>
+                  {new Intl.DateTimeFormat(lang === 'sl' ? 'sl-SI' : lang, { dateStyle: 'long' }).format(new Date(article.publishDate))}
+                </time>
+                {article.updatedDate && article.updatedDate !== article.publishDate && (
+                  <>
+                    {' · '}{labels.updated}:{' '}
+                    <time dateTime={article.updatedDate}>
+                      {new Intl.DateTimeFormat(lang === 'sl' ? 'sl-SI' : lang, { dateStyle: 'long' }).format(new Date(article.updatedDate))}
+                    </time>
+                  </>
+                )}
+              </p>
+            )}
           </motion.header>
 
           {/* ── Hero Image (Right side) ─────────────────────── */}
@@ -209,7 +263,7 @@ export default function BlogArticlePage({ lang, article, related }: Props) {
                 </div>
                 {article.imageCaption && (
                   <p style={{
-                    fontFamily: 'Inter, system-ui, sans-serif',
+                    fontFamily: 'var(--font-inter), system-ui, sans-serif',
                     fontSize: '0.75rem',
                     fontWeight: 400,
                     lineHeight: 1.6,
@@ -279,7 +333,7 @@ export default function BlogArticlePage({ lang, article, related }: Props) {
               </div>
               {article.imageCaptions?.[0] && (
                 <p style={{
-                  fontFamily: 'Inter, system-ui, sans-serif',
+                  fontFamily: 'var(--font-inter), system-ui, sans-serif',
                   fontSize: '0.72rem',
                   color: '#888',
                   lineHeight: 1.4,
@@ -320,7 +374,7 @@ export default function BlogArticlePage({ lang, article, related }: Props) {
                 </div>
                 {article.imageCaptions?.[1] && (
                   <p style={{
-                    fontFamily: 'Inter, system-ui, sans-serif',
+                    fontFamily: 'var(--font-inter), system-ui, sans-serif',
                     fontSize: '0.72rem',
                     color: '#888',
                     lineHeight: 1.4,
@@ -372,7 +426,7 @@ export default function BlogArticlePage({ lang, article, related }: Props) {
             className="blog-content blog-content--light"
             dangerouslySetInnerHTML={{ __html: article.content }}
             style={{
-              fontFamily: 'Inter, system-ui, sans-serif',
+              fontFamily: 'var(--font-inter), system-ui, sans-serif',
               fontSize: 'clamp(1rem, 1.3vw, 1.1rem)',
               fontWeight: 300,
               lineHeight: 1.85,
@@ -393,7 +447,7 @@ export default function BlogArticlePage({ lang, article, related }: Props) {
             }}
           >
             <h2 style={{
-              fontFamily: "'Cormorant Garamond', Georgia, serif",
+              fontFamily: 'var(--font-cormorant), Georgia, serif',
               fontSize: 'clamp(1.5rem, 2.5vw, 1.9rem)',
               fontWeight: 400,
               color: '#1A1A1A',
@@ -430,7 +484,7 @@ export default function BlogArticlePage({ lang, article, related }: Props) {
                 >
                   <span style={{
                     display: 'block',
-                    fontFamily: "'Cormorant Garamond', Georgia, serif",
+                    fontFamily: 'var(--font-cormorant), Georgia, serif',
                     fontSize: '1.15rem',
                     fontWeight: 500,
                     lineHeight: 1.3,
@@ -440,7 +494,7 @@ export default function BlogArticlePage({ lang, article, related }: Props) {
                     {rel.title}
                   </span>
                   <span style={{
-                    fontFamily: 'Inter, system-ui, sans-serif',
+                    fontFamily: 'var(--font-inter), system-ui, sans-serif',
                     fontSize: '0.85rem',
                     fontWeight: 300,
                     lineHeight: 1.55,
@@ -480,7 +534,7 @@ export default function BlogArticlePage({ lang, article, related }: Props) {
           }}>
             <div>
               <h3 style={{
-                fontFamily: "'Cormorant Garamond', Georgia, serif",
+                fontFamily: 'var(--font-cormorant), Georgia, serif',
                 fontSize: 'clamp(1.5rem, 2.5vw, 1.9rem)',
                 fontWeight: 400,
                 color: '#1A1A1A',
@@ -489,7 +543,7 @@ export default function BlogArticlePage({ lang, article, related }: Props) {
                 {labels.ctaTitle}
               </h3>
               <p style={{
-                fontFamily: 'Inter, system-ui, sans-serif',
+                fontFamily: 'var(--font-inter), system-ui, sans-serif',
                 fontSize: '0.92rem',
                 fontWeight: 300,
                 lineHeight: 1.6,
@@ -506,7 +560,7 @@ export default function BlogArticlePage({ lang, article, related }: Props) {
                 display: 'inline-flex',
                 alignItems: 'center',
                 gap: '0.5rem',
-                fontFamily: 'Inter, system-ui, sans-serif',
+                fontFamily: 'var(--font-inter), system-ui, sans-serif',
                 fontSize: '0.78rem',
                 fontWeight: 500,
                 letterSpacing: '0.06em',

@@ -179,7 +179,7 @@ export default function AboutPageContent({ lang }: Props) {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}
             style={{
-              fontFamily: "'Cormorant Garamond', Georgia, serif",
+              fontFamily: 'var(--font-cormorant), Georgia, serif',
               fontSize: 'clamp(2.5rem, 5vw, 4rem)',
               fontWeight: 500,
               fontStyle: 'italic',
@@ -195,7 +195,7 @@ export default function AboutPageContent({ lang }: Props) {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.1 }}
             style={{
-              fontFamily: 'Inter, system-ui, sans-serif',
+              fontFamily: 'var(--font-inter), system-ui, sans-serif',
               fontSize: 'clamp(0.95rem, 1.3vw, 1.15rem)',
               fontWeight: 400,
               color: 'rgba(28,25,23,0.7)',
@@ -245,7 +245,7 @@ export default function AboutPageContent({ lang }: Props) {
             <div className="w-full lg:w-2/3">
               <h2
                 style={{
-                  fontFamily: "'Cormorant Garamond', Georgia, serif",
+                  fontFamily: 'var(--font-cormorant), Georgia, serif',
                   fontSize: 'clamp(2rem, 3.5vw, 2.8rem)',
                   fontWeight: 600,
                   color: '#C1A452',
@@ -255,7 +255,7 @@ export default function AboutPageContent({ lang }: Props) {
                 {at.spelaSemeTitle}
               </h2>
 
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem', fontFamily: 'Inter, system-ui, sans-serif', fontSize: '1.05rem', fontWeight: 300, color: 'rgba(28,25,23,0.85)', lineHeight: 1.8 }}>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem', fontFamily: 'var(--font-inter), system-ui, sans-serif', fontSize: '1.05rem', fontWeight: 300, color: 'rgba(28,25,23,0.85)', lineHeight: 1.8 }}>
                 <p>{at.spelaSemeP1}</p>
                 <p>{at.spelaSemeP2}</p>
 
@@ -279,7 +279,7 @@ export default function AboutPageContent({ lang }: Props) {
                     display: 'inline-flex',
                     alignItems: 'center',
                     gap: '0.5rem',
-                    fontFamily: 'Inter, system-ui, sans-serif',
+                    fontFamily: 'var(--font-inter), system-ui, sans-serif',
                     fontSize: '0.82rem',
                     fontWeight: 500,
                     letterSpacing: '0.06em',
@@ -322,7 +322,7 @@ export default function AboutPageContent({ lang }: Props) {
           >
             <h2
               style={{
-                fontFamily: "'Cormorant Garamond', Georgia, serif",
+                fontFamily: 'var(--font-cormorant), Georgia, serif',
                 fontSize: 'clamp(1.8rem, 3vw, 2.4rem)',
                 fontWeight: 600,
                 color: '#C1A452',
@@ -334,7 +334,7 @@ export default function AboutPageContent({ lang }: Props) {
               {at.goalsTitle}
             </h2>
 
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem', fontFamily: 'Inter, system-ui, sans-serif', fontSize: '1.05rem', fontWeight: 300, color: 'rgba(28,25,23,0.85)', lineHeight: 1.8 }}>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem', fontFamily: 'var(--font-inter), system-ui, sans-serif', fontSize: '1.05rem', fontWeight: 300, color: 'rgba(28,25,23,0.85)', lineHeight: 1.8 }}>
               <p>{at.goalsDesc}</p>
 
               <ul style={{ display: 'flex', flexDirection: 'column', gap: '1.2rem', paddingLeft: '1.5rem', margin: '1rem 0' }}>
@@ -368,7 +368,7 @@ export default function AboutPageContent({ lang }: Props) {
           >
             <h2
               style={{
-                fontFamily: "'Cormorant Garamond', Georgia, serif",
+                fontFamily: 'var(--font-cormorant), Georgia, serif',
                 fontSize: 'clamp(1.8rem, 3vw, 2.4rem)',
                 fontWeight: 600,
                 color: '#C1A452',
@@ -378,7 +378,7 @@ export default function AboutPageContent({ lang }: Props) {
               {at.brandTitle}
             </h2>
 
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem', fontFamily: 'Inter, system-ui, sans-serif', fontSize: '1.05rem', fontWeight: 400, color: 'rgba(28,25,23,0.85)', lineHeight: 1.8 }}>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem', fontFamily: 'var(--font-inter), system-ui, sans-serif', fontSize: '1.05rem', fontWeight: 400, color: 'rgba(28,25,23,0.85)', lineHeight: 1.8 }}>
               <p><strong>{at.brandP1.split('.')[0]}.</strong> {at.brandP1.substring(at.brandP1.indexOf('.') + 1)}</p>
               <p>{at.brandP2}</p>
               <p>

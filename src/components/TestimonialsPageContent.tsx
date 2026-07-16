@@ -148,7 +148,7 @@ function TestimonialCard({
         />
         <h2
           style={{
-            fontFamily: "'Cormorant Garamond', Georgia, serif",
+            fontFamily: 'var(--font-cormorant), Georgia, serif',
             fontSize: 'clamp(1.2rem, 1.6vw, 1.45rem)',
             fontWeight: 600,
             color: '#1C1917',
@@ -178,7 +178,7 @@ function TestimonialCard({
                 <p
                   key={pIdx}
                   style={{
-                    fontFamily: "'Cormorant Garamond', Georgia, serif",
+                    fontFamily: 'var(--font-cormorant), Georgia, serif',
                     fontSize: 'clamp(1rem, 1.1vw, 1.08rem)',
                     fontWeight: 400,
                     fontStyle: 'italic',
@@ -190,7 +190,7 @@ function TestimonialCard({
                   {pIdx === 0 && (
                     <span
                       style={{
-                        fontFamily: "'Cormorant Garamond', Georgia, serif",
+                        fontFamily: 'var(--font-cormorant), Georgia, serif',
                         fontSize: '2rem',
                         fontWeight: 300,
                         color: '#C1A452',
@@ -207,7 +207,7 @@ function TestimonialCard({
                   {pIdx === paragraphs.length - 1 && (
                     <span
                       style={{
-                        fontFamily: "'Cormorant Garamond', Georgia, serif",
+                        fontFamily: 'var(--font-cormorant), Georgia, serif',
                         fontSize: '2rem',
                         fontWeight: 300,
                         color: '#C1A452',
@@ -233,7 +233,7 @@ function TestimonialCard({
             >
               <p
                 style={{
-                  fontFamily: "'Cormorant Garamond', Georgia, serif",
+                  fontFamily: 'var(--font-cormorant), Georgia, serif',
                   fontSize: 'clamp(1rem, 1.1vw, 1.08rem)',
                   fontWeight: 400,
                   fontStyle: 'italic',
@@ -244,7 +244,7 @@ function TestimonialCard({
               >
                 <span
                   style={{
-                    fontFamily: "'Cormorant Garamond', Georgia, serif",
+                    fontFamily: 'var(--font-cormorant), Georgia, serif',
                     fontSize: '2rem',
                     fontWeight: 300,
                     color: '#C1A452',
@@ -259,7 +259,7 @@ function TestimonialCard({
                 {previewText}
                 <span
                   style={{
-                    fontFamily: "'Cormorant Garamond', Georgia, serif",
+                    fontFamily: 'var(--font-cormorant), Georgia, serif',
                     fontSize: '2rem',
                     fontWeight: 300,
                     color: '#C1A452',
@@ -298,7 +298,7 @@ function TestimonialCard({
                   <Image src={src} alt={label} fill style={{ objectFit: 'cover' }} sizes="200px" />
                 </div>
                 <p style={{
-                  fontFamily: 'Inter, system-ui, sans-serif',
+                  fontFamily: 'var(--font-inter), system-ui, sans-serif',
                   fontSize: '0.72rem',
                   fontWeight: 500,
                   letterSpacing: '0.06em',
@@ -326,7 +326,7 @@ function TestimonialCard({
               alignItems: 'center',
               gap: '0.35rem',
               marginTop: '0.8rem',
-              fontFamily: 'Inter, system-ui, sans-serif',
+              fontFamily: 'var(--font-inter), system-ui, sans-serif',
               fontSize: '0.78rem',
               fontWeight: 500,
               letterSpacing: '0.04em',
@@ -390,7 +390,6 @@ export default function TestimonialsPageContent({ lang }: Props) {
   }, [])
 
   const currentTestimonials = testimonialsByLang[lang] || testimonialsByLang.sl
-  console.log("Current Lang:", lang, currentTestimonials[0]?.quote.substring(0, 30))
   const leftCol = currentTestimonials.filter((_, i) => i % 2 === 0)
   const rightCol = currentTestimonials.filter((_, i) => i % 2 === 1)
 
@@ -413,7 +412,7 @@ export default function TestimonialsPageContent({ lang }: Props) {
         >
           <h1
             style={{
-              fontFamily: "'Cormorant Garamond', Georgia, serif",
+              fontFamily: 'var(--font-cormorant), Georgia, serif',
               fontSize: 'clamp(2.4rem, 5vw, 3.5rem)',
               fontWeight: 400,
               color: '#1C1917',
@@ -425,7 +424,7 @@ export default function TestimonialsPageContent({ lang }: Props) {
           </h1>
           <p
             style={{
-              fontFamily: 'Inter, system-ui, sans-serif',
+              fontFamily: 'var(--font-inter), system-ui, sans-serif',
               fontSize: 'clamp(0.95rem, 1.2vw, 1.1rem)',
               fontWeight: 300,
               lineHeight: 1.6,

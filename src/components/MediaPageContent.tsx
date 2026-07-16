@@ -60,7 +60,7 @@ export default function MediaPageContent() {
               />
             </div>
             <h3 style={{
-              fontFamily: "'Cormorant Garamond', Georgia, serif",
+              fontFamily: 'var(--font-cormorant), Georgia, serif',
               fontSize: '1.1rem',
               fontWeight: 600,
               color: '#1A1A1A',

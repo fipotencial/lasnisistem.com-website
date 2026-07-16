@@ -49,7 +49,7 @@ export default function CookieConsent({ gaId }: { gaId: string }) {
               onClick={accept}
               style={{
                 background: '#C1A452',
-                color: '#fff',
+                color: '#1A1A1A',
                 border: 'none',
                 padding: '0.5rem 1.25rem',
                 cursor: 'pointer',

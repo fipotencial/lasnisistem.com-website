@@ -17,7 +17,7 @@ function AnimatedHeadline({ text }: { text: string }) {
       initial="hidden"
       animate="visible"
       style={{
-        fontFamily: "'Cormorant Garamond', Georgia, serif",
+        fontFamily: 'var(--font-cormorant), Georgia, serif',
         fontSize: 'clamp(2.8rem, 5.5vw, 5rem)',
         fontWeight: 400,
         lineHeight: 1.08,
@@ -136,7 +136,7 @@ export default function HeroSection({ lang, t }: Props) {
           {/* Tagline — light for contrast on dark video */}
           <motion.h2
             style={{
-              fontFamily: "'Cormorant Garamond', Georgia, serif",
+              fontFamily: 'var(--font-cormorant), Georgia, serif',
               fontSize: 'clamp(1.1rem, 1.8vw, 1.45rem)',
               fontWeight: 400,
               fontStyle: 'italic',
@@ -165,7 +165,7 @@ export default function HeroSection({ lang, t }: Props) {
               className="hero-cta"
               style={{
                 display: 'inline-block',
-                fontFamily: 'Inter, system-ui, sans-serif',
+                fontFamily: 'var(--font-inter), system-ui, sans-serif',
                 fontSize: '0.7rem',
                 fontWeight: 500,
                 letterSpacing: '0.25em',

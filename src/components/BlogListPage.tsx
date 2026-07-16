@@ -98,7 +98,7 @@ function FeaturedCard({ article, lang, labels }: { article: BlogArticle; lang: L
             }} />
 
             <span style={{
-              fontFamily: 'Inter, system-ui, sans-serif',
+              fontFamily: 'var(--font-inter), system-ui, sans-serif',
               fontSize: '0.65rem',
               fontWeight: 600,
               letterSpacing: '0.2em',
@@ -111,7 +111,7 @@ function FeaturedCard({ article, lang, labels }: { article: BlogArticle; lang: L
             </span>
 
             <h2 style={{
-              fontFamily: "'Cormorant Garamond', Georgia, serif",
+              fontFamily: 'var(--font-cormorant), Georgia, serif',
               fontSize: 'clamp(1.8rem, 3vw, 2.6rem)',
               fontWeight: 400,
               lineHeight: 1.2,
@@ -129,7 +129,7 @@ function FeaturedCard({ article, lang, labels }: { article: BlogArticle; lang: L
             }} />
 
             <p style={{
-              fontFamily: 'Inter, system-ui, sans-serif',
+              fontFamily: 'var(--font-inter), system-ui, sans-serif',
               fontSize: '0.88rem',
               fontWeight: 300,
               lineHeight: 1.75,
@@ -154,7 +154,7 @@ function FeaturedCard({ article, lang, labels }: { article: BlogArticle; lang: L
             <div>
               <div style={{ display: 'flex', alignItems: 'baseline', gap: '1rem', marginBottom: '2rem' }}>
                 <span style={{
-                  fontFamily: "'Cormorant Garamond', Georgia, serif",
+                  fontFamily: 'var(--font-cormorant), Georgia, serif',
                   fontSize: '4.5rem',
                   fontWeight: 300,
                   lineHeight: 1,
@@ -163,7 +163,7 @@ function FeaturedCard({ article, lang, labels }: { article: BlogArticle; lang: L
                   01
                 </span>
                 <span style={{
-                  fontFamily: 'Inter, system-ui, sans-serif',
+                  fontFamily: 'var(--font-inter), system-ui, sans-serif',
                   fontSize: '0.75rem',
                   fontWeight: 600,
                   letterSpacing: '0.1em',
@@ -175,7 +175,7 @@ function FeaturedCard({ article, lang, labels }: { article: BlogArticle; lang: L
               </div>
 
               <p style={{
-                fontFamily: "'Cormorant Garamond', Georgia, serif",
+                fontFamily: 'var(--font-cormorant), Georgia, serif',
                 fontSize: '1.2rem',
                 fontWeight: 400,
                 fontStyle: 'italic',
@@ -193,7 +193,7 @@ function FeaturedCard({ article, lang, labels }: { article: BlogArticle; lang: L
               paddingTop: '1.2rem',
             }}>
               <span style={{
-                fontFamily: 'Inter, system-ui, sans-serif',
+                fontFamily: 'var(--font-inter), system-ui, sans-serif',
                 fontSize: '0.78rem',
                 fontWeight: 500,
                 color: '#6B6155',
@@ -201,7 +201,7 @@ function FeaturedCard({ article, lang, labels }: { article: BlogArticle; lang: L
                 {article.readTime} {labels.minRead}
               </span>
               <span style={{
-                fontFamily: 'Inter, system-ui, sans-serif',
+                fontFamily: 'var(--font-inter), system-ui, sans-serif',
                 fontSize: '0.75rem',
                 fontWeight: 500,
                 letterSpacing: '0.06em',
@@ -260,7 +260,7 @@ function EditorialRow({ article, lang, labels, index }: { article: BlogArticle; 
         >
           {/* Number */}
           <span style={{
-            fontFamily: "'Cormorant Garamond', Georgia, serif",
+            fontFamily: 'var(--font-cormorant), Georgia, serif',
             fontSize: '2.2rem',
             fontWeight: 300,
             lineHeight: 1,
@@ -274,7 +274,7 @@ function EditorialRow({ article, lang, labels, index }: { article: BlogArticle; 
           <div style={{ minWidth: 0 }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '0.8rem', marginBottom: '0.5rem' }}>
               <span style={{
-                fontFamily: 'Inter, system-ui, sans-serif',
+                fontFamily: 'var(--font-inter), system-ui, sans-serif',
                 fontSize: '0.7rem',
                 fontWeight: 600,
                 letterSpacing: '0.12em',
@@ -289,7 +289,7 @@ function EditorialRow({ article, lang, labels, index }: { article: BlogArticle; 
                 flexShrink: 0,
               }} />
               <span style={{
-                fontFamily: 'Inter, system-ui, sans-serif',
+                fontFamily: 'var(--font-inter), system-ui, sans-serif',
                 fontSize: '0.72rem',
                 fontWeight: 400,
                 color: '#8A8070',
@@ -299,7 +299,7 @@ function EditorialRow({ article, lang, labels, index }: { article: BlogArticle; 
             </div>
 
             <h3 style={{
-              fontFamily: "'Cormorant Garamond', Georgia, serif",
+              fontFamily: 'var(--font-cormorant), Georgia, serif',
               fontSize: 'clamp(1.35rem, 2.2vw, 1.65rem)',
               fontWeight: 500,
               lineHeight: 1.3,
@@ -310,7 +310,7 @@ function EditorialRow({ article, lang, labels, index }: { article: BlogArticle; 
             </h3>
 
             <p style={{
-              fontFamily: 'Inter, system-ui, sans-serif',
+              fontFamily: 'var(--font-inter), system-ui, sans-serif',
               fontSize: '0.9rem',
               fontWeight: 300,
               lineHeight: 1.65,
@@ -365,7 +365,7 @@ export default function BlogListPage({ lang }: Props) {
           <div style={{ display: 'flex', alignItems: 'flex-end', justifyContent: 'space-between', flexWrap: 'wrap', gap: '1rem' }}>
             <div>
               <h1 style={{
-                fontFamily: "'Cormorant Garamond', Georgia, serif",
+                fontFamily: 'var(--font-cormorant), Georgia, serif',
                 fontSize: 'clamp(3.2rem, 7vw, 5.5rem)',
                 fontWeight: 300,
                 lineHeight: 0.95,
@@ -377,7 +377,7 @@ export default function BlogListPage({ lang }: Props) {
               </h1>
             </div>
             <p style={{
-              fontFamily: 'Inter, system-ui, sans-serif',
+              fontFamily: 'var(--font-inter), system-ui, sans-serif',
               fontSize: 'clamp(0.88rem, 1.1vw, 0.98rem)',
               fontWeight: 400,
               lineHeight: 1.6,

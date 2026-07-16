@@ -194,7 +194,7 @@ export default function Navigation({ lang, t, variant = 'dark' }: Props) {
                 >
                   <button
                     style={{
-                      fontFamily: 'Inter, system-ui, sans-serif',
+                      fontFamily: 'var(--font-inter), system-ui, sans-serif',
                       fontSize: '0.78rem',
                       fontWeight: 600,
                       letterSpacing: '0.15em',
@@ -264,7 +264,7 @@ export default function Navigation({ lang, t, variant = 'dark' }: Props) {
                               style={{
                                 display: 'block',
                                 padding: '0.65rem 1.5rem',
-                                fontFamily: 'Inter, system-ui, sans-serif',
+                                fontFamily: 'var(--font-inter), system-ui, sans-serif',
                                 fontSize: '0.76rem',
                                 fontWeight: 500,
                                 letterSpacing: '0.06em',
@@ -302,7 +302,7 @@ export default function Navigation({ lang, t, variant = 'dark' }: Props) {
                 href={item.href}
                 className="group relative"
                 style={{
-                  fontFamily: 'Inter, system-ui, sans-serif',
+                  fontFamily: 'var(--font-inter), system-ui, sans-serif',
                   fontSize: '0.78rem',
                   fontWeight: 600,
                   letterSpacing: '0.15em',
@@ -333,7 +333,7 @@ export default function Navigation({ lang, t, variant = 'dark' }: Props) {
           <a
             href="tel:+38631444868"
             style={{
-              fontFamily: 'Inter, system-ui, sans-serif',
+              fontFamily: 'var(--font-inter), system-ui, sans-serif',
               fontSize: '0.72rem',
               fontWeight: 600,
               letterSpacing: '0.08em',
@@ -363,7 +363,7 @@ export default function Navigation({ lang, t, variant = 'dark' }: Props) {
                 onClick={() => switchLang(l.code)}
                 title={l.label}
                 style={{
-                  fontFamily: 'Inter, system-ui, sans-serif',
+                  fontFamily: 'var(--font-inter), system-ui, sans-serif',
                   fontSize: '0.68rem',
                   fontWeight: 600,
                   letterSpacing: '0.12em',
@@ -440,7 +440,7 @@ export default function Navigation({ lang, t, variant = 'dark' }: Props) {
                   href={link.href}
                   onClick={() => setMenuOpen(false)}
                   style={{
-                    fontFamily: 'Inter, system-ui, sans-serif',
+                    fontFamily: 'var(--font-inter), system-ui, sans-serif',
                     fontSize: '0.85rem',
                     fontWeight: 500,
                     letterSpacing: '0.14em',
@@ -458,7 +458,7 @@ export default function Navigation({ lang, t, variant = 'dark' }: Props) {
                 <button
                   onClick={() => setMobileONasOpen(!mobileONasOpen)}
                   style={{
-                    fontFamily: 'Inter, system-ui, sans-serif',
+                    fontFamily: 'var(--font-inter), system-ui, sans-serif',
                     fontSize: '0.85rem',
                     fontWeight: 500,
                     letterSpacing: '0.14em',
@@ -500,7 +500,7 @@ export default function Navigation({ lang, t, variant = 'dark' }: Props) {
                           href={sub.href}
                           onClick={() => { setMenuOpen(false); setMobileONasOpen(false) }}
                           style={{
-                            fontFamily: 'Inter, system-ui, sans-serif',
+                            fontFamily: 'var(--font-inter), system-ui, sans-serif',
                             fontSize: '0.8rem',
                             fontWeight: 400,
                             letterSpacing: '0.08em',
@@ -521,7 +521,7 @@ export default function Navigation({ lang, t, variant = 'dark' }: Props) {
               <a
                 href="tel:+38631444868"
                 style={{
-                  fontFamily: 'Inter, system-ui, sans-serif',
+                  fontFamily: 'var(--font-inter), system-ui, sans-serif',
                   fontSize: '0.85rem',
                   fontWeight: 600,
                   letterSpacing: '0.06em',
@@ -548,7 +548,7 @@ export default function Navigation({ lang, t, variant = 'dark' }: Props) {
                       key={l.code}
                       onClick={() => switchLang(l.code)}
                       style={{
-                        fontFamily: 'Inter, system-ui, sans-serif',
+                        fontFamily: 'var(--font-inter), system-ui, sans-serif',
                         fontSize: '0.75rem',
                         fontWeight: 600,
                         letterSpacing: '0.12em',

@@ -1,5 +1,3 @@
-import ProductSchema from '@/components/schema/ProductSchema'
-import FAQSchema from '@/components/schema/FAQSchema'
 import Navigation from '@/components/Navigation'
 import HeroSection from '@/components/HeroSection'
 import CredibilitySection from '@/components/CredibilitySection'
@@ -54,8 +52,6 @@ export default async function HomePage({ params }: Props) {
 
   return (
     <main>
-      <ProductSchema lang={lang} />
-      <FAQSchema lang={lang} />
       <Navigation lang={lang} t={t} />
       <HeroSection lang={lang} t={t} />
       <CredibilitySection lang={lang} t={t} />

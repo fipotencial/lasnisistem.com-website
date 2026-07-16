@@ -245,7 +245,7 @@ function MenGallery() {
           background: 'linear-gradient(to top, rgba(0,0,0,0.5), transparent)',
         }}>
           <span style={{
-            fontFamily: "'Cormorant Garamond', Georgia, serif",
+            fontFamily: 'var(--font-cormorant), Georgia, serif',
             fontSize: '1.4rem',
             fontWeight: 500,
             color: '#FFFFFF',
@@ -260,7 +260,7 @@ function MenGallery() {
       <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
         <ArrowButton direction="left" onClick={prev} />
         <span style={{
-          fontFamily: 'Inter, system-ui, sans-serif',
+          fontFamily: 'var(--font-inter), system-ui, sans-serif',
           fontSize: '0.8rem',
           fontWeight: 400,
           color: '#8B8178',
@@ -370,7 +370,7 @@ function WomenGallery({ labels }: { labels: { front: string; back: string } }) {
           background: 'linear-gradient(to top, rgba(0,0,0,0.5), transparent)',
         }}>
           <span style={{
-            fontFamily: "'Cormorant Garamond', Georgia, serif",
+            fontFamily: 'var(--font-cormorant), Georgia, serif',
             fontSize: '1.4rem',
             fontWeight: 500,
             color: '#FFFFFF',
@@ -385,7 +385,7 @@ function WomenGallery({ labels }: { labels: { front: string; back: string } }) {
       <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
         <ArrowButton direction="left" onClick={prev} />
         <span style={{
-          fontFamily: 'Inter, system-ui, sans-serif',
+          fontFamily: 'var(--font-inter), system-ui, sans-serif',
           fontSize: '0.8rem',
           fontWeight: 400,
           color: '#8B8178',
@@ -437,7 +437,7 @@ export default function HybridPageContent({ lang }: { lang: LangCode }) {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
               style={{
-                fontFamily: 'Inter, system-ui, sans-serif',
+                fontFamily: 'var(--font-inter), system-ui, sans-serif',
                 fontSize: '0.72rem',
                 fontWeight: 500,
                 letterSpacing: '0.2em',
@@ -455,7 +455,7 @@ export default function HybridPageContent({ lang }: { lang: LangCode }) {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.1 }}
               style={{
-                fontFamily: "'Cormorant Garamond', Georgia, serif",
+                fontFamily: 'var(--font-cormorant), Georgia, serif',
                 fontSize: 'clamp(2.4rem, 5vw, 3.8rem)',
                 fontWeight: 300,
                 color: '#1A1A1A',
@@ -517,7 +517,7 @@ export default function HybridPageContent({ lang }: { lang: LangCode }) {
             }} />
 
             <h2 style={{
-              fontFamily: "'Cormorant Garamond', Georgia, serif",
+              fontFamily: 'var(--font-cormorant), Georgia, serif',
               fontSize: 'clamp(1.8rem, 3vw, 2.6rem)',
               fontWeight: 400,
               color: '#1C1917',
@@ -528,7 +528,7 @@ export default function HybridPageContent({ lang }: { lang: LangCode }) {
             </h2>
 
             <p style={{
-              fontFamily: 'Inter, system-ui, sans-serif',
+              fontFamily: 'var(--font-inter), system-ui, sans-serif',
               fontSize: '1.05rem', fontWeight: 300,
               lineHeight: 1.8, color: 'rgba(28,25,23,0.65)',
               marginBottom: '1.5rem',
@@ -537,7 +537,7 @@ export default function HybridPageContent({ lang }: { lang: LangCode }) {
             </p>
 
             <p style={{
-              fontFamily: 'Inter, system-ui, sans-serif',
+              fontFamily: 'var(--font-inter), system-ui, sans-serif',
               fontSize: '1.05rem', fontWeight: 300,
               lineHeight: 1.8, color: 'rgba(28,25,23,0.65)',
               marginBottom: 0,
@@ -568,7 +568,7 @@ export default function HybridPageContent({ lang }: { lang: LangCode }) {
               boxShadow: '0 4px 24px rgba(140,120,60,0.06)',
             }}>
               <h3 style={{
-                fontFamily: "'Cormorant Garamond', Georgia, serif",
+                fontFamily: 'var(--font-cormorant), Georgia, serif',
                 fontSize: 'clamp(1.6rem, 2.5vw, 2.2rem)',
                 fontWeight: 400,
                 fontStyle: 'italic',
@@ -583,7 +583,7 @@ export default function HybridPageContent({ lang }: { lang: LangCode }) {
                 <div style={{ display: 'flex', gap: '0.8rem', alignItems: 'flex-start' }}>
                   <GoldDot />
                   <p style={{
-                    fontFamily: 'Inter, system-ui, sans-serif',
+                    fontFamily: 'var(--font-inter), system-ui, sans-serif',
                     fontSize: '1rem', fontWeight: 300,
                     lineHeight: 1.75, color: '#44403C',
                     margin: 0,
@@ -594,7 +594,7 @@ export default function HybridPageContent({ lang }: { lang: LangCode }) {
                 <div style={{ display: 'flex', gap: '0.8rem', alignItems: 'flex-start' }}>
                   <GoldDot />
                   <p style={{
-                    fontFamily: 'Inter, system-ui, sans-serif',
+                    fontFamily: 'var(--font-inter), system-ui, sans-serif',
                     fontSize: '1rem', fontWeight: 300,
                     lineHeight: 1.75, color: '#44403C',
                     margin: 0,
@@ -625,7 +625,7 @@ export default function HybridPageContent({ lang }: { lang: LangCode }) {
               className="flex-1"
             >
               <h3 style={{
-                fontFamily: "'Cormorant Garamond', Georgia, serif",
+                fontFamily: 'var(--font-cormorant), Georgia, serif',
                 fontSize: 'clamp(1.5rem, 2vw, 1.9rem)',
                 fontWeight: 400,
                 color: '#1C1917',
@@ -646,7 +646,7 @@ export default function HybridPageContent({ lang }: { lang: LangCode }) {
               className="flex-1"
             >
               <h3 style={{
-                fontFamily: "'Cormorant Garamond', Georgia, serif",
+                fontFamily: 'var(--font-cormorant), Georgia, serif',
                 fontSize: 'clamp(1.5rem, 2vw, 1.9rem)',
                 fontWeight: 400,
                 color: '#1C1917',
@@ -675,7 +675,7 @@ export default function HybridPageContent({ lang }: { lang: LangCode }) {
             }}
           >
             <p style={{
-              fontFamily: 'Inter, system-ui, sans-serif',
+              fontFamily: 'var(--font-inter), system-ui, sans-serif',
               fontSize: '1rem', fontWeight: 300,
               lineHeight: 1.7, color: '#44403C',
               marginBottom: '1.5rem',
@@ -696,7 +696,7 @@ export default function HybridPageContent({ lang }: { lang: LangCode }) {
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{
-                  fontFamily: 'Inter, system-ui, sans-serif',
+                  fontFamily: 'var(--font-inter), system-ui, sans-serif',
                   fontSize: '0.78rem', fontWeight: 500,
                   letterSpacing: '0.12em', textTransform: 'uppercase',
                   color: '#1C1917', backgroundColor: '#C1A452',
@@ -713,7 +713,7 @@ export default function HybridPageContent({ lang }: { lang: LangCode }) {
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{
-                  fontFamily: 'Inter, system-ui, sans-serif',
+                  fontFamily: 'var(--font-inter), system-ui, sans-serif',
                   fontSize: '0.78rem', fontWeight: 500,
                   letterSpacing: '0.12em', textTransform: 'uppercase',
                   color: '#1C1917', backgroundColor: '#C1A452',
@@ -729,7 +729,7 @@ export default function HybridPageContent({ lang }: { lang: LangCode }) {
 
             {/* CTA text + contact button */}
             <p style={{
-              fontFamily: 'Inter, system-ui, sans-serif',
+              fontFamily: 'var(--font-inter), system-ui, sans-serif',
               fontSize: '0.95rem', fontWeight: 300,
               lineHeight: 1.7, color: '#6B6155',
               marginBottom: '1.5rem',
@@ -741,7 +741,7 @@ export default function HybridPageContent({ lang }: { lang: LangCode }) {
             <Link
               href={`/${lang}/kontakt`}
               style={{
-                fontFamily: 'Inter, system-ui, sans-serif',
+                fontFamily: 'var(--font-inter), system-ui, sans-serif',
                 fontSize: '0.72rem', fontWeight: 500,
                 letterSpacing: '0.18em', textTransform: 'uppercase',
                 color: '#FFFFFF', backgroundColor: '#1C1917',

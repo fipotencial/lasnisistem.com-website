@@ -20,45 +20,45 @@ const t = {
     heroSuperTitle: 'Izpadanje las',
     heroTitle: 'Plešavost: vzroki, vrste in rešitve, ki delujejo',
     heroSubtitle:
-      'Plešavost prizadene polovico moških in skoraj polovico žensk. Razumevanje vzrokov je prvi korak – izbira prave rešitve pa tisti, ki spremeni vse.',
+      'Plešavost in redčenje las sta pogosta pri moških in ženskah. Razumevanje vzroka je prvi korak do realne izbire zdravljenja ali estetske rešitve.',
     introTitle: 'Kaj je plešavost in kako pogosta je?',
     introP1:
-      'Plešavost (medicinsko alopecija) je stanje, pri katerem lasje trajno izpadejo in ne zrastejo nazaj. Od običajnega izpadanja las – vsakdo izgubi 50 do 100 las na dan – jo loči prav trajnost: pri plešavosti lasni mešički postopoma oslabijo, se skrčijo in nazadnje propadejo.',
+      'Alopecija je medicinski izraz za izgubo las in vključuje več različnih stanj. Nekatera povzročijo začasno čezmerno izpadanje, druga postopno redčenje, pri brazgotinskih oblikah pa je izguba lahko trajna. Običajno dnevno izpade približno 50 do 100 las; širjenje preče, umikanje lasne linije ali zaplate brez las pa so znaki, ki jih je smiselno raziskati.',
     introP2:
-      'Najpogostejša oblika je androgenetska alopecija, ki do 50. leta prizadene približno polovico moških, do menopavze pa opazno redčenje las doživi tudi okoli 40 % žensk. Plešavost torej ni redkost in ni razlog za sram – je pa razlog, da spoznate svoje možnosti.',
+      'Najpogostejša oblika je androgenetska alopecija oziroma dedno vzorčno redčenje las. Lahko se začne že v mladosti in s starostjo napreduje. Plešavost ni razlog za sram, vendar je pravilna diagnoza pomembna, ker se zdravljenje androgenetske alopecije razlikuje od zdravljenja telogenega efluvija, alopecije areate ali bolezni lasišča.',
     maleTitle: 'Moška plešavost (androgenetska alopecija)',
     maleP1:
-      'Pri moških plešavost povzroča povečana občutljivost lasnih mešičkov na hormon DHT (dihidrotestosteron). Ta postopoma krajša rastno fazo las: lasje postajajo tanjši in krajši, dokler mešiček povsem ne propade. Značilen vzorec se začne z umikanjem lasne linije na čelu ("zalizci"), nadaljuje z redčenjem na temenu in lahko napreduje do popolne plešavosti zgornjega dela glave.',
+      'Pri moški androgenetski alopeciji imajo lasni mešički dedno povečano občutljivost na hormon DHT (dihidrotestosteron). Rastna faza se krajša, lasje pa postopoma postajajo tanjši in krajši. Značilen vzorec se začne z umikanjem lasne linije na čelu ("zalizci"), nadaljuje z redčenjem na temenu in lahko napreduje do obsežne plešavosti zgornjega dela glave.',
     maleP2:
-      'Napredovanje moške plešavosti stroka meri z Norwood-Hamiltonovo lestvico s sedmimi stopnjami. Višja kot je stopnja, manj je možnosti za zdravljenje z zdravili ali presaditvijo – zato je pomembno, da rešitev izberete glede na svojo stopnjo, ne glede na obljube oglasov.',
+      'Napredovanje se pogosto opisuje z Norwood-Hamiltonovo lestvico s sedmimi stopnjami. Lestvica pomaga opisati vzorec, ne pove pa sama, katera rešitev je primerna. Na izbiro vplivajo hitrost napredovanja, starost, zdravje, stanje donorskega območja in pričakovanja.',
     norwoodAlt: 'Norwood-Hamiltonova lestvica moške plešavosti – 7 stopenj',
     norwoodCaption: 'Norwood-Hamiltonova lestvica: 7 stopenj napredovanja moške plešavosti',
     femaleTitle: 'Ženska plešavost',
     femaleP1:
       'Ženska plešavost poteka drugače kot moška. Lasna linija običajno ostane, lasje pa se difuzno – enakomerno – redčijo po vsem temenu. Napredovanje se meri z Ludwigovo lestvico s tremi stopnjami: od komaj opaznega redčenja preko vse širše preče do vidnega lasišča.',
     femaleP2:
-      'Ker je redčenje postopno in razpršeno, ga ženske pogosto opazijo šele, ko je izgubljena že tretjina las. Sprožilci so hormonske spremembe (nosečnost, menopavza, ščitnica), stres, pomanjkanje železa in dedna nagnjenost. Za žensko plešavost so posebej primerne rešitve, ki dodajo gostoto brez posega: lasni vložki, hibridni sistemi in lasulje iz naravnih las.',
+      'Ker je redčenje postopno in razpršeno, ga je mogoče dolgo spregledati. Podoben videz lahko povzročijo dedna nagnjenost, telogeni efluvij, pomanjkanje železa, bolezen ščitnice ali hormonske spremembe, zato je pregled pomemben. Za estetsko dodajanje gostote so na voljo lasni vložki, hibridni sistemi in lasulje iz naravnih las.',
     causesTitle: 'Najpogostejši vzroki plešavosti',
     causes: [
       {
         title: 'Genetika in hormoni',
-        desc: 'Dedna občutljivost na DHT je vzrok za več kot 90 % primerov moške plešavosti in velik del ženske. Prenaša se po materini in očetovi strani.',
+        desc: 'Dedna občutljivost lasnih mešičkov je glavni dejavnik androgenetske alopecije pri moških in ženskah. Nagnjenost se lahko podeduje po materini ali očetovi strani.',
       },
       {
         title: 'Stres in travmatični dogodki',
-        desc: 'Močan stres lahko sproži telogeni efluvij – pospešeno izpadanje las nekaj mesecev po dogodku. Običajno je prehodno, kronični stres pa lahko redčenje utrdi.',
+        desc: 'Močan telesni ali čustveni stres lahko sproži telogeni efluvij – povečano izpadanje nekaj mesecev po dogodku. Pogosto se izboljša, ko se vzrok odpravi, okrevanje pa traja več mesecev.',
       },
       {
-        title: 'Avtoimunski vzroki (alopecia areata)',
-        desc: 'Imunski sistem napade lastne lasne mešičke, zato lasje izpadajo v okroglih zaplatah. Lahko napreduje do popolne izgube las na glavi ali telesu.',
+        title: 'Avtoimunski vzroki (alopecija areata)',
+        desc: 'Imunski sistem napade lasne mešičke, zato lasje pogosto izpadajo v okroglih zaplatah. Pri nekaterih ljudeh se izguba razširi na celotno lasišče ali telo.',
       },
       {
         title: 'Kemoterapija in zdravila',
-        desc: 'Citostatiki, antikoagulanti, nekateri antidepresivi in zdravila za krvni tlak lahko povzročijo obsežno izpadanje las – po koncu terapije lasje večinoma zrastejo nazaj.',
+        desc: 'Kemoterapija in nekatera zdravila lahko povzročijo izpadanje. Zdravila ne prekinite sami; o povezavi, poteku in morebitni zamenjavi se posvetujte z zdravnikom.',
       },
       {
         title: 'Pomanjkanje železa in hranil',
-        desc: 'Nizke zaloge železa (feritin), pomanjkanje beljakovin, cinka ali vitamina D oslabijo rast las. Krvna slika je zato smiseln prvi korak pri nepojasnjenem izpadanju.',
+        desc: 'Pomanjkanje železa ali beljakovin je lahko povezano z izpadanjem las. Preiskave in dodatki naj bodo usmerjeni glede na simptome ter presojo zdravnika, ne zgolj na podlagi spletnega testa.',
       },
       {
         title: 'Bolezni ščitnice',
@@ -71,11 +71,11 @@ const t = {
     solutions: [
       {
         title: 'Zdravila (minoksidil, finasterid)',
-        desc: 'Delujeta le v zgodnjih fazah in samo dokler ju uporabljate. Izpadanje lahko upočasnita, izgubljenih las pa praviloma ne povrneta. Finasterid ima lahko hormonske stranske učinke.',
+        desc: 'Pri androgenetski alopeciji lahko pri delu ljudi upočasnijo izpadanje in spodbudijo nekaj ponovne rasti. Učinek praviloma zahteva nadaljnjo uporabo, primernost in tveganja pa je treba preveriti z zdravnikom ali farmacevtom.',
       },
       {
         title: 'Presaditev las',
-        desc: 'Kirurška preselitev lastnih mešičkov. Učinkovita pri nižjih stopnjah, a zahteva zadostno donorsko območje – pri napredovali plešavosti pogosto ni izvedljiva. Rezultat je viden šele po 12–18 mesecih.',
+        desc: 'Kirurška preselitev lastnih mešičkov. Zahteva ustrezno diagnozo, stabilen načrt za nadaljnje izpadanje in zadostno donorsko območje. Primernost oceni kirurg za presaditev las.',
       },
       {
         title: 'Lasulja',
@@ -91,7 +91,7 @@ const t = {
       },
       {
         title: 'Hollywood Lasni Sistem®',
-        desc: 'Po meri izdelana prozorna mikromrežica z ročno vozlanimi naravnimi lasmi. Polni, naravni lasje brez operacije – tudi pri najvišjih stopnjah plešavosti, ko presaditev ni več mogoča. Neprekinjeno nošenje, 6-mesečna garancija.',
+        desc: 'Po meri izdelana prozorna mikromrežica z ročno vozlanimi naravnimi lasmi. Brez operacije prekrije delno ali obsežno plešavost. Omogoča stabilno pritrjevanje in ima 6-mesečno garancijo.',
         href: '',
         linkLabel: 'Spoznajte Lasni sistem® →',
       },
@@ -380,8 +380,8 @@ export default function BaldnessPageContent({ lang }: { lang: LangCode }) {
   const labels = t[lang] || t.sl
   const faq = plesavostFaq[lang] || plesavostFaq.sl
 
-  const headingFont = "'Cormorant Garamond', Georgia, serif"
-  const bodyFont = 'Inter, system-ui, sans-serif'
+  const headingFont = 'var(--font-cormorant), Georgia, serif'
+  const bodyFont = 'var(--font-inter), system-ui, sans-serif'
 
   const paragraphStyle: React.CSSProperties = {
     fontFamily: bodyFont,
@@ -691,6 +691,63 @@ export default function BaldnessPageContent({ lang }: { lang: LangCode }) {
           </div>
         </div>
       </section>
+
+      {lang === 'sl' && (
+        <section style={{ background: '#F5F2ED' }}>
+          <div style={{
+            width: '88%', maxWidth: 900, margin: '0 auto',
+            padding: 'clamp(3rem, 5vw, 5rem) 0',
+          }}>
+            <motion.div
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: '-80px' }}
+              transition={{ duration: 0.7 }}
+            >
+              <h2 style={h2Style}>Kdaj je pri izpadanju las potreben dermatolog?</h2>
+              <p style={paragraphStyle}>
+                Plešavost ni ena sama diagnoza. Pregled je posebej pomemben pri nenadnem izpadanju, okroglih zaplatah brez las, bolečem ali vnetem lasišču, izgubi obrvi in trepalnic, hitrem napredovanju ali drugih simptomih, kot so utrujenost, spremembe telesne teže in neredne menstruacije.
+              </p>
+              <p style={paragraphStyle}>
+                Zdravnik ali dermatolog lahko razlikuje med androgenetsko alopecijo, telogenim efluvijem, <Link href="/sl/blog/alopecia-areata" style={{ color: '#6B6155', textDecoration: 'underline', textUnderlineOffset: 3 }}>alopecijo areato</Link>, okužbo in brazgotinskimi oblikami. Glede na izvid so lahko potrebne krvne preiskave, dermatoskopija ali biopsija lasišča.
+              </p>
+              <p style={{ ...paragraphStyle, marginBottom: '2rem' }}>
+                Celoten pregled vzrokov, poteka diagnostike in zdravljenja je v vodiču <Link href="/sl/blog/izpadanje-las-vzroki-vrste-in-resitve" style={{ color: '#6B6155', textDecoration: 'underline', textUnderlineOffset: 3 }}>Izpadanje las: vzroki, vrste, zdravljenje in rešitve</Link>. Naš posvet je namenjen izbiri estetskega lasnega nadomestka in ne nadomešča zdravstvene diagnoze.
+              </p>
+
+              <div style={{
+                background: '#FFFFFF',
+                borderRadius: '1rem',
+                border: '1px solid rgba(193,164,82,0.15)',
+                padding: '1.6rem 1.8rem',
+              }}>
+                <h3 style={{
+                  fontFamily: headingFont,
+                  fontSize: '1.35rem',
+                  fontWeight: 500,
+                  color: '#1C1917',
+                  marginBottom: '0.8rem',
+                }}>
+                  Medicinski viri
+                </h3>
+                <ul style={{
+                  fontFamily: bodyFont,
+                  fontSize: '0.95rem',
+                  fontWeight: 300,
+                  lineHeight: 1.8,
+                  color: 'rgba(28,25,23,0.65)',
+                  margin: 0,
+                  paddingLeft: '1.2rem',
+                }}>
+                  <li><a href="https://www.aad.org/public/diseases/hair-loss/causes/fall-out" target="_blank" rel="noopener noreferrer" style={{ color: '#6B6155' }}>American Academy of Dermatology: Hair loss overview</a></li>
+                  <li><a href="https://www.aad.org/public/diseases/hair-loss/treatment/diagnosis-treat" target="_blank" rel="noopener noreferrer" style={{ color: '#6B6155' }}>American Academy of Dermatology: Diagnosis and treatment</a></li>
+                  <li><a href="https://www.nhs.uk/conditions/hair-loss/" target="_blank" rel="noopener noreferrer" style={{ color: '#6B6155' }}>NHS: Hair loss</a></li>
+                </ul>
+              </div>
+            </motion.div>
+          </div>
+        </section>
+      )}
 
       {/* ─── FAQ ─── */}
       <section style={{ background: '#F3F0EB' }}>

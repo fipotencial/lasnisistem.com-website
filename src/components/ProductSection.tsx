@@ -4,6 +4,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion'
 import type { Translation, LangCode } from '@/lib/i18n/translations'
+import LazyAutoplayVideo from '@/components/LazyAutoplayVideo'
 
 const articleSlugs: Record<LangCode, string> = {
   sl: 'hollywood-lasni-sistem-najboljsa-resitev',
@@ -79,7 +80,7 @@ export default function ProductSection({ lang, t }: Props) {
           viewport={{ once: true, margin: '-60px' }}
           transition={{ duration: 0.7, delay: 0.1 }}
           style={{
-            fontFamily: "'Cormorant Garamond', Georgia, serif",
+            fontFamily: 'var(--font-cormorant), Georgia, serif',
             fontSize: 'clamp(2.2rem, 5vw, 3.8rem)',
             fontWeight: 300,
             letterSpacing: '-0.02em',
@@ -100,7 +101,7 @@ export default function ProductSection({ lang, t }: Props) {
           viewport={{ once: true, margin: '-60px' }}
           transition={{ duration: 0.8, delay: 0.25 }}
           style={{
-            fontFamily: 'Inter, system-ui, sans-serif',
+            fontFamily: 'var(--font-inter), system-ui, sans-serif',
             fontSize: 'clamp(0.9rem, 1.2vw, 1.05rem)',
             fontWeight: 300,
             lineHeight: 1.7,
@@ -125,12 +126,13 @@ export default function ProductSection({ lang, t }: Props) {
         >
           <motion.div style={{ rotateX, rotateY, transformStyle: 'preserve-3d' }}>
             <Image
-              src="/images/hair system with graphics2.png"
+              src="/images/hair-system-graphics.webp"
               alt={p.headline}
               width={1200}
-              height={800}
+              height={1338}
               className="w-full h-auto"
               style={{ objectFit: 'contain' }}
+              sizes="(max-width: 768px) 85vw, 600px"
             />
           </motion.div>
         </motion.div>
@@ -167,7 +169,7 @@ export default function ProductSection({ lang, t }: Props) {
                 }} />
 
                 <h3 style={{
-                  fontFamily: "'Cormorant Garamond', Georgia, serif",
+                  fontFamily: 'var(--font-cormorant), Georgia, serif',
                   fontSize: 'clamp(2rem, 3.5vw, 3rem)',
                   fontWeight: 400,
                   color: '#1C1917',
@@ -178,7 +180,7 @@ export default function ProductSection({ lang, t }: Props) {
                 </h3>
 
                 <p style={{
-                  fontFamily: 'Inter, system-ui, sans-serif',
+                  fontFamily: 'var(--font-inter), system-ui, sans-serif',
                   fontSize: '1.05rem',
                   fontWeight: 300,
                   lineHeight: 1.8,
@@ -201,7 +203,7 @@ export default function ProductSection({ lang, t }: Props) {
                     <div key={i} style={{ display: 'flex', gap: '0.8rem', alignItems: 'flex-start' }}>
                       <GoldDot />
                       <span style={{
-                        fontFamily: 'Inter, system-ui, sans-serif',
+                        fontFamily: 'var(--font-inter), system-ui, sans-serif',
                         fontSize: '0.92rem',
                         fontWeight: 400,
                         lineHeight: 1.6,
@@ -218,7 +220,7 @@ export default function ProductSection({ lang, t }: Props) {
                   style={{
                     display: 'inline-block',
                     marginTop: '2rem',
-                    fontFamily: 'Inter, system-ui, sans-serif',
+                    fontFamily: 'var(--font-inter), system-ui, sans-serif',
                     fontSize: '0.72rem',
                     fontWeight: 500,
                     letterSpacing: '0.18em',
@@ -262,13 +264,10 @@ export default function ProductSection({ lang, t }: Props) {
                   pointerEvents: 'none',
                 }}
               >
-                <video
+                <LazyAutoplayVideo
                   src="/second%20video%20website%20(1)%20compresed.mp4"
+                  poster="/images/video-hair-system-fit-poster.webp"
                   className="w-full h-full object-cover"
-                  muted
-                  loop
-                  playsInline
-                  autoPlay
                 />
               </div>
             </motion.div>
@@ -309,13 +308,10 @@ export default function ProductSection({ lang, t }: Props) {
                   pointerEvents: 'none',
                 }}
               >
-                <video
+                <LazyAutoplayVideo
                   src="/first%20video%20website%20(1)%20cmopresed.mp4"
+                  poster="/images/video-hair-system-lifestyle-poster.webp"
                   className="w-full h-full object-cover"
-                  muted
-                  loop
-                  playsInline
-                  autoPlay
                 />
               </div>
             </motion.div>
@@ -338,7 +334,7 @@ export default function ProductSection({ lang, t }: Props) {
                 }} />
 
                 <h3 style={{
-                  fontFamily: "'Cormorant Garamond', Georgia, serif",
+                  fontFamily: 'var(--font-cormorant), Georgia, serif',
                   fontSize: 'clamp(2rem, 3.5vw, 3rem)',
                   fontWeight: 400,
                   color: '#1C1917',
@@ -349,7 +345,7 @@ export default function ProductSection({ lang, t }: Props) {
                 </h3>
 
                 <p style={{
-                  fontFamily: 'Inter, system-ui, sans-serif',
+                  fontFamily: 'var(--font-inter), system-ui, sans-serif',
                   fontSize: '1.05rem',
                   fontWeight: 300,
                   lineHeight: 1.8,
@@ -372,7 +368,7 @@ export default function ProductSection({ lang, t }: Props) {
                     <div key={i} style={{ display: 'flex', gap: '0.8rem', alignItems: 'flex-start' }}>
                       <GoldDot />
                       <span style={{
-                        fontFamily: 'Inter, system-ui, sans-serif',
+                        fontFamily: 'var(--font-inter), system-ui, sans-serif',
                         fontSize: '0.92rem',
                         fontWeight: 400,
                         lineHeight: 1.6,
@@ -389,7 +385,7 @@ export default function ProductSection({ lang, t }: Props) {
                   style={{
                     display: 'inline-block',
                     marginTop: '2rem',
-                    fontFamily: 'Inter, system-ui, sans-serif',
+                    fontFamily: 'var(--font-inter), system-ui, sans-serif',
                     fontSize: '0.72rem',
                     fontWeight: 500,
                     letterSpacing: '0.18em',

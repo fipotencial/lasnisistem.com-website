@@ -25,12 +25,25 @@ const STATIC_PAGES = [
   '/blog',
 ]
 
+const STATIC_LAST_MODIFIED: Record<string, string> = {
+  '': '2026-07-13',
+  '/hibridni-sistemi': '2026-07-13',
+  '/lasulje': '2026-07-16',
+  '/plesavost': '2026-07-16',
+  '/kontakt': '2026-07-13',
+  '/poslanstvo': '2026-07-16',
+  '/mnenja-strank': '2026-07-13',
+  '/mediji': '2026-07-13',
+  '/svetovalni-studio': '2026-07-16',
+  '/pravno-obvestilo': '2026-07-16',
+  '/blog': '2026-07-16',
+}
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const entries: MetadataRoute.Sitemap = []
 
-  // Static pages — sl gets full priority; other languages deprioritised
+  // Static pages
   for (const lang of LANGUAGES) {
-    const isSl = lang === 'sl'
     for (const page of STATIC_PAGES) {
       const languages: Record<string, string> = {
         'x-default': `${BASE_URL}/sl${page}`,
@@ -40,9 +53,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       }
       entries.push({
         url: `${BASE_URL}/${lang}${page}`,
-        lastModified: new Date(),
-        changeFrequency: page === '' ? 'weekly' : 'monthly',
-        priority: page === '' ? (isSl ? 1.0 : 0.3) : (isSl ? 0.8 : 0.3),
+        lastModified: new Date(STATIC_LAST_MODIFIED[page]),
         alternates: { languages },
       })
     }
@@ -51,7 +62,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // Dynamic blog articles — slugs are translated per language and map across
   // languages by array index (same convention as Navigation and lib/seo.ts)
   for (const lang of LANGUAGES) {
-    const isSl = lang === 'sl'
     const articles = getArticlesByLang(lang)
     articles.forEach((article, idx) => {
       const languages: Record<string, string> = {}
@@ -69,9 +79,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       }
       entries.push({
         url: `${BASE_URL}/${lang}/blog/${article.slug}`,
-        lastModified: article.publishDate ? new Date(article.publishDate) : new Date(),
-        changeFrequency: 'yearly',
-        priority: isSl ? 0.6 : 0.2,
+        lastModified: new Date(article.updatedDate || article.publishDate),
         // Single-language articles get no hreflang group
         ...(count > 1 ? { alternates: { languages } } : {}),
       })

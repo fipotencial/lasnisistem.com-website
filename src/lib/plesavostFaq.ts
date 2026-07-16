@@ -18,7 +18,7 @@ export const plesavostFaq: Record<string, FaqItem[]> = {
     {
       question: 'Ali se plešavost da ustaviti ali pozdraviti?',
       answer:
-        'Zdravili minoksidil in finasterid lahko pri delu ljudi upočasnita ali začasno zaustavita izpadanje las, vendar delujeta le, dokler ju uporabljate. Kjer so lasni mešički že propadli, lasje ne zrastejo nazaj. Pri napredovali plešavosti so realne rešitve presaditev las, lasni sistem ali lasulja.',
+        'Odvisno od vzroka. Pri androgenetski alopeciji lahko minoksidil in pri primernih moških finasterid upočasnita izpadanje ter pri delu ljudi spodbudita nekaj ponovne rasti, učinek pa praviloma zahteva nadaljnjo uporabo. Druge oblike izpadanja potrebujejo drugačno zdravljenje. Pri napredovali plešavosti so med možnostmi presaditev las, lasni sistem ali lasulja.',
     },
     {
       question: 'Kdaj se začne moška plešavost?',
@@ -28,12 +28,12 @@ export const plesavostFaq: Record<string, FaqItem[]> = {
     {
       question: 'Kaj je najboljša rešitev pri napredovali plešavosti?',
       answer:
-        'Pri napredovali plešavosti (višje stopnje po Norwood-Hamiltonovi lestvici) presaditev las pogosto ni več mogoča, ker donorsko območje ne zadošča. Takrat je lasni sistem najboljša neinvazivna rešitev – brez operacije zagotovi polne, naravno izgledajoče lase v nekaj tednih.',
+        'Ni ene najboljše rešitve za vse. Primernost presaditve je odvisna od diagnoze, stabilnosti izpadanja, donorskega območja in pričakovanj. Lasni sistem je neinvazivna možnost za takojšnje prekrivanje tudi obsežne plešavosti, lasulja pa je pogosto primerna pri popolni ali razpršeni izgubi las.',
     },
     {
       question: 'Ali plešavost prizadene tudi ženske?',
       answer:
-        'Da. Do menopavze se z opaznim redčenjem las sooči približno 40 % žensk. Ženska plešavost običajno poteka difuzno – lasje se enakomerno redčijo po vsem temenu (Ludwigova lestvica), zato je pogosto dolgo neopažena. Rešitve vključujejo lasne vložke, hibridne sisteme in lasulje iz naravnih las.',
+        'Da. Androgenetska alopecija je tudi pri ženskah pogost vzrok redčenja. Pogosto se kaže kot širjenje preče in difuzno redčenje na temenu, vendar imajo podoben videz lahko tudi pomanjkanje železa, bolezen ščitnice ali telogeni efluvij. Estetske rešitve vključujejo lasne vložke, hibridne sisteme in lasulje iz naravnih las.',
     },
   ],
   en: [

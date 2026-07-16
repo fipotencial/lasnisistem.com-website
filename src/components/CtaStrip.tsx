@@ -110,7 +110,7 @@ export default function CtaStrip({ lang, t }: Props) {
           viewport={{ once: true, margin: '-60px' }}
           transition={{ duration: 0.7, delay: 0.15 }}
           style={{
-            fontFamily: "'Cormorant Garamond', Georgia, serif",
+            fontFamily: 'var(--font-cormorant), Georgia, serif',
             fontSize: 'clamp(1.7rem, 3vw, 2.4rem)',
             fontWeight: 400,
             fontStyle: 'italic',
@@ -135,7 +135,7 @@ export default function CtaStrip({ lang, t }: Props) {
             href={`/${lang}/kontakt`}
             style={{
               display: 'inline-block',
-              fontFamily: 'Inter, system-ui, sans-serif',
+              fontFamily: 'var(--font-inter), system-ui, sans-serif',
               fontSize: '0.72rem',
               fontWeight: 500,
               letterSpacing: '0.2em',

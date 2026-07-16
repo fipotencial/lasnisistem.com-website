@@ -364,7 +364,7 @@ function FeaturedGlowCard({ testimonial, title, quote }: {
           <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
             <span
               style={{
-                fontFamily: "'Cormorant Garamond', Georgia, serif",
+                fontFamily: 'var(--font-cormorant), Georgia, serif',
                 fontSize: '1.35rem',
                 fontWeight: 600,
                 color: '#F5EFE0',
@@ -378,6 +378,7 @@ function FeaturedGlowCard({ testimonial, title, quote }: {
                 href={testimonial.instagram}
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label={`${testimonial.name} Instagram`}
                 style={{ color: 'rgba(193,164,82,0.7)', display: 'flex', transition: 'color 0.2s' }}
                 onMouseEnter={e => { e.currentTarget.style.color = '#C1A452' }}
                 onMouseLeave={e => { e.currentTarget.style.color = 'rgba(193,164,82,0.7)' }}
@@ -388,7 +389,7 @@ function FeaturedGlowCard({ testimonial, title, quote }: {
           </div>
           <span
             style={{
-              fontFamily: 'Inter, system-ui, sans-serif',
+              fontFamily: 'var(--font-inter), system-ui, sans-serif',
               fontSize: '0.78rem',
               fontWeight: 500,
               letterSpacing: '0.06em',
@@ -403,7 +404,7 @@ function FeaturedGlowCard({ testimonial, title, quote }: {
         {/* Quote */}
         <p
           style={{
-            fontFamily: "'Cormorant Garamond', Georgia, serif",
+            fontFamily: 'var(--font-cormorant), Georgia, serif',
             fontSize: 'clamp(1rem, 1.2vw, 1.12rem)',
             fontWeight: 400,
             fontStyle: 'italic',
@@ -418,7 +419,7 @@ function FeaturedGlowCard({ testimonial, title, quote }: {
         {/* Clients */}
         <p
           style={{
-            fontFamily: 'Inter, system-ui, sans-serif',
+            fontFamily: 'var(--font-inter), system-ui, sans-serif',
             fontSize: '0.75rem',
             fontWeight: 300,
             lineHeight: 1.5,
@@ -524,7 +525,7 @@ function TestimonialCarousel({ lang }: { lang: LangCode }) {
                 />
                 <p
                   style={{
-                    fontFamily: "'Cormorant Garamond', Georgia, serif",
+                    fontFamily: 'var(--font-cormorant), Georgia, serif',
                     fontSize: '1rem',
                     fontStyle: 'italic',
                     lineHeight: 1.55,
@@ -539,7 +540,7 @@ function TestimonialCarousel({ lang }: { lang: LangCode }) {
                     display: 'inline-flex',
                     alignItems: 'center',
                     gap: '0.4rem',
-                    fontFamily: 'Inter, system-ui, sans-serif',
+                    fontFamily: 'var(--font-inter), system-ui, sans-serif',
                     fontSize: '0.74rem',
                     fontWeight: 600,
                     letterSpacing: '0.04em',
@@ -555,7 +556,7 @@ function TestimonialCarousel({ lang }: { lang: LangCode }) {
                 <span
                   style={{
                     display: 'block',
-                    fontFamily: 'Inter, system-ui, sans-serif',
+                    fontFamily: 'var(--font-inter), system-ui, sans-serif',
                     fontSize: '0.73rem',
                     fontWeight: 600,
                     letterSpacing: '0.08em',
@@ -572,7 +573,7 @@ function TestimonialCarousel({ lang }: { lang: LangCode }) {
             <GlowCard key={`${item.name}-${i}`}>
               <p
                 style={{
-                  fontFamily: "'Cormorant Garamond', Georgia, serif",
+                  fontFamily: 'var(--font-cormorant), Georgia, serif',
                   fontSize: '0.98rem',
                   fontStyle: 'italic',
                   lineHeight: 1.5,
@@ -585,7 +586,7 @@ function TestimonialCarousel({ lang }: { lang: LangCode }) {
               <span
                 style={{
                   display: 'block',
-                  fontFamily: 'Inter, system-ui, sans-serif',
+                  fontFamily: 'var(--font-inter), system-ui, sans-serif',
                   fontSize: '0.73rem',
                   fontWeight: 500,
                   letterSpacing: '0.08em',
@@ -628,7 +629,7 @@ export default function TestimonialsSection({ lang, t }: Props) {
         >
           <h2
             style={{
-              fontFamily: "'Cormorant Garamond', Georgia, serif",
+              fontFamily: 'var(--font-cormorant), Georgia, serif',
               fontSize: 'clamp(2rem, 3.5vw, 2.8rem)',
               fontWeight: 400,
               fontStyle: 'italic',
@@ -641,7 +642,7 @@ export default function TestimonialsSection({ lang, t }: Props) {
           </h2>
           <p
             style={{
-              fontFamily: 'Inter, system-ui, sans-serif',
+              fontFamily: 'var(--font-inter), system-ui, sans-serif',
               fontSize: '0.95rem',
               fontWeight: 300,
               color: '#78716C',
@@ -684,7 +685,7 @@ export default function TestimonialsSection({ lang, t }: Props) {
       >
         <h3
           style={{
-            fontFamily: "'Cormorant Garamond', Georgia, serif",
+            fontFamily: 'var(--font-cormorant), Georgia, serif',
             fontSize: 'clamp(1.6rem, 2.5vw, 2.2rem)',
             fontWeight: 400,
             fontStyle: 'italic',

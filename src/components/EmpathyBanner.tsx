@@ -100,7 +100,7 @@ export default function EmpathyBanner({ lang, t }: Props) {
 
         <h2
           style={{
-            fontFamily: "'Cormorant Garamond', Georgia, serif",
+            fontFamily: 'var(--font-cormorant), Georgia, serif',
             fontSize: 'clamp(1.8rem, 3.2vw, 2.5rem)',
             fontWeight: 400,
             fontStyle: 'italic',
@@ -115,7 +115,7 @@ export default function EmpathyBanner({ lang, t }: Props) {
 
         <p
           style={{
-            fontFamily: 'Inter, system-ui, sans-serif',
+            fontFamily: 'var(--font-inter), system-ui, sans-serif',
             fontSize: 'clamp(0.92rem, 1.15vw, 1.05rem)',
             fontWeight: 300,
             lineHeight: 1.75,
@@ -131,7 +131,7 @@ export default function EmpathyBanner({ lang, t }: Props) {
           style={{
             display: 'inline-block',
             marginTop: '1.6rem',
-            fontFamily: 'Inter, system-ui, sans-serif',
+            fontFamily: 'var(--font-inter), system-ui, sans-serif',
             fontSize: '0.82rem',
             fontWeight: 500,
             letterSpacing: '0.08em',

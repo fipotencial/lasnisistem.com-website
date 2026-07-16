@@ -137,7 +137,7 @@ const contactTranslations: Record<LangCode, {
 }
 
 const inputBaseStyle: React.CSSProperties = {
-  fontFamily: 'Inter, system-ui, sans-serif',
+  fontFamily: 'var(--font-inter), system-ui, sans-serif',
   fontSize: '0.9rem',
   fontWeight: 300,
   color: '#1C1917',
@@ -199,7 +199,7 @@ export default function ContactPageContent({ lang }: Props) {
           >
             <h1
               style={{
-                fontFamily: "'Cormorant Garamond', Georgia, serif",
+                fontFamily: 'var(--font-cormorant), Georgia, serif',
                 fontSize: 'clamp(2.8rem, 5.5vw, 4.2rem)',
                 fontWeight: 500,
                 color: '#1A1A1A',
@@ -216,7 +216,7 @@ export default function ContactPageContent({ lang }: Props) {
 
             <p
               style={{
-                fontFamily: 'Inter, system-ui, sans-serif',
+                fontFamily: 'var(--font-inter), system-ui, sans-serif',
                 fontSize: 'clamp(0.95rem, 1.25vw, 1.15rem)',
                 fontWeight: 400,
                 color: 'rgba(26,26,26,0.65)',
@@ -275,7 +275,7 @@ export default function ContactPageContent({ lang }: Props) {
                     </div>
                     <p
                       style={{
-                        fontFamily: "'Cormorant Garamond', Georgia, serif",
+                        fontFamily: 'var(--font-cormorant), Georgia, serif',
                         fontSize: '1.3rem',
                         fontWeight: 500,
                         color: '#1C1917',
@@ -286,7 +286,7 @@ export default function ContactPageContent({ lang }: Props) {
                     </p>
                     <p
                       style={{
-                        fontFamily: 'Inter, system-ui, sans-serif',
+                        fontFamily: 'var(--font-inter), system-ui, sans-serif',
                         fontSize: '0.9rem',
                         fontWeight: 300,
                         color: 'rgba(28,25,23,0.6)',
@@ -305,7 +305,7 @@ export default function ContactPageContent({ lang }: Props) {
                       <div>
                         <label
                           style={{
-                            fontFamily: 'Inter, system-ui, sans-serif',
+                            fontFamily: 'var(--font-inter), system-ui, sans-serif',
                             fontSize: '0.72rem',
                             fontWeight: 500,
                             letterSpacing: '0.08em',
@@ -335,7 +335,7 @@ export default function ContactPageContent({ lang }: Props) {
                       <div>
                         <label
                           style={{
-                            fontFamily: 'Inter, system-ui, sans-serif',
+                            fontFamily: 'var(--font-inter), system-ui, sans-serif',
                             fontSize: '0.72rem',
                             fontWeight: 500,
                             letterSpacing: '0.08em',
@@ -368,7 +368,7 @@ export default function ContactPageContent({ lang }: Props) {
                     <div>
                       <label
                         style={{
-                          fontFamily: 'Inter, system-ui, sans-serif',
+                          fontFamily: 'var(--font-inter), system-ui, sans-serif',
                           fontSize: '0.72rem',
                           fontWeight: 500,
                           letterSpacing: '0.08em',
@@ -399,7 +399,7 @@ export default function ContactPageContent({ lang }: Props) {
                     <div>
                       <label
                         style={{
-                          fontFamily: 'Inter, system-ui, sans-serif',
+                          fontFamily: 'var(--font-inter), system-ui, sans-serif',
                           fontSize: '0.72rem',
                           fontWeight: 500,
                           letterSpacing: '0.08em',
@@ -434,7 +434,7 @@ export default function ContactPageContent({ lang }: Props) {
                     {/* Disclaimer */}
                     <p
                       style={{
-                        fontFamily: 'Inter, system-ui, sans-serif',
+                        fontFamily: 'var(--font-inter), system-ui, sans-serif',
                         fontSize: '0.72rem',
                         fontWeight: 300,
                         color: 'rgba(28,25,23,0.4)',
@@ -450,7 +450,7 @@ export default function ContactPageContent({ lang }: Props) {
                       type="submit"
                       disabled={sending}
                       style={{
-                        fontFamily: 'Inter, system-ui, sans-serif',
+                        fontFamily: 'var(--font-inter), system-ui, sans-serif',
                         fontSize: '0.82rem',
                         fontWeight: 500,
                         letterSpacing: '0.06em',
@@ -497,7 +497,7 @@ export default function ContactPageContent({ lang }: Props) {
               >
                 <h2
                   style={{
-                    fontFamily: "'Cormorant Garamond', Georgia, serif",
+                    fontFamily: 'var(--font-cormorant), Georgia, serif',
                     fontSize: '1.5rem',
                     fontWeight: 500,
                     color: '#1A1A1A',
@@ -512,7 +512,7 @@ export default function ContactPageContent({ lang }: Props) {
                   <div>
                     <span
                       style={{
-                        fontFamily: 'Inter, system-ui, sans-serif',
+                        fontFamily: 'var(--font-inter), system-ui, sans-serif',
                         fontSize: '0.68rem',
                         fontWeight: 500,
                         letterSpacing: '0.12em',
@@ -529,7 +529,7 @@ export default function ContactPageContent({ lang }: Props) {
                       target="_blank"
                       rel="noopener noreferrer"
                       style={{
-                        fontFamily: 'Inter, system-ui, sans-serif',
+                        fontFamily: 'var(--font-inter), system-ui, sans-serif',
                         fontSize: '0.92rem',
                         fontWeight: 300,
                         color: '#1C1917',
@@ -549,7 +549,7 @@ export default function ContactPageContent({ lang }: Props) {
                   <div>
                     <span
                       style={{
-                        fontFamily: 'Inter, system-ui, sans-serif',
+                        fontFamily: 'var(--font-inter), system-ui, sans-serif',
                         fontSize: '0.68rem',
                         fontWeight: 500,
                         letterSpacing: '0.12em',
@@ -564,7 +564,7 @@ export default function ContactPageContent({ lang }: Props) {
                     <a
                       href="tel:+38631444868"
                       style={{
-                        fontFamily: 'Inter, system-ui, sans-serif',
+                        fontFamily: 'var(--font-inter), system-ui, sans-serif',
                         fontSize: '0.92rem',
                         fontWeight: 300,
                         color: '#1C1917',
@@ -582,7 +582,7 @@ export default function ContactPageContent({ lang }: Props) {
                   <div>
                     <span
                       style={{
-                        fontFamily: 'Inter, system-ui, sans-serif',
+                        fontFamily: 'var(--font-inter), system-ui, sans-serif',
                         fontSize: '0.68rem',
                         fontWeight: 500,
                         letterSpacing: '0.12em',
@@ -597,7 +597,7 @@ export default function ContactPageContent({ lang }: Props) {
                     <a
                       href="mailto:info@lasnisistem.com"
                       style={{
-                        fontFamily: 'Inter, system-ui, sans-serif',
+                        fontFamily: 'var(--font-inter), system-ui, sans-serif',
                         fontSize: '0.92rem',
                         fontWeight: 300,
                         color: '#1C1917',
@@ -615,7 +615,7 @@ export default function ContactPageContent({ lang }: Props) {
                   <div>
                     <span
                       style={{
-                        fontFamily: 'Inter, system-ui, sans-serif',
+                        fontFamily: 'var(--font-inter), system-ui, sans-serif',
                         fontSize: '0.68rem',
                         fontWeight: 500,
                         letterSpacing: '0.12em',
@@ -629,7 +629,7 @@ export default function ContactPageContent({ lang }: Props) {
                     </span>
                     <p
                       style={{
-                        fontFamily: 'Inter, system-ui, sans-serif',
+                        fontFamily: 'var(--font-inter), system-ui, sans-serif',
                         fontSize: '0.92rem',
                         fontWeight: 300,
                         color: '#1C1917',
@@ -652,7 +652,7 @@ export default function ContactPageContent({ lang }: Props) {
                 >
                   <p
                     style={{
-                      fontFamily: "'Cormorant Garamond', Georgia, serif",
+                      fontFamily: 'var(--font-cormorant), Georgia, serif',
                       fontSize: '1rem',
                       fontStyle: 'italic',
                       fontWeight: 500,

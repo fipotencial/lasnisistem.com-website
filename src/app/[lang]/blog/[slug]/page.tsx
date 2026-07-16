@@ -62,13 +62,13 @@ export default async function BlogArticleRoute({ params }: Props) {
     '@type': 'BlogPosting',
     headline: article.title,
     description: article.excerpt,
-    image: `${BASE_URL}${article.image}`,
+    ...(article.image ? { image: `${BASE_URL}${article.image}` } : {}),
     datePublished: article.publishDate,
-    dateModified: article.publishDate,
+    dateModified: article.updatedDate || article.publishDate,
     timeRequired: `PT${article.readTime}M`,
     author: {
       '@type': 'Organization',
-      name: 'Lasni Sistem®',
+      name: article.author || 'Lasni Sistem®',
       '@id': `${BASE_URL}/#organization`,
     },
     publisher: {

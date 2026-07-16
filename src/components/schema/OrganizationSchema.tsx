@@ -10,7 +10,7 @@ export default function OrganizationSchema({ lang }: { lang: string }) {
     '@context': 'https://schema.org',
     '@graph': [
       {
-        '@type': ['LocalBusiness', 'MedicalBusiness'],
+        '@type': 'LocalBusiness',
         '@id': 'https://www.lasnisistem.com/#organization',
         name: 'Fi Potencial d.o.o.',
         alternateName: ['Lasni Sistem®', 'Hollywood Lasni Sistem', 'Hollywood Hair System®'],

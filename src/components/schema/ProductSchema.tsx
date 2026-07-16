@@ -23,7 +23,7 @@ export default function ProductSchema({ lang }: { lang: string }) {
       '@id': 'https://www.lasnisistem.com/#organization',
     },
     description: productDescriptions[lang] ?? productDescriptions.sl,
-    image: 'https://www.lasnisistem.com/images/hair system with graphics.png',
+    image: 'https://www.lasnisistem.com/images/hair-system-graphics.webp',
     url: `https://www.lasnisistem.com/${lang}`,
     offers: {
       '@type': 'Offer',
@@ -35,41 +35,6 @@ export default function ProductSchema({ lang }: { lang: string }) {
       url: `https://www.lasnisistem.com/${lang}`,
       seller: { '@id': 'https://www.lasnisistem.com/#organization' },
     },
-    aggregateRating: {
-      '@type': 'AggregateRating',
-      ratingValue: '4.9',
-      reviewCount: '150',
-      bestRating: '5',
-      worstRating: '1',
-    },
-    review: [
-      {
-        '@type': 'Review',
-        reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
-        author: { '@type': 'Person', name: 'Erika' },
-        reviewBody:
-          lang === 'sl'
-            ? 'Navdušena sem in počutim se lahkotno in sproščeno, kot bi imela svoje lase na glavi.'
-            : lang === 'de'
-            ? 'Ich bin begeistert und fühle mich leicht und entspannt, als hätte ich meine eigenen Haare.'
-            : lang === 'ru'
-            ? 'Я в восторге и чувствую себя легко и непринуждённо, будто у меня свои волосы.'
-            : 'I am thrilled and feel light and at ease, as if I had my own hair on my head.',
-      },
-      {
-        '@type': 'Review',
-        reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
-        author: { '@type': 'Person', name: 'Katja' },
-        reviewBody:
-          lang === 'sl'
-            ? 'Sistem je bil tako lahek, lasje tako lepi in naravni. Pozabiš, da ga imaš na glavi.'
-            : lang === 'de'
-            ? 'Das System war so leicht, die Haare so schön und natürlich. Man vergisst, dass man es trägt.'
-            : lang === 'ru'
-            ? 'Система такая лёгкая, волосы такие красивые и натуральные. Забываешь, что она у тебя на голове.'
-            : "The system was so light, the hair so beautiful and natural. You forget you're even wearing it.",
-      },
-    ],
     additionalProperty: [
       { '@type': 'PropertyValue', name: 'Warranty', value: '6 months' },
       { '@type': 'PropertyValue', name: 'Lifespan', value: 'Up to 4 years' },

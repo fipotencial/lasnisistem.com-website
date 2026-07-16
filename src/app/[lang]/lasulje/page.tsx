@@ -3,6 +3,7 @@ import Footer from '@/components/Footer'
 import WigsPageContent from '@/components/WigsPageContent'
 import { translations, languages } from '@/lib/i18n/translations'
 import { buildAlternates } from '@/lib/seo'
+import { lasuljeFaq } from '@/lib/lasuljeFaq'
 import type { Metadata } from 'next'
 
 type Props = {
@@ -16,7 +17,7 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { lang } = await params
   const titles: Record<string, string> = {
-    sl: 'Lasulje po meri iz evropskih las',
+    sl: 'Lasulja po meri iz evropskih las',
     en: 'Wigs – Custom European Hair',
     de: 'Perücken – Europäisches Echthaar',
     ru: 'Парики из европейских волос',
@@ -40,9 +41,27 @@ export default async function WigsPage({ params }: Props) {
     ? (rawLang as keyof typeof translations)
     : 'sl'
   const t = translations[lang]
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: lasuljeFaq.map((item) => ({
+      '@type': 'Question',
+      name: item.question,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: item.answer,
+      },
+    })),
+  }
 
   return (
     <main>
+      {lang === 'sl' && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        />
+      )}
       <Navigation lang={lang} t={t} variant="light" />
       <WigsPageContent lang={lang} />
       <Footer lang={lang} t={t} />

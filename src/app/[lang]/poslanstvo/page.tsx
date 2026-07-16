@@ -21,10 +21,16 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     de: 'Wer Wir Sind / Unsere Mission',
     ru: 'Кто Мы / Наша миссия',
   }
+  const descriptions: Record<string, string> = {
+    sl: 'Smo lastniki franšize za prodajo Hollywood Lasnih sistemov® za področje celotne Evrope. Spoznajte našo ekipo in poslanstvo.',
+    en: 'Meet the team and mission behind Hollywood Hair System® solutions in Europe and our long-standing experience with hair loss.',
+    de: 'Lernen Sie das Team, die Mission und die langjährige Erfahrung hinter den Hollywood Haarsystem® Lösungen in Europa kennen.',
+    ru: 'Познакомьтесь с нашей командой, миссией и многолетним опытом работы с решениями Hollywood Hair System® в Европе.',
+  }
 
   return {
     title: titles[lang] || titles.sl,
-    description: 'Smo lastniki franšize za prodajo Hollywood Lasnih sistemov® za področje celotne Evrope. Spoznajte našo ekipo in poslanstvo.',
+    description: descriptions[lang] || descriptions.sl,
     alternates: buildAlternates(lang, '/poslanstvo'),
   }
 }

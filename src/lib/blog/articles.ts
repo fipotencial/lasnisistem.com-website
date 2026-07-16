@@ -6,6 +6,8 @@ export type BlogArticle = {
   content: string
   category: 'lasni-sistem' | 'izpadanje-las' | 'produkti' | 'skupnost'
   publishDate: string
+  updatedDate?: string
+  author?: string
   readTime: number
   image: string
   imageCaption?: string
@@ -207,12 +209,14 @@ export const blogArticles: BlogArticle[] = [
     image: '/images/7-stages-of-the-norwood-hamilton-scale-1024x634.jpeg',
     content: `<h2>Izpadanje las – izguba las – plešavost</h2>
 
-<p>Izpadanje las pri moških – moška plešavost oziroma <strong>androgena alopecija</strong> je pogost pojav. Začetni znaki se pojavijo pri skoraj vsakem drugem moškem do 50. leta, pri ženskah pa se redčenje las pojavi pri skoraj celotni populaciji do 60. leta starosti.</p>
+<p>Za širši pregled vzrokov, diagnostike in zdravljenja preberite novi vodič <a href="/sl/blog/izpadanje-las-vzroki-vrste-in-resitve">Izpadanje las: vzroki, vrste, zdravljenje in rešitve</a>. Ta članek se osredotoča predvsem na vzorce in stopnje plešavosti.</p>
 
-<p>Prvi znaki sprememb na lasišču se lahko pojavijo že pri 20. letih in potem s staranjem napredujejo. Začetni simptom je običajno tanjšanje las, ki postajajo vedno krajši in svetleje pigmentirani. Z napredovanjem te bolezni pa se lasje postopoma redčijo, pojavi se vidno izpadanje las – vse dokler ne nastopi popolna <a href="/sl/plesavost">plešavost</a>.</p>
+<p>Izpadanje las pri moških – moška plešavost oziroma <strong>androgenetska alopecija</strong> – je pogost pojav. Pogostost s starostjo narašča, dedno vzorčno redčenje pa se pojavlja tudi pri ženskah.</p>
+
+<p>Prvi znaki sprememb na lasišču se lahko pojavijo že v mladosti in nato s staranjem napredujejo. Lasje postopoma postajajo tanjši, krajši in manj pigmentirani. Obseg napredovanja je med posamezniki zelo različen in ne vodi pri vseh do popolne <a href="/sl/plesavost">plešavosti</a>.</p>
 
 <h3>Vzroki moške plešavosti</h3>
-<p>Vzrok nastanka moške plešavosti je vpliv moških spolnih hormonov. Plešavost je tudi dedna. Hitrost in obseg izpadanja las sta odvisna od posameznika in jih je zaradi različnih genskih zasnov težko predvideti.</p>
+<p>Pri moški androgenetski alopeciji imajo lasni mešički dedno povečano občutljivost na dihidrotestosteron (DHT). Hitrost in obseg redčenja sta odvisna od posameznika in ju je težko natančno predvideti.</p>
 
 <h3>Hamiltonova lestvica – 7 faz napredovanja</h3>
 <p>Izguba las pri moških napreduje drugače kot pri ženskah. Pri moških se prične lasišče redčiti na obeh straneh čela in na vrhu glave.</p>
@@ -252,35 +256,76 @@ export const blogArticles: BlogArticle[] = [
   },
   {
     slug: 'alopecia-areata',
-    title: 'Alopecia areata',
+    title: 'Alopecija areata: znaki, vzroki, zdravljenje in rešitve',
     oldUrl: 'http://lasnisistem.com/index.php?IzpisVsebineMenija=1&iIdMeni=84',
-    excerpt: 'Kaj je alopecia areata? Spoznajte to nepredvidljivo medicinsko stanje, ki prizadene milijone ljudi po svetu.',
+    excerpt: 'Kaj je alopecija areata, kako jo prepoznamo in kakšne so možnosti zdravljenja ter estetskega prekrivanja izgube las?',
     category: 'izpadanje-las',
     publishDate: '2022-10-12',
-    readTime: 7,
+    updatedDate: '2026-07-16',
+    author: 'Uredništvo Lasni Sistem®',
+    readTime: 10,
     image: '/images/alopecia areata image.jpg',
     imageCaption: 'Dr. Vera Price, soustanoviteljica NAAF-a in dr. Špela Šeme, pobudnica in vodja Skupine za samopomoč ob izpadanju las in solastnica podjetja Fi potencial d.o.o.',
-    content: `<h2>Alopecia areata</h2>
+    content: `<h2>Kaj je alopecija areata?</h2>
 
-<p><strong>Alopecia areata</strong> je nepredvidljivo medicinsko stanje, ki samo v ZDA prizadene štiri milijone in pol ljudi. Zanjo je značilna nenadna izguba las v krožnih lisah, ki se lahko pojavijo kjerkoli na glavi ali telesu.</p>
+<p><strong>Alopecija areata</strong> (latinsko <em>alopecia areata</em>) je avtoimunska bolezen, pri kateri imunski sistem napade lasne mešičke. Najpogosteje se pokaže kot ena ali več nenadno nastalih okroglih ali ovalnih zaplat brez las. Izguba las se lahko pojavi na lasišču, obrveh, trepalnicah, bradi ali drugih delih telesa.</p>
 
-<h3>Kaj je alopecia areata?</h3>
-<p>Gre za <strong>avtoimunsko bolezen</strong>, pri kateri imunski sistem napade lasne folikle. To privede do delne ali popolne izgube las. Bolezen lahko prizadene vsakogar, ne glede na starost ali spol, najpogosteje pa se pojavi v mlajših letih.</p>
+<p>Lasni mešički pri alopeciji areati praviloma niso uničeni, zato je ponovna rast las mogoča. Potek pa je nepredvidljiv: lasje lahko ponovno zrastejo, izpadanje se lahko ponovi ali razširi. Po podatkih organizacije NAAF se z alopecijo areato v življenju sreča približno 2 % ljudi.</p>
 
-<h3>Oblike alopecije areate</h3>
+<h2>Znaki in simptomi</h2>
 <ul>
-<li><strong>Alopecia areata (lokalizirana):</strong> Ena ali več okroglih lis brez las na lasišču</li>
-<li><strong>Alopecia totalis:</strong> Popolna izguba las na glavi</li>
-<li><strong>Alopecia universalis:</strong> Popolna izguba las na celotnem telesu</li>
+<li>gladke, jasno omejene okrogle ali ovalne zaplate brez las,</li>
+<li>hitro izpadanje las v nekaj dneh ali tednih,</li>
+<li>kratki lasje v obliki klicaja ob robu zaplate,</li>
+<li>izguba obrvi, trepalnic, brade ali dlak drugod po telesu,</li>
+<li>drobne vdolbinice, cepljenje ali hrapavost nohtov,</li>
+<li>hkratno izpadanje na enem in ponovno izraščanje na drugem predelu.</li>
 </ul>
 
-<h3>Vzroki</h3>
-<p>Natančen vzrok alopecije areate ni dokončno pojasnjen. Znanstveniki menijo, da gre za kombinacijo genetskih in okoljskih dejavnikov, ki sprožijo avoimunski odziv. Stres, okužbe in drugi dejavniki so lahko sprožitveni faktorji.</p>
+<p>Podobne zaplate lahko povzročijo tudi glivična okužba, brazgotinska alopecija, vlečenje las ali druga stanja. Zato diagnoze ni smiselno postavljati samo po fotografiji ali opisu na spletu.</p>
 
-<h3>Zdravljenje in rešitve</h3>
-<p>Čeprav za alopecijo areato trenutno ni dokončnega zdravila, obstajajo različni pristopi k obvladovanju stanja. Alopecia areata je le eden od vzrokov za <a href="/sl/plesavost">plešavost in izpadanje las</a>. Za mnoge prizadete je <strong>Lasni sistem®</strong> idealna estetska rešitev, ki omogoča normalno kakovost življenja – vključno z vsemi športnimi aktivnostmi. Pri popolni izgubi las je odlična izbira tudi <a href="/sl/lasulje">lasulja iz naravnih evropskih las</a>.</p>
+<h2>Oblike alopecije areate</h2>
+<ul>
+<li><strong>Lokalizirana alopecija areata:</strong> ena ali več omejenih zaplat brez las.</li>
+<li><strong>Ophiasis:</strong> pasasto izpadanje ob straneh in na zatilju.</li>
+<li><strong>Alopecia totalis:</strong> popolna ali skoraj popolna izguba las na lasišču.</li>
+<li><strong>Alopecia universalis:</strong> izguba las in dlak po celotnem telesu.</li>
+</ul>
 
-<p>V našem svetovalnem studiu imamo bogate izkušnje s pomočjo osebam z alopecijo areato. Vabimo vas na <strong>diskretno in individualno konzultacijo</strong>.</p>`,
+<h2>Zakaj nastane?</h2>
+<p>Natančen razlog, zakaj se imunski sistem usmeri proti lasnim mešičkom, ni povsem pojasnjen. Pomembno vlogo imajo geni in delovanje imunskega sistema. Tveganje je večje pri osebah, ki imajo bližnjega sorodnika z alopecijo areato ali drugo avtoimunsko bolezen, na primer bolezen ščitnice, vitiligo ali luskavico.</p>
+
+<p>Močan stres lahko pri nekaterih ljudeh sovpada z začetkom ali poslabšanjem bolezni, vendar stres sam po sebi ni dokazan edini vzrok. Alopecija areata ni nalezljiva in je ne povzročijo neustrezna higiena, šampon ali pokrivalo.</p>
+
+<h2>Kako poteka diagnoza?</h2>
+<p>Diagnozo običajno postavi dermatolog s pregledom lasišča, dlak in nohtov ter pogovorom o poteku izpadanja in zdravstveni zgodovini. Uporabi lahko dermatoskop. Če slika ni značilna, so včasih potrebni puljenje nekaj las, biopsija kože ali krvne preiskave, na primer za izključevanje bolezni ščitnice oziroma pomanjkanj.</p>
+
+<h2>Zdravljenje alopecije areate</h2>
+<p>En način zdravljenja ne deluje pri vseh. Izbira je odvisna od starosti, obsega in trajanja izpadanja, prizadetih predelov, drugih bolezni ter vpliva bolezni na kakovost življenja. Pri eni ali dveh manjših zaplatah lahko dermatolog predlaga tudi spremljanje, saj lasje včasih zrastejo brez zdravljenja.</p>
+
+<p>Med možnosti, ki jih glede na primer uporablja dermatolog, sodijo lokalni ali vbrizgani kortikosteroidi, kontaktna imunoterapija in druga zdravila, ki vplivajo na imunski odziv. Za težje oblike so danes na voljo tudi zaviralci JAK. Evropska agencija za zdravila med drugim navaja baricitinib za zdravljenje težke alopecije areate pri odraslih in mladostnikih od 12. leta. Ta zdravila imajo pomembna tveganja in niso primerna za vsakogar, zato o njih odloča specialist.</p>
+
+<p>Minoksidil se lahko v nekaterih načrtih uporablja kot dopolnilo za ohranjanje ponovno zraslih las, vendar sam po sebi običajno ni dovolj za obsežno alopecijo areato. Ne prekinjajte predpisanih zdravil in ne začnite zdravljenja na lastno pest.</p>
+
+<h2>Estetske rešitve in vsakdanje življenje</h2>
+<p>Zdravljenje potrebuje čas, rezultat ni zagotovljen, nekateri pa se zanj ne odločijo. Za takojšnje prekrivanje so na voljo lasulje, lasni vložki in po meri izdelani lasni sistemi. Ameriška akademija za dermatologijo med možnostmi za obvladovanje videza izgube las izrecno navaja lasuljo, lasni vložek ali lasno protezo.</p>
+
+<p>Pri obsežni ali popolni izgubi las je lahko primerna <a href="/sl/lasulje">lasulja iz naravnih evropskih las</a>. Kadar je treba prekriti omejen predel ali se rešitev stabilno pritrdi, pride v poštev tudi lasni sistem. To sta estetski rešitvi, ne zdravljenje bolezni. V našem svetovalnem studiu pomagamo izbrati možnost glede na obseg izgube las, občutljivost lasišča, življenjski slog in želeni videz.</p>
+
+<h2>Kdaj k zdravniku?</h2>
+<p>Pregled je priporočljiv pri nenadnem izpadanju v zaplatah, izgubi obrvi ali trepalnic, spremembah nohtov, bolečem ali vnetem lasišču ter hitrem širjenju izgube las. Če izpadanje močno vpliva na počutje, to povejte zdravniku; psihološka podpora in stik z drugimi osebami z alopecijo sta lahko pomemben del obravnave.</p>
+
+<p>Alopecija areata je samo eden od možnih vzrokov za <a href="/sl/blog/izpadanje-las-vzroki-vrste-in-resitve">izpadanje las</a>. Več o drugih oblikah in estetskih možnostih preberite tudi na strani o <a href="/sl/plesavost">plešavosti pri moških in ženskah</a>.</p>
+
+<div class="article-note"><strong>Pomembno:</strong> Članek je informativen in ne nadomešča pregleda ali zdravljenja pri zdravniku oziroma dermatologu.</div>
+
+<h2>Viri</h2>
+<ul>
+<li><a href="https://www.naaf.org/navigation-toolkit/understanding-alopecia-areata/" target="_blank" rel="noopener noreferrer">NAAF: Understanding Alopecia Areata</a></li>
+<li><a href="https://www.aad.org/public/diseases/hair-loss/types/alopecia/causes" target="_blank" rel="noopener noreferrer">American Academy of Dermatology: Alopecia areata – causes</a></li>
+<li><a href="https://www.aad.org/public/diseases/hair-loss/types/alopecia/treatment" target="_blank" rel="noopener noreferrer">American Academy of Dermatology: Diagnosis and treatment</a></li>
+<li><a href="https://www.ema.europa.eu/en/medicines/human/EPAR/olumiant" target="_blank" rel="noopener noreferrer">European Medicines Agency: Olumiant</a></li>
+</ul>`,
   },
   {
     slug: 'naaf-national-alopecia-areata-foundation',
@@ -305,7 +350,7 @@ export const blogArticles: BlogArticle[] = [
 </ul>
 
 <h3>Raziskave</h3>
-<p>V okviru NAAF raziskav so odkrili, da alopecijo areato določa kar <strong>8 genov</strong>, katere so tudi že uspeli določiti. To je pomemben korak k razvoju novih zdravil in terapij.</p>
+<p>Raziskave so odkrile več genetskih območij, povezanih z alopecijo areato, zlasti takih, ki sodelujejo pri uravnavanju imunskega sistema. Bolezni ne določa en sam gen; pri nastanku se prepletajo genetski in drugi dejavniki.</p>
 
 <h3>Podpora v Sloveniji</h3>
 <p>Tudi v Sloveniji se zavedamo pomena te organizacije. V našem svetovalnem studiu sledimo najnovejšim spoznanjem NAAF in jih prenašamo v prakso – tako pri psihološki podpori kot pri iskanju najboljših estetskih rešitev za naše stranke.</p>
@@ -408,7 +453,7 @@ export const blogArticles: BlogArticle[] = [
 <p>Obvestilo o srečanju bo objavljeno na naših straneh. Za informacije nas kontaktirajte na telefonsko številko <strong>031 444 868</strong>.</p>
 
 <h3>Raziskave</h3>
-<p>V okviru NAAF raziskav so odkrili, da alopecijo areato določa kar <strong>8 genov</strong>, katere so tudi že uspeli določiti!</p>`,
+<p>Raziskave alopecije areate so pokazale povezave z več genetskimi območji, ki sodelujejo pri delovanju imunskega sistema. Nova spoznanja pomagajo pri razvoju in izbiri sodobnejših zdravljenj.</p>`,
   },
   {
     slug: 'kako-je-lasni-sistem-prisel-v-slovenijo',
@@ -433,6 +478,103 @@ export const blogArticles: BlogArticle[] = [
 
 <h3>Neopaznost, kakovost in trajnost</h3>
 <p>Ker je dr. Šeme zasebno in službeno preživela ogromno časa v tujini (ZDA, Azija, Avstralija…), je najprej zase, potem pa seveda še druge, iskala najboljše rešitve za izgubo las. Zato so naše rešitve izbor najboljšega z vsega sveta. Zasnovane so z veliko pozornosti do kakovosti in trajnosti, kar zagotavlja zanesljiv, dolgotrajen ter brezhiben naraven videz.</p>`,
+  },
+  {
+    slug: 'izpadanje-las-vzroki-vrste-in-resitve',
+    title: 'Izpadanje las: vzroki, vrste, zdravljenje in rešitve',
+    oldUrl: '',
+    excerpt: 'Celovit vodič o izpadanju las pri ženskah in moških: najpogostejši vzroki, diagnoza, zdravljenje ter estetske rešitve.',
+    category: 'izpadanje-las',
+    publishDate: '2026-07-16',
+    updatedDate: '2026-07-16',
+    author: 'Uredništvo Lasni Sistem®',
+    readTime: 14,
+    image: '/images/7-stages-of-the-norwood-hamilton-scale-1024x634.jpeg',
+    content: `<h2>Kdaj je izpadanje las normalno in kdaj čezmerno?</h2>
+
+<p>Izpadanje las je normalen del lasnega cikla. Običajno dnevno izgubimo približno 50 do 100 las, ki jih nadomestijo novi. Težava nastane, ko lasje izpadajo hitreje, kot ponovno rastejo, ko se preča širi, lasna linija umika, čop postaja tanjši ali se pojavijo jasno omejene zaplate brez las.</p>
+
+<p>Pomembno je razlikovati med <strong>čezmernim izpadanjem</strong> in <strong>postopnim redčenjem las</strong>. Pri telogenem efluviju več las hkrati preide v fazo mirovanja in izpade, pogosto nekaj mesecev po bolezni, porodu, operaciji, hitrem hujšanju ali močnem stresu. Pri androgenetski alopeciji pa se lasni mešički zaradi dedne občutljivosti postopoma manjšajo, zato lasje postajajo tanjši in krajši.</p>
+
+<h2>Kako rastejo lasje?</h2>
+<p>Vsak las prehaja skozi rastno fazo (anageno), prehodno fazo (katageno) in fazo mirovanja (telogeno), ki ji sledi izpad. Ker posamezni lasje niso v isti fazi hkrati, zdravo lasišče ne izgubi vseh las naenkrat. Bolezen, hormonska sprememba, pomanjkanje hranil, zdravilo ali močan telesni stres lahko ta ritem porušijo.</p>
+
+<h2>Najpogostejši vzroki izpadanja las</h2>
+
+<h3>1. Androgenetska alopecija</h3>
+<p>Dedno pogojeno izpadanje je najpogostejši vzrok redčenja pri moških in ženskah. Pri moških se pogosto začne z umikanjem lasne linije in redčenjem na temenu. Pri ženskah je značilna širša preča in difuzno redčenje na vrhu glave, sprednja lasna linija pa pogosto ostane ohranjena. Zgodnja diagnoza je pomembna, ker so medicinski postopki praviloma učinkovitejši, preden redčenje močno napreduje.</p>
+
+<h3>2. Telogeni efluvij</h3>
+<p>Gre za nenadno povečano izpadanje po telesnem ali čustvenem stresorju. Sprožijo ga lahko visoka vročina, okužba, operacija, porod, večja izguba telesne teže, pomanjkanje železa ali dolgotrajen stres. Izpadanje se pogosto začne šele dva do tri mesece po dogodku. Če se vzrok odpravi, se gostota pri mnogih ljudeh postopoma izboljša, vendar okrevanje traja več mesecev.</p>
+
+<h3>3. Alopecija areata</h3>
+<p><a href="/sl/blog/alopecia-areata">Alopecija areata</a> je avtoimunska bolezen, pri kateri se lasje navadno izgubijo v okroglih zaplatah. Prizadene lahko tudi obrvi, trepalnice, brado ali druge dele telesa. Ker so mešički večinoma ohranjeni, je ponovna rast mogoča, potek pa je lahko ponavljajoč in nepredvidljiv.</p>
+
+<h3>4. Bolezni, hormoni in pomanjkanja</h3>
+<p>Izpadanje je lahko povezano z boleznimi ščitnice, anemijo oziroma pomanjkanjem železa, hormonskimi spremembami po porodu ali v menopavzi, nekaterimi kroničnimi boleznimi ter nezadostnim vnosom beljakovin. Prehranskih dopolnil ni smiselno jemati brez ugotovljenega pomanjkanja, saj presežek nekaterih snovi prav tako lahko škoduje.</p>
+
+<h3>5. Zdravila in onkološko zdravljenje</h3>
+<p>Nekatera zdravila ter kemoterapija ali obsevanje lahko povzročijo izpadanje. Zdravila ne prekinite sami; o časovni povezavi in možnih zamenjavah se pogovorite z zdravnikom. Po koncu določenih terapij lasje pogosto ponovno zrastejo, vendar sta čas in obseg ponovne rasti odvisna od zdravljenja in posameznika.</p>
+
+<h3>6. Vlečenje in poškodovanje las</h3>
+<p>Tesne pričeske, podaljški, pogosto močno vlečenje, kemično ravnanje in pretirana toplota lahko povzročijo lomljenje ali trakcijsko alopecijo. Dolgotrajno vlečenje lahko mešičke trajno poškoduje, zato je smiselno ukrepati ob prvih znakih bolečine, zategovanja ali redčenja ob lasni liniji.</p>
+
+<h2>Izpadanje las pri ženskah</h2>
+<p>Pri ženskah se lahko prepletajo dedna nagnjenost, hormonske spremembe, pomanjkanje železa, bolezni ščitnice, porod, stres in poškodovanje las. Posebej pozorni bodite na širjenje preče, tanjšanje čopa, vidnejše lasišče na temenu ali nenadno povečano količino las pri umivanju. Ker ima več različnih stanj podoben videz, je diagnoza pomembnejša od nakupa prvega izdelka proti izpadanju.</p>
+
+<h2>Izpadanje las pri moških</h2>
+<p>Pri moških je najpogostejša androgenetska alopecija. Napredovanje se pogosto opisuje z Norwood-Hamiltonovo lestvico, vendar fotografija lestvice ne nadomesti pregleda. Redčenje se lahko hkrati poslabša zaradi telogenega efluvija, vnetja lasišča ali drugega vzroka. Več o vzorcih in stopnjah preberite na strani <a href="/sl/plesavost">plešavost: vzroki, vrste in rešitve</a>.</p>
+
+<h2>Kdaj je potreben pregled?</h2>
+<p>Obrnite se na osebnega zdravnika ali dermatologa, če:</p>
+<ul>
+<li>lasje izpadajo nenadoma ali v jasno omejenih zaplatah,</li>
+<li>se izguba hitro širi ali traja več mesecev,</li>
+<li>je lasišče rdeče, boleče, srbeče, luskasto ali brazgotinjeno,</li>
+<li>izgubljate tudi obrvi, trepalnice ali dlake drugod po telesu,</li>
+<li>imate utrujenost, spremembe telesne teže, neredne menstruacije ali druge simptome,</li>
+<li>se je izpadanje začelo po uvedbi zdravila,</li>
+<li>izpadanje močno vpliva na samozavest ali počutje.</li>
+</ul>
+
+<h2>Kako zdravnik ugotavlja vzrok?</h2>
+<p>Obravnava se začne s pogovorom o začetku in poteku izpadanja, boleznih, zdravilih, prehrani, nosečnosti, stresorjih in družinski zgodovini. Sledi pregled lasišča in las, pogosto z dermatoskopom. Glede na ugotovitve so lahko potrebne krvne preiskave ali biopsija lasišča. En sam komercialni “pregled lasišča” ne more izključiti vseh zdravstvenih vzrokov.</p>
+
+<h2>Možnosti zdravljenja</h2>
+<p>Zdravljenje je odvisno od diagnoze. Pri dednem redčenju se uporabljajo zdravila, kot sta minoksidil in pri primernih moških finasterid, vendar ne delujejo pri vseh in učinek praviloma traja samo med uporabo. O koristih, omejitvah, kontraindikacijah in neželenih učinkih se pogovorite z zdravnikom ali farmacevtom.</p>
+
+<p>Pri alopeciji areati se uporabljajo drugačni pristopi, na primer kortikosteroidi, kontaktna imunoterapija ali pri težjih oblikah specialistično predpisani zaviralci JAK. Pri pomanjkanju železa, bolezni ščitnice ali drugem osnovnem vzroku se zdravi predvsem ta vzrok. Presaditev las je kirurška možnost za izbrane osebe s stabilnim vzorcem izgube in zadostnim donorskim območjem.</p>
+
+<h2>Lasulja, lasni vložek ali lasni sistem?</h2>
+<p>Estetska rešitev ne zdravi vzroka izpadanja, lahko pa takoj povrne videz gostih las in zmanjša vsakodnevno obremenitev. Izbira je odvisna od obsega izgube, lastnih las in načina življenja:</p>
+<ul>
+<li><strong>Lasni vložek oziroma topper</strong> doda gostoto na omejenem predelu in se lahko poveže z obstoječimi lasmi.</li>
+<li><strong><a href="/sl/lasulje">Lasulja</a></strong> prekrije celotno lasišče in je primerna pri obsežni ali popolni izgubi las, tudi med onkološkim zdravljenjem.</li>
+<li><strong><a href="/sl/hibridni-sistemi">Hibridni sistem</a></strong> združuje lastne lase in lasni nadomestek, kadar je del las še ohranjen.</li>
+<li><strong>Lasni sistem</strong> je po meri izdelan lasni nadomestek za stabilno prekrivanje delne ali obsežne plešavosti brez operacije.</li>
+</ul>
+
+<p>Na diskretnem posvetu je smiselno primerjati udobje, način pritrditve, vzdrževanje, življenjsko dobo in realne stroške, ne samo fotografij pred in po.</p>
+
+<h2>Kaj lahko naredite sami?</h2>
+<ul>
+<li>Ne vlecite las v tesne pričeske in zmanjšajte agresivno toploto ali kemično obdelavo.</li>
+<li>Poskrbite za dovolj beljakovin in uravnoteženo prehrano; dodatke jemljite ob dokazanem pomanjkanju.</li>
+<li>Fotografirajte prečo, teme in lasno linijo v enaki svetlobi enkrat mesečno, ne vsak dan.</li>
+<li>Zapišite začetek težave, bolezni, stresne dogodke in nova zdravila.</li>
+<li>Ne nasedajte zagotovilom o “100-odstotni ponovni rasti”. Nobeno zdravljenje ne deluje pri vseh.</li>
+</ul>
+
+<div class="article-note"><strong>Pomembno:</strong> Članek je namenjen splošnemu informiranju. Ne postavlja diagnoze in ne nadomešča pregleda pri zdravniku ali dermatologu.</div>
+
+<h2>Viri</h2>
+<ul>
+<li><a href="https://www.aad.org/public/diseases/hair-loss/causes/fall-out" target="_blank" rel="noopener noreferrer">American Academy of Dermatology: Hair loss overview</a></li>
+<li><a href="https://www.aad.org/public/diseases/hair-loss/causes/18-causes" target="_blank" rel="noopener noreferrer">American Academy of Dermatology: Causes of hair loss</a></li>
+<li><a href="https://www.aad.org/public/diseases/hair-loss/treatment/diagnosis-treat" target="_blank" rel="noopener noreferrer">American Academy of Dermatology: Diagnosis and treatment</a></li>
+<li><a href="https://www.nhs.uk/conditions/hair-loss/" target="_blank" rel="noopener noreferrer">NHS: Hair loss</a></li>
+<li><a href="https://www.naaf.org/navigation-toolkit/understanding-alopecia-areata/" target="_blank" rel="noopener noreferrer">NAAF: Understanding Alopecia Areata</a></li>
+</ul>`,
   },
 ]
 

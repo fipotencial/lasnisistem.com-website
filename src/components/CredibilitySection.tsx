@@ -220,7 +220,7 @@ export default function CredibilitySection({ t }: Props) {
           viewport={{ once: true, margin: '-80px' }}
           transition={{ duration: 0.7 }}
           style={{
-            fontFamily: "'Cormorant Garamond', Georgia, serif",
+            fontFamily: 'var(--font-cormorant), Georgia, serif',
             fontSize: 'clamp(2.2rem, 3.5vw, 3.2rem)',
             fontWeight: 400,
             fontStyle: 'italic',
@@ -240,7 +240,7 @@ export default function CredibilitySection({ t }: Props) {
           viewport={{ once: true, margin: '-80px' }}
           transition={{ duration: 0.7, delay: 0.1 }}
           style={{
-            fontFamily: 'Inter, system-ui, sans-serif',
+            fontFamily: 'var(--font-inter), system-ui, sans-serif',
             fontSize: '1.1rem',
             fontWeight: 300,
             lineHeight: 1.6,
@@ -265,7 +265,7 @@ export default function CredibilitySection({ t }: Props) {
           <div className="text-center">
             <span
               style={{
-                fontFamily: "'Cormorant Garamond', Georgia, serif",
+                fontFamily: 'var(--font-cormorant), Georgia, serif',
                 fontSize: 'clamp(4rem, 8vw, 6.5rem)',
                 fontWeight: 300,
                 lineHeight: 0.9,
@@ -277,7 +277,7 @@ export default function CredibilitySection({ t }: Props) {
             </span>
             <span
               style={{
-                fontFamily: 'Inter, system-ui, sans-serif',
+                fontFamily: 'var(--font-inter), system-ui, sans-serif',
                 fontSize: '0.65rem',
                 fontWeight: 400,
                 letterSpacing: '0.2em',
@@ -304,7 +304,7 @@ export default function CredibilitySection({ t }: Props) {
           <div className="text-center">
             <span
               style={{
-                fontFamily: "'Cormorant Garamond', Georgia, serif",
+                fontFamily: 'var(--font-cormorant), Georgia, serif',
                 fontSize: 'clamp(4rem, 8vw, 6.5rem)',
                 fontWeight: 300,
                 lineHeight: 0.9,
@@ -316,7 +316,7 @@ export default function CredibilitySection({ t }: Props) {
             </span>
             <span
               style={{
-                fontFamily: 'Inter, system-ui, sans-serif',
+                fontFamily: 'var(--font-inter), system-ui, sans-serif',
                 fontSize: '0.65rem',
                 fontWeight: 400,
                 letterSpacing: '0.2em',
@@ -352,7 +352,7 @@ export default function CredibilitySection({ t }: Props) {
           viewport={{ once: true, margin: '-60px' }}
           transition={{ duration: 0.7 }}
           style={{
-            fontFamily: 'Inter, system-ui, sans-serif',
+            fontFamily: 'var(--font-inter), system-ui, sans-serif',
             fontSize: '0.75rem',
             fontWeight: 500,
             letterSpacing: '0.2em',
@@ -404,6 +404,7 @@ export default function CredibilitySection({ t }: Props) {
                 href="https://www.trustindex.io/reviews/hairartinc.com"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="HairArt ocena 4.9 od 5 na podlagi 384 ocen"
                 style={{
                   display: 'flex', alignItems: 'center', gap: '0.2rem',
                   textDecoration: 'none', transition: 'opacity 0.3s ease',
@@ -413,7 +414,7 @@ export default function CredibilitySection({ t }: Props) {
                 onMouseLeave={e => { e.currentTarget.style.opacity = '1' }}
               >
                 <span style={{
-                  fontFamily: 'Inter, system-ui, sans-serif',
+                  fontFamily: 'var(--font-inter), system-ui, sans-serif',
                   fontSize: '0.85rem', fontWeight: 600,
                   color: 'rgba(255, 255, 255, 0.95)',
                 }}>
@@ -423,12 +424,12 @@ export default function CredibilitySection({ t }: Props) {
                   <StarIcon />
                 </div>
                 <span style={{
-                  fontFamily: 'Inter, system-ui, sans-serif',
+                  fontFamily: 'var(--font-inter), system-ui, sans-serif',
                   fontSize: '0.75rem', fontWeight: 400,
                   color: 'rgba(255, 255, 255, 0.5)',
                   marginLeft: '0.05rem'
                 }}>
-                  (384)
+                  HairArt (384)
                 </span>
               </a>
             </div>
