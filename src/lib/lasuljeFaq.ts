@@ -27,3 +27,26 @@ export const lasuljeFaq: FaqItem[] = [
       'Najbolj naraven rezultat navadno dosežemo, ko barvo primerjamo pri dnevni svetlobi, gostoto prilagodimo obrazu in starosti ter dolžino izberemo glede na življenjski slog. Pri osebnem posvetu je mogoče primerjati različne baze, odtenke in načine pritrditve.',
   },
 ]
+
+export const lasuljeFaqHr: FaqItem[] = [
+  {
+    question: 'Koja je razlika između perike od prirodne i sintetičke kose?',
+    answer: 'Perika od prirodne kose nudi više mogućnosti šišanja i oblikovanja te izgledom i dodirom više nalikuje vlastitoj kosi. Sintetička perika obično je pristupačnija i jednostavnija za održavanje, ali ima manje mogućnosti toplinskog oblikovanja i kraći uporabni vijek.',
+  },
+  {
+    question: 'Je li bolja perika po mjeri ili gotova perika?',
+    answer: 'Perika po mjeri prilagođena je obliku glave, željenoj gustoći, boji, duljini i načinu pričvršćivanja. Gotova perika brže je dostupna i može biti dobar izbor ako veličina i baza dobro pristaju. Najvažniji su pravilno prianjanje i udobnost.',
+  },
+  {
+    question: 'Koja je perika prikladna kod alopecije ili kemoterapije?',
+    answer: 'Kod vrlo malo vlastite kose ili bez nje važna je mekana, stabilna i prozračna baza koja ne nadražuje osjetljivo vlasište. Izbor je individualan, stoga preporučujemo osobno isprobavanje.',
+  },
+  {
+    question: 'Koliko traje perika od prirodne kose?',
+    answer: 'Vijek trajanja ovisi o kvaliteti kose i baze, učestalosti nošenja, oblikovanju i njezi. Redovito nježno pranje, prikladna kozmetika i ograničavanje visoke temperature mogu ga znatno produljiti.',
+  },
+  {
+    question: 'Kako odabrati pravu boju, duljinu i gustoću?',
+    answer: 'Najprirodniji rezultat obično postignemo usporedbom boje na dnevnom svjetlu, prilagodbom gustoće licu i dobi te odabirom duljine prema životnom stilu. Na osobnim konzultacijama možete usporediti različite baze, nijanse i načine pričvršćivanja.',
+  },
+]

@@ -45,6 +45,24 @@ const footerTranslations: Record<LangCode, {
     bookConsultation: 'Rezervirajte posvet',
     ctaDescription: 'Dogovorite se za diskretno in strokovno posvetovanje.',
   },
+  hr: {
+    tagline: 'Ekskluzivni europski distributer Hollywood Hair System® – 40 godina iskustva, 25 godina poslovanja u Europi.',
+    navigation: 'Navigacija',
+    hairSystem: 'Sustav za kosu',
+    hairLoss: 'Hibridni sustavi',
+    hollywoodHybrid: 'Perike',
+    aboutUs: 'Tko smo / Naša misija',
+    blog: 'Članci',
+    contact: 'Kontakt',
+    contactUs: 'Kontaktni podaci',
+    address: 'Komenskega 1, 4000 Kranj, Slovenija',
+    phone: '+386 31 444 868',
+    email: 'info@lasnisistem.com',
+    legalNotice: 'Pravna obavijest',
+    allRightsReserved: 'Sva prava pridržana.',
+    bookConsultation: 'Rezervirajte konzultacije',
+    ctaDescription: 'Dogovorite diskretne i stručne konzultacije.',
+  },
   en: {
     tagline: 'Exclusive European distributor of the Hollywood Hair System® – 40 years of experience, 25 years in Europe. Our partner system has been operating since 1977.',
     navigation: 'Navigation',
@@ -139,6 +157,7 @@ export default function Footer({ lang }: Props) {
   const ft = footerTranslations[lang] || footerTranslations.sl
   const plesavostLabel: Record<string, string> = {
     sl: 'Plešavost in izpadanje las',
+    hr: 'Ćelavost i gubitak kose',
     en: 'Baldness & Hair Loss',
     de: 'Kahlheit & Haarausfall',
     ru: 'Облысение и выпадение волос',

@@ -102,6 +102,53 @@ const t = {
       'Na brezplačnem in diskretnem posvetu v našem svetovalnem studiu v Kranju skupaj pregledamo vaše lasišče in možnosti – brez obveznosti.',
     ctaButton: 'Rezervirajte brezplačen posvet',
   },
+  hr: {
+    heroSuperTitle: 'Gubitak kose',
+    heroTitle: 'Ćelavost: uzroci, vrste i rješenja koja djeluju',
+    heroSubtitle:
+      'Ćelavost i prorjeđivanje kose česti su kod muškaraca i žena. Razumijevanje uzroka prvi je korak prema realnom izboru liječenja ili estetskog rješenja.',
+    introTitle: 'Što je ćelavost i koliko je česta?',
+    introP1:
+      'Alopecija je medicinski naziv za gubitak kose i obuhvaća različita stanja. Neka uzrokuju privremeno pojačano ispadanje, druga postupno prorjeđivanje, dok kod ožiljnih oblika gubitak može biti trajan. Uobičajeno dnevno ispadne približno 50 do 100 vlasi; širenje razdjeljka, povlačenje linije kose ili područja bez kose znakovi su koje treba istražiti.',
+    introP2:
+      'Najčešći oblik je androgenetska alopecija, odnosno nasljedno prorjeđivanje kose. Može započeti već u mladosti i napredovati s godinama. Ćelavost nije razlog za sram, no pravilna je dijagnoza važna jer se liječenje razlikuje kod androgenetske alopecije, telogenog efluvija, alopecije areate i bolesti vlasišta.',
+    maleTitle: 'Muška ćelavost (androgenetska alopecija)',
+    maleP1:
+      'Kod muške androgenetske alopecije folikuli kose imaju nasljedno povećanu osjetljivost na hormon DHT. Faza rasta skraćuje se, a vlasi postupno postaju tanje i kraće. Tipičan uzorak počinje povlačenjem linije kose na čelu, nastavlja se prorjeđivanjem na tjemenu i može napredovati do opsežne ćelavosti gornjeg dijela glave.',
+    maleP2:
+      'Napredovanje se često opisuje Norwood-Hamiltonovom ljestvicom sa sedam stupnjeva. Ljestvica opisuje uzorak, ali sama ne određuje prikladno rješenje. Na izbor utječu brzina napredovanja, dob, zdravlje, stanje donorskog područja i očekivanja.',
+    norwoodAlt: 'Norwood-Hamiltonova ljestvica muške ćelavosti – 7 stupnjeva',
+    norwoodCaption: 'Norwood-Hamiltonova ljestvica: 7 stupnjeva napredovanja muške ćelavosti',
+    femaleTitle: 'Ženska ćelavost',
+    femaleP1:
+      'Ženska ćelavost razvija se drukčije od muške. Linija kose obično ostaje očuvana, dok se kosa difuzno i ravnomjerno prorjeđuje po tjemenu. Napredovanje se mjeri Ludwigovom ljestvicom s tri stupnja: od jedva primjetnog prorjeđivanja preko širenja razdjeljka do vidljivog vlasišta.',
+    femaleP2:
+      'Budući da je prorjeđivanje postupno i raspršeno, dugo može ostati neprimijećeno. Sličan izgled mogu uzrokovati nasljedna sklonost, telogeni efluvij, nedostatak željeza, bolest štitnjače ili hormonske promjene, stoga je pregled važan. Za estetsko povećanje gustoće dostupni su umetci za kosu, hibridni sustavi i perike od prirodne kose.',
+    causesTitle: 'Najčešći uzroci ćelavosti',
+    causes: [
+      { title: 'Genetika i hormoni', desc: 'Nasljedna osjetljivost folikula glavni je čimbenik androgenetske alopecije kod muškaraca i žena. Sklonost se može naslijediti s majčine ili očeve strane.' },
+      { title: 'Stres i traumatični događaji', desc: 'Snažan tjelesni ili emocionalni stres može potaknuti telogeni efluvij – pojačano ispadanje nekoliko mjeseci nakon događaja. Stanje se često poboljša uklanjanjem uzroka, ali oporavak traje više mjeseci.' },
+      { title: 'Autoimuni uzroci (alopecija areata)', desc: 'Imunosni sustav napada folikule pa kosa često ispada u okruglim područjima. Kod nekih se osoba gubitak proširi na cijelo vlasište ili tijelo.' },
+      { title: 'Kemoterapija i lijekovi', desc: 'Kemoterapija i neki lijekovi mogu uzrokovati ispadanje kose. Nemojte sami prekidati terapiju; o povezanosti, tijeku i mogućoj zamjeni razgovarajte s liječnikom.' },
+      { title: 'Nedostatak željeza i hranjivih tvari', desc: 'Nedostatak željeza ili bjelančevina može biti povezan s ispadanjem kose. Pretrage i dodatke treba usmjeriti prema simptomima i procjeni liječnika.' },
+      { title: 'Bolesti štitnjače', desc: 'I pojačano i smanjeno djelovanje štitnjače često se prvo primijeti na kosi, koja postaje tanka, lomljiva i rijetka.' },
+    ],
+    solutionsTitle: 'Rješenja za ćelavost – usporedba',
+    solutionsIntro:
+      'Nijedno rješenje nije najbolje za svakoga. Pravi izbor ovisi o stupnju ćelavosti, zdravlju, proračunu i očekivanjima. Usporedba mogućnosti:',
+    solutions: [
+      { title: 'Lijekovi (minoksidil, finasterid)', desc: 'Kod androgenetske alopecije nekim ljudima mogu usporiti ispadanje i potaknuti određeni ponovni rast. Učinak obično zahtijeva kontinuiranu uporabu, a prikladnost i rizike treba provjeriti s liječnikom ili ljekarnikom.' },
+      { title: 'Presađivanje kose', desc: 'Kirurško premještanje vlastitih folikula. Zahtijeva odgovarajuću dijagnozu, plan za buduće ispadanje i dovoljno donorsko područje. Prikladnost procjenjuje kirurg za presađivanje kose.' },
+      { title: 'Perika', desc: 'Trenutačno rješenje za potpuno prekrivanje, posebno prikladno tijekom kemoterapije i kod opsežnog ženskog gubitka kose. Kvalitetna perika od europske kose izgleda prirodno i udobna je.', href: '/lasulje', linkLabel: 'Više o perikama →' },
+      { title: 'Hibridni sustav', desc: 'Kombinacija tehnologije sustava za kosu i perike od europske kose – prirodniji izgled od klasične perike uz pristupačniju cijenu i brzu dostupnost.', href: '/hibridni-sistemi', linkLabel: 'Više o hibridnim sustavima →' },
+      { title: 'Hollywood Sustav za kosu®', desc: 'Prozirna mikromrežica izrađena po mjeri s ručno vezanom prirodnom kosom. Bez operacije prekriva djelomičnu ili opsežnu ćelavost, omogućuje stabilno pričvršćivanje i ima šestomjesečno jamstvo.', href: '', linkLabel: 'Upoznajte Sustav za kosu® →' },
+    ],
+    faqTitle: 'Česta pitanja o ćelavosti',
+    ctaTitle: 'Niste sigurni koje je rješenje pravo za vas?',
+    ctaText:
+      'Na besplatnim i diskretnim konzultacijama u našem studiju u Kranju zajedno ćemo pregledati vaše vlasište i mogućnosti – bez obveze.',
+    ctaButton: 'Rezervirajte besplatne konzultacije',
+  },
   en: {
     heroSuperTitle: 'Hair Loss',
     heroTitle: 'Baldness: causes, types and solutions that work',

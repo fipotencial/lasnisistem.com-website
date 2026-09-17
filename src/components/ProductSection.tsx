@@ -8,6 +8,7 @@ import LazyAutoplayVideo from '@/components/LazyAutoplayVideo'
 
 const articleSlugs: Record<LangCode, string> = {
   sl: 'hollywood-lasni-sistem-najboljsa-resitev',
+  hr: 'hollywood-sustav-za-kosu-najbolje-rjesenje',
   en: 'hollywood-hair-system-the-best-solution',
   de: 'hollywood-haarsystem-die-beste-loesung',
   ru: 'hollywood-sistema-volos-luchshee-reshenie',

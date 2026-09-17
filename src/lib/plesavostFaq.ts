@@ -36,6 +36,28 @@ export const plesavostFaq: Record<string, FaqItem[]> = {
         'Da. Androgenetska alopecija je tudi pri ženskah pogost vzrok redčenja. Pogosto se kaže kot širjenje preče in difuzno redčenje na temenu, vendar imajo podoben videz lahko tudi pomanjkanje železa, bolezen ščitnice ali telogeni efluvij. Estetske rešitve vključujejo lasne vložke, hibridne sisteme in lasulje iz naravnih las.',
     },
   ],
+  hr: [
+    {
+      question: 'Je li ćelavost nasljedna?',
+      answer: 'Da, najčešći oblik ćelavosti – androgenetska alopecija – u velikoj je mjeri nasljedan. Nasljeđuje se povećana osjetljivost folikula na hormon DHT, koji postupno skraćuje fazu rasta kose. Sklonost se može prenijeti s majčine ili očeve strane.',
+    },
+    {
+      question: 'Može li se ćelavost zaustaviti ili izliječiti?',
+      answer: 'Ovisi o uzroku. Kod androgenetske alopecije minoksidil i, za prikladne muškarce, finasterid mogu usporiti ispadanje te nekim osobama potaknuti određeni ponovni rast. Druge vrste ispadanja zahtijevaju drukčije liječenje. Kod uznapredovale ćelavosti mogućnosti su presađivanje, sustav za kosu ili perika.',
+    },
+    {
+      question: 'Kada počinje muška ćelavost?',
+      answer: 'Muška ćelavost može početi ubrzo nakon 18. godine, najčešće povlačenjem linije kose na čelu i prorjeđivanjem na tjemenu. Do 50. godine približno se polovica muškaraca suočava s vidljivom ćelavošću.',
+    },
+    {
+      question: 'Koje je najbolje rješenje za uznapredovalu ćelavost?',
+      answer: 'Ne postoji jedno najbolje rješenje za sve. Prikladnost presađivanja ovisi o dijagnozi, stabilnosti ispadanja, donorskom području i očekivanjima. Sustav za kosu neinvazivna je opcija za trenutačno prekrivanje i opsežne ćelavosti, dok je perika često prikladna kod potpunog ili difuznog gubitka kose.',
+    },
+    {
+      question: 'Pogađa li ćelavost i žene?',
+      answer: 'Da. Androgenetska alopecija čest je uzrok prorjeđivanja i kod žena. Obično se vidi kao širenje razdjeljka i difuzno prorjeđivanje na tjemenu. Estetska rješenja uključuju umetke za kosu, hibridne sustave i perike od prirodne kose.',
+    },
+  ],
   en: [
     {
       question: 'Is baldness hereditary?',

@@ -17,12 +17,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { lang } = await params
   const titles: Record<string, string> = {
     sl: 'Kdo smo / Naše poslanstvo',
+    hr: 'Tko smo / Naša misija',
     en: 'Who We Are / Our Mission',
     de: 'Wer Wir Sind / Unsere Mission',
     ru: 'Кто Мы / Наша миссия',
   }
   const descriptions: Record<string, string> = {
     sl: 'Smo lastniki franšize za prodajo Hollywood Lasnih sistemov® za področje celotne Evrope. Spoznajte našo ekipo in poslanstvo.',
+    hr: 'Vlasnici smo franšize Hollywood Sustava za kosu® za cijelu Europu. Upoznajte naš tim, misiju i dugogodišnje iskustvo s gubitkom kose.',
     en: 'Meet the team and mission behind Hollywood Hair System® solutions in Europe and our long-standing experience with hair loss.',
     de: 'Lernen Sie das Team, die Mission und die langjährige Erfahrung hinter den Hollywood Haarsystem® Lösungen in Europa kennen.',
     ru: 'Познакомьтесь с нашей командой, миссией и многолетним опытом работы с решениями Hollywood Hair System® в Европе.',

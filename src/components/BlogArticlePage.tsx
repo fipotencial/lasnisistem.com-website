@@ -15,10 +15,10 @@ type Props = {
 }
 
 const categoryLabels: Record<string, Record<LangCode, string>> = {
-  'lasni-sistem': { sl: 'Lasni sistem', en: 'Hair System', de: 'Haarsystem', ru: 'Система волос' },
-  'izpadanje-las': { sl: 'Izpadanje las', en: 'Hair Loss', de: 'Haarausfall', ru: 'Выпадение волос' },
-  'produkti': { sl: 'Produkti', en: 'Products', de: 'Produkte', ru: 'Продукты' },
-  'skupnost': { sl: 'Skupnost', en: 'Community', de: 'Gemeinschaft', ru: 'Сообщество' },
+  'lasni-sistem': { sl: 'Lasni sistem', hr: 'Sustav za kosu', en: 'Hair System', de: 'Haarsystem', ru: 'Система волос' },
+  'izpadanje-las': { sl: 'Izpadanje las', hr: 'Gubitak kose', en: 'Hair Loss', de: 'Haarausfall', ru: 'Выпадение волос' },
+  'produkti': { sl: 'Produkti', hr: 'Proizvodi', en: 'Products', de: 'Produkte', ru: 'Продукты' },
+  'skupnost': { sl: 'Skupnost', hr: 'Zajednica', en: 'Community', de: 'Gemeinschaft', ru: 'Сообщество' },
 }
 
 const pageLabels: Record<LangCode, {
@@ -42,6 +42,17 @@ const pageLabels: Record<LangCode, {
     ctaBody: 'Naročite se na diskretno in strokovno individualno konzultacijo.',
     ctaButton: 'Rezervirajte posvet',
     relatedTitle: 'Preberite tudi',
+  },
+  hr: {
+    backToBlog: 'Svi članci',
+    minRead: 'min čitanja',
+    by: 'Autor',
+    published: 'Objavljeno',
+    updated: 'Ažurirano',
+    ctaTitle: 'Želite saznati više?',
+    ctaBody: 'Rezervirajte diskretne i stručne individualne konzultacije.',
+    ctaButton: 'Rezervirajte konzultacije',
+    relatedTitle: 'Pročitajte i',
   },
   en: {
     backToBlog: 'All articles',

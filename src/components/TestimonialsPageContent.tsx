@@ -12,6 +12,7 @@ type Props = {
 
 const expandLabels: Record<LangCode, { expand: string; collapse: string }> = {
   sl: { expand: 'Preberi celotno zgodbo', collapse: 'Zapri' },
+  hr: { expand: 'Pročitajte cijelu priču', collapse: 'Zatvori' },
   en: { expand: 'Read full story', collapse: 'Close' },
   de: { expand: 'Ganze Geschichte lesen', collapse: 'Schließen' },
   ru: { expand: 'Читать полную историю', collapse: 'Закрыть' },

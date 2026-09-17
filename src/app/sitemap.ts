@@ -2,10 +2,11 @@ import type { MetadataRoute } from 'next'
 import { getArticlesByLang } from '@/lib/blog/articles'
 
 const BASE_URL = 'https://www.lasnisistem.com'
-const LANGUAGES = ['sl', 'en', 'de', 'ru']
+const LANGUAGES = ['sl', 'hr', 'en', 'de', 'ru']
 
 const HREFLANG: Record<string, string> = {
   sl: 'sl-SI',
+  hr: 'hr-HR',
   en: 'en-US',
   de: 'de-DE',
   ru: 'ru-RU',
@@ -26,17 +27,17 @@ const STATIC_PAGES = [
 ]
 
 const STATIC_LAST_MODIFIED: Record<string, string> = {
-  '': '2026-07-13',
-  '/hibridni-sistemi': '2026-07-13',
-  '/lasulje': '2026-07-16',
-  '/plesavost': '2026-07-16',
-  '/kontakt': '2026-07-13',
-  '/poslanstvo': '2026-07-16',
-  '/mnenja-strank': '2026-07-13',
-  '/mediji': '2026-07-13',
-  '/svetovalni-studio': '2026-07-16',
-  '/pravno-obvestilo': '2026-07-16',
-  '/blog': '2026-07-16',
+  '': '2026-09-16',
+  '/hibridni-sistemi': '2026-09-16',
+  '/lasulje': '2026-09-16',
+  '/plesavost': '2026-09-16',
+  '/kontakt': '2026-09-16',
+  '/poslanstvo': '2026-09-16',
+  '/mnenja-strank': '2026-09-16',
+  '/mediji': '2026-09-16',
+  '/svetovalni-studio': '2026-09-16',
+  '/pravno-obvestilo': '2026-09-16',
+  '/blog': '2026-09-16',
 }
 
 export default function sitemap(): MetadataRoute.Sitemap {

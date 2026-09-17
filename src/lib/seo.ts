@@ -3,10 +3,11 @@ import { getArticlesByLang } from '@/lib/blog/articles'
 
 export const SITE_URL = 'https://www.lasnisistem.com'
 
-const LANG_CODES = ['sl', 'en', 'de', 'ru'] as const
+const LANG_CODES = ['sl', 'hr', 'en', 'de', 'ru'] as const
 
 const HREFLANG: Record<string, string> = {
   sl: 'sl-SI',
+  hr: 'hr-HR',
   en: 'en-US',
   de: 'de-DE',
   ru: 'ru-RU',

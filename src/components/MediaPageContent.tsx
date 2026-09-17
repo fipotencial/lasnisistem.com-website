@@ -2,6 +2,7 @@
 
 import Image from 'next/image'
 import { useState } from 'react'
+import type { LangCode } from '@/lib/i18n/translations'
 
 const mediaItems = [
   { src: 'clanek - zdravje - 2005.jpg', label: 'Zdravje - Februar 2005 (1. del)' },
@@ -28,7 +29,21 @@ const mediaItems = [
   { src: 'clanek_cosmopolitan4.jpg', label: 'Cosmopolitan - Maj 2004 (4. del)' },
 ]
 
-export default function MediaPageContent() {
+function localizeLabel(label: string, lang: LangCode) {
+  if (lang !== 'hr') return label
+  return label
+    .replace('Januar', 'Siječanj')
+    .replace('Februar', 'Veljača')
+    .replace('Marec', 'Ožujak')
+    .replace('Maj', 'Svibanj')
+    .replace('September', 'Rujan')
+    .replace('Oktober', 'Listopad')
+    .replace('November', 'Studeni')
+    .replace('December', 'Prosinac')
+    .replace('del', 'dio')
+}
+
+export default function MediaPageContent({ lang }: { lang: LangCode }) {
   const [zoomed, setZoomed] = useState<string | null>(null)
 
   return (
@@ -39,8 +54,9 @@ export default function MediaPageContent() {
         gap: '2rem',
         alignItems: 'center',
       }}>
-        {mediaItems.map((item, i) => (
-          <div key={i} className="group flex flex-col items-center">
+        {mediaItems.map((item, i) => {
+          const label = localizeLabel(item.label, lang)
+          return <div key={i} className="group flex flex-col items-center">
             <div
               className="relative w-full rounded-lg overflow-hidden bg-white transition-all duration-300 group-hover:-translate-y-1 group-hover:shadow-2xl"
               onClick={() => setZoomed(`/images/page_mediji_images of magazines/${item.src}`)}
@@ -53,7 +69,7 @@ export default function MediaPageContent() {
             >
               <Image
                 src={`/images/page_mediji_images of magazines/${item.src}`}
-                alt={item.label}
+                alt={label}
                 fill
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 style={{ objectFit: 'cover' }}
@@ -66,10 +82,10 @@ export default function MediaPageContent() {
               color: '#1A1A1A',
               textAlign: 'center',
             }}>
-              {item.label}
+              {label}
             </h3>
           </div>
-        ))}
+        })}
       </div>
 
       {/* Lightbox */}

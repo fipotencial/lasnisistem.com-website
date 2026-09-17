@@ -97,6 +97,22 @@ export const testimonialsEN: Testimonial[] = [
   { ...testimonialsSL[12], name: 'Miha from Ljubljana', quote: 'I am Miha from Ljubljana. Bothered by the thought of going bald, I decided to take action to regain my self-confidence and opted for the Hair System with Fi Potencial d.o.o. \n\nI have been wearing the hair system for a year now, and I can swim, play football, and go out in the wind without any fear. I am very glad I made this choice.\n\n–Miha' },
 ]
 
+export const testimonialsHR: Testimonial[] = [
+  { ...testimonialsSL[0], name: 'Erika', quote: 'Imam 52 godine. U 29. godini izgubila sam svu kosu zbog alopecije universalis. Godinama sam kupovala neudobne i neprozračne perike, a zatim sam se odlučila za Sustav za kosu kod Špele Šeme. Danas se osjećam lagano i opušteno, kao da imam vlastitu kosu. Ponovno mogu voziti bicikl, vježbati i plivati bez brige. Žao mi je samo što se nisam odlučila ranije.\n\n– Erika' },
+  { ...testimonialsSL[1], name: 'Katja', quote: 'Nakon tumora na mozgu, operacija i zračenja dio moje kose više nikada nije narastao. Godinama sam isprobavala kape, sintetičke i prirodne perike, umetke i tupee, ali ništa nije bilo udobno ni prirodno. Zatim sam pronašla FI-Potencial. Sustav se savršeno uklopio s mojom kosom, izgleda potpuno prirodno i zaboravim da ga nosim. Nema vrućine ni svrbeži. Nakon mnogo godina ponovno sam se osjećala normalno.\n\n– Katja' },
+  { ...testimonialsSL[2], name: 'Christine', quote: 'Godinama sam nosila periku i svakodnevno se bojala vjetra i pogleda drugih. Kada sam 2003. dobila Sustav za kosu, ponovno sam počela živjeti. Od prvog sam se trenutka osjećala slobodno. Normalno perem i oblikujem kosu, nije mi vruće i mogu bez straha plivati i skočiti u vodu. Špela mi je vratila ženstvenost.\n\n– KBC, Christine' },
+  { ...testimonialsSL[3], name: 'Mateja, 22 godine', quote: 'Zbog alopecije areate totalis isprobala sam različite perike, ali bile su vruće, nestabilne i brzo su se uništavale. Sustav od europske kose sve je promijenio. Lagan je, rub je nevidljiv, koža diše, a mogu spavati, plivati pod vodom i kosu oblikovati kako želim. Da mogu vratiti vrijeme, odabrala bih ga mnogo ranije.\n\n– Mateja' },
+  { ...testimonialsSL[4], name: 'Eva, 18 godina', quote: 'Kosu sam izgubila s 12 godina zbog bolesti i terapija. Kape, perike i tupei nisu mi omogućavali sport ni bezbrižan boravak na vjetru. Kada sam upoznala Špelu, nisam mogla vjerovati da njezina kosa nije prirodna. Sustav za kosu sada mi omogućuje normalan život.\n\n– Eva' },
+  { ...testimonialsSL[5], name: 'Merima, 15 godina', quote: 'Nakon kemoterapije kosa mi više nije narasla. Sintetičke perike bile su vruće, svrbjele su i izgledale neprirodno. U roku od dva mjeseca dobila sam Sustav za kosu od europske kose, upravo onakav kakvu sam imala prije bolesti. Više se ne bojim vjetra i ponovno se osjećam sigurno.\n\n– Merima' },
+  { ...testimonialsSL[6], name: '22-godišnji student', quote: 'Prerano prorjeđivanje kose snažno je utjecalo na moje samopouzdanje. Sustav se doslovno stopio s mojom kosom i sada imam frizuru koja mi odgovara. Nitko nije primijetio da nosim sustav. Psihološki učinak pune kose i vraćenog samopouzdanja neprocjenjiv je.\n\n– A.' },
+  { ...testimonialsSL[7], name: 'Oduševljeni korisnik Sustava za kosu®', quote: 'Sustav je nevjerojatan i odlično se drži, pa se nikada ne bojim da će pasti. Iznimno je lagan i gotovo zaboravim da ga nosim. U usporedbi sa starim tupeom, osjećaj je kao prijelaz iz starog automobila u novi Mercedes.\n\n– Oduševljeni korisnik' },
+  { ...testimonialsSL[8], name: 'Sustav za kosu® u 50. godini', quote: 'Bio sam ćelav oko 30 godina i nikada se s time nisam pomirio. Otkad nosim sustav mnogo sam samouvjereniji i žalim samo što se nisam odlučio ranije. Izrada je toliko kvalitetna da bi ga bilo uvredljivo nazvati perikom.\n\n– S.A.' },
+  { ...testimonialsSL[9], name: 'Bojči iz Maribora', quote: 'Vrlo sam zadovoljna sustavom, a oduševljeni su i svi oko mene. Vratila sam golemo samopouzdanje i ponovno sam ona stara: nasmijana i opuštena. Trčim, plešem, skačem i plivam bez brige.\n\n– Bojči' },
+  { ...testimonialsSL[10], name: 'Marjana', quote: 'Zbog alopecije totalis 14 sam godina nosila perike i bila umorna od vrućine, svrbeži i neudobnosti. Sustav za kosu vratio mi je bezbrižno plivanje i sport. Kosa ostaje na glavi kao da je moja, a strah od vjetra potpuno je nestao.\n\n– Marjana' },
+  { ...testimonialsSL[11], name: 'Janka iz Celja', quote: 'Kada mi je gusta kosa počela naglo ispadati, obične perike dodatno su me rastužile i ograničavale. Sa Sustavom za kosu ponovno uživam u sportu, plivanju, sauni i vjetru. Ponovno živim.\n\n– Janka' },
+  { ...testimonialsSL[12], name: 'Miha iz Ljubljane', quote: 'Pomislio sam da ću oćelaviti i odlučio vratiti samopouzdanje uz Sustav za kosu tvrtke Fi Potencial. Nosim ga već godinu dana i bez straha plivam, igram nogomet i izlazim na jak vjetar. Vrlo mi je drago što sam donio tu odluku.\n\n– Miha' },
+]
+
 export const testimonialsDE: Testimonial[] = [
   { ...testimonialsSL[0], name: 'Erika', quote: 'Ich bin 52 Jahre alt. Mein erster Wendepunkt war mit 29, als ich wegen Alopecia Universalis alle Haare verlor. Nachdem ich jahrelang unpraktische und warme Perücken getragen habe, entschied ich mich für das Haarsystem von Frau Špela Šeme. Jetzt fühle ich mich großartig, entspannt und mache wieder unbeschwert Sport! Danke!' },
   { ...testimonialsSL[1], name: 'Katja', quote: 'Mit acht Jahren bekam ich einen Hirntumor, und während der nachfolgenden Therapien und Bestrahlungen verlor ich all meine Haare. Jahrelang litt ich unter Perücken und schlechten Toupets. Erst das Haarsystem von FI-Potencial gab mir wieder das Gefühl, völlig "normal" zu leben. Es juckt nicht und sieht 100% echt aus.' },
@@ -131,6 +147,7 @@ export const testimonialsRU: Testimonial[] = [
 
 export const testimonialsByLang: Record<LangCode, Testimonial[]> = {
   sl: testimonialsSL,
+  hr: testimonialsHR,
   en: testimonialsEN,
   de: testimonialsDE,
   ru: testimonialsRU,
@@ -148,6 +165,11 @@ export const testimonialsPageLabels: Record<LangCode, {
     title: 'Izpostavljene zgodbe in mnenja strank',
     subtitle: 'Resnične zgodbe naših strank, ki so z Lasnim sistemom® ponovno zaživele',
     readFullTestimonial: 'Preberite celotno mnenje',
+  },
+  hr: {
+    title: 'Istaknute priče i iskustva klijenata',
+    subtitle: 'Stvarne priče naših klijenata kojima je Sustav za kosu® promijenio život',
+    readFullTestimonial: 'Pročitajte cijelo iskustvo',
   },
   en: {
     title: 'Featured Stories & Customer Testimonials',

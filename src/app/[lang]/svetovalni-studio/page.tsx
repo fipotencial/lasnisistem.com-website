@@ -17,12 +17,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { lang } = await params
   const titles: Record<string, string> = {
     sl: 'Svetovalni studio Kranj',
+    hr: 'Savjetodavni studio Kranj',
     en: 'Consulting Studio',
     de: 'Beratungsstudio',
     ru: 'Консультационная студия',
   }
   const descriptions: Record<string, string> = {
     sl: 'Obiščite naš svetovalni studio v Kranju za diskretno in individualno svetovanje o rešitvah za izpadanje las in plešavost.',
+    hr: 'Posjetite naš savjetodavni studio u Kranju za diskretne i individualne konzultacije o gubitku kose, perikama i sustavima za kosu.',
     en: 'Visit our consulting studio in Kranj for discreet, individual advice on hair loss, wigs and custom hair systems.',
     de: 'Besuchen Sie unser Beratungsstudio in Kranj für eine diskrete, individuelle Beratung zu Haarausfall, Perücken und Haarsystemen.',
     ru: 'Посетите нашу студию в Кране для конфиденциальной индивидуальной консультации по выпадению волос, парикам и системам волос.',
@@ -35,9 +37,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 const studioImages = [
-  { src: '/images/studio1.png', alt: 'Svetovalni studio – notranjost' },
-  { src: '/images/studio2.jpg', alt: 'Svetovalni studio – prostor za svetovanje' },
-  { src: '/images/studio3.jpg', alt: 'Svetovalni studio – ambient' },
+  { src: '/images/studio1.png', alt: 'Svetovalni studio – notranjost', altHr: 'Savjetodavni studio – interijer' },
+  { src: '/images/studio2.jpg', alt: 'Svetovalni studio – prostor za svetovanje', altHr: 'Savjetodavni studio – prostor za konzultacije' },
+  { src: '/images/studio3.jpg', alt: 'Svetovalni studio – ambient', altHr: 'Savjetodavni studio – ambijent' },
 ]
 
 const studioLabels: Record<string, any> = {
@@ -50,6 +52,16 @@ const studioLabels: Record<string, any> = {
     hoursText: 'Po dogovoru —\nindividualna konzultacija',
     discretionTitle: 'Diskretnost zagotovljena',
     discretionText: 'Diskretnost zagotovljena, v salonu ste vedno le vi oz. vaši bližnji in naše strokovno osebje. Salon se nahaja v zasebni vili z dvema vhodoma, kjer izgleda, kot, da ste se napotili le na obisk, nobenih nezaželenih srečanj tretjih oseb.',
+  },
+  hr: {
+    title: 'Savjetodavni studio',
+    desc: 'Naš studio u Kranju prostor je u kojem diskretno i individualno savjetujemo o svim rješenjima za gubitak kose. Posjetite nas radi stručnih konzultacija.',
+    location: 'Lokacija',
+    contact: 'Kontakt',
+    hours: 'Radno vrijeme',
+    hoursText: 'Prema dogovoru —\nindividualne konzultacije',
+    discretionTitle: 'Diskrecija je zajamčena',
+    discretionText: 'U salonu ste uvijek samo vi, vaši bližnji i naše stručno osoblje. Salon se nalazi u privatnoj vili s dva ulaza, bez neželjenih susreta s trećim osobama.',
   },
   en: {
     title: 'Consulting Studio',
@@ -149,7 +161,7 @@ export default async function StudioPage({ params }: Props) {
               >
                 <Image
                   src={img.src}
-                  alt={img.alt}
+                  alt={lang === 'hr' ? img.altHr : img.alt}
                   width={800}
                   height={600}
                   style={{
@@ -211,7 +223,7 @@ export default async function StudioPage({ params }: Props) {
             }}>
               <Image
                 src="/images/vila_svetovalni studio.jpg"
-                alt="Zunanjost zasebne vile - Svetovalni studio"
+                alt={lang === 'hr' ? 'Vanjski izgled privatne vile – savjetodavni studio' : 'Zunanjost zasebne vile - Svetovalni studio'}
                 fill
                 sizes="(max-width: 768px) 100vw, 50vw"
                 style={{

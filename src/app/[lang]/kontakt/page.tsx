@@ -19,6 +19,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   const titles: Record<string, string> = {
     sl: 'Kontakt',
+    hr: 'Kontakt',
     en: 'Contact',
     de: 'Kontakt',
     ru: 'Контакт',
@@ -26,6 +27,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   const descriptions: Record<string, string> = {
     sl: 'Stopite v stik z nami – brezplačno in diskretno svetovanje o rešitvah za izpadanje las. Tel: +386 31 444 868, svetovalni studio v Kranju.',
+    hr: 'Kontaktirajte nas za besplatne i diskretne konzultacije o rješenjima za gubitak kose. Tel: +386 31 444 868, savjetodavni studio u Kranju.',
     en: 'Get in touch – free and discreet consultation about hair loss solutions. Tel: +386 31 444 868, consulting studio in Kranj, Slovenia.',
     de: 'Kontaktieren Sie uns – kostenlose und diskrete Beratung zu Lösungen bei Haarausfall. Tel: +386 31 444 868, Beratungsstudio in Kranj, Slowenien.',
     ru: 'Свяжитесь с нами – бесплатная и деликатная консультация по решениям при выпадении волос. Тел: +386 31 444 868, студия в Словении.',

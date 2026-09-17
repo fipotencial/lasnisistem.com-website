@@ -18,6 +18,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   const titles: Record<string, string> = {
     sl: 'Blog – članki o izpadanju las in plešavosti',
+    hr: 'Blog – članci o gubitku kose i ćelavosti',
     en: 'Blog – Hair Loss Articles',
     de: 'Blog – Artikel über Haarausfall',
     ru: 'Блог – статьи о выпадении волос',
@@ -25,6 +26,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   const descriptions: Record<string, string> = {
     sl: 'Strokovni članki o izpadanju las, plešavosti, alopeciji, lasuljah in Lasnem sistemu®. Preberite naše vodiče in spoznajte rešitve.',
+    hr: 'Stručni članci o gubitku kose, ćelavosti, alopeciji, perikama i Sustavu za kosu®. Pročitajte naše vodiče i upoznajte rješenja.',
     en: 'Expert articles on hair loss, Hair System®, alopecia and care. Read our guides and discover solutions.',
     de: 'Fachartikel über Haarausfall, Haarsystem®, Alopezie und Pflege. Lesen Sie unsere Leitfäden und entdecken Sie Lösungen.',
     ru: 'Экспертные статьи о выпадении волос, системе волос, алопеции и уходе. Читайте наши руководства и откройте решения.',

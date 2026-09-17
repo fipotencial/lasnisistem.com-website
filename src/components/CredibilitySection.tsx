@@ -404,7 +404,7 @@ export default function CredibilitySection({ t }: Props) {
                 href="https://www.trustindex.io/reviews/hairartinc.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="HairArt ocena 4.9 od 5 na podlagi 384 ocen"
+                aria-label="HairArt 4.9/5 (384)"
                 style={{
                   display: 'flex', alignItems: 'center', gap: '0.2rem',
                   textDecoration: 'none', transition: 'opacity 0.3s ease',

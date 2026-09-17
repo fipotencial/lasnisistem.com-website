@@ -17,12 +17,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { lang } = await params
   const titles: Record<string, string> = {
     sl: 'Hibridni lasni sistemi za moške in ženske',
+    hr: 'Hibridni sustavi za kosu za muškarce i žene',
     en: 'Hybrid Hair Systems for Men and Women',
     de: 'Hybrid-Haarsysteme für Männer und Frauen',
     ru: 'Гибридные системы волос',
   }
   const descriptions: Record<string, string> = {
     sl: 'Hibridni sistemi za moške in ženske iz najkvalitetnejših evropskih las. Cenovno ugodnejši od Hollywood Lasnega sistema®.',
+    hr: 'Hibridni sustavi za muškarce i žene od najkvalitetnije europske kose. Cjenovno pristupačniji od Hollywood Sustava za kosu®.',
     en: 'Hybrid systems for men and women made from the finest European hair. More affordable than the Hollywood Hair System®.',
     de: 'Hybridsysteme für Männer und Frauen aus hochwertigstem europäischem Haar. Günstiger als das Hollywood Haarsystem®.',
     ru: 'Гибридные системы для мужчин и женщин из высококачественных европейских волос. Доступнее Голливудской Системы Волос®.',

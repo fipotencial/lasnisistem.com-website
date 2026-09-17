@@ -12,6 +12,7 @@ type Props = {
 
 const plesavostLinkLabel: Record<string, string> = {
   sl: 'Spoznajte vzroke in rešitve za plešavost →',
+  hr: 'Upoznajte uzroke i rješenja za ćelavost →',
   en: 'Explore the causes of and solutions for baldness →',
   de: 'Ursachen und Lösungen bei Kahlheit entdecken →',
   ru: 'Узнайте о причинах и решениях облысения →',

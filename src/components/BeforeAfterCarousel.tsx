@@ -2,6 +2,7 @@
 
 import Image from 'next/image'
 import { useState } from 'react'
+import type { LangCode } from '@/lib/i18n/translations'
 
 type PairCard = { type: 'pair'; before: string; after: string }
 type SingleCard = { type: 'single'; src: string }
@@ -38,9 +39,18 @@ const LABEL_BASE: React.CSSProperties = {
   pointerEvents: 'none',
 }
 
-export default function BeforeAfterCarousel() {
+const labels: Record<LangCode, { results: string; title: string; before: string; after: string; close: string }> = {
+  sl: { results: 'Rezultati', title: 'Pred & Po', before: 'Pred', after: 'Po', close: 'Zapri' },
+  hr: { results: 'Rezultati', title: 'Prije & Poslije', before: 'Prije', after: 'Poslije', close: 'Zatvori' },
+  en: { results: 'Results', title: 'Before & After', before: 'Before', after: 'After', close: 'Close' },
+  de: { results: 'Ergebnisse', title: 'Vorher & Nachher', before: 'Vorher', after: 'Nachher', close: 'Schließen' },
+  ru: { results: 'Результаты', title: 'До & После', before: 'До', after: 'После', close: 'Закрыть' },
+}
+
+export default function BeforeAfterCarousel({ lang }: { lang: LangCode }) {
   const [paused, setPaused] = useState(false)
   const [lightbox, setLightbox] = useState<string[] | null>(null)
+  const text = labels[lang]
 
   const track = [...CARDS, ...CARDS]
 
@@ -64,7 +74,7 @@ export default function BeforeAfterCarousel() {
           color: '#C1A452',
           marginBottom: '0.7rem',
         }}>
-          Rezultati
+          {text.results}
         </p>
         <h2 style={{
           fontFamily: 'var(--font-cormorant), Georgia, serif',
@@ -74,7 +84,7 @@ export default function BeforeAfterCarousel() {
           lineHeight: 1.1,
           margin: 0,
         }}>
-          Pred &amp; Po
+          {text.title}
         </h2>
       </div>
 
@@ -120,22 +130,22 @@ export default function BeforeAfterCarousel() {
                 /* ── Paired card: two images side by side ── */
                 <div style={{ display: 'flex', gap: 2, height: H }}>
                   <div style={{ position: 'relative', width: W, height: H, flexShrink: 0 }}>
-                    <Image src={card.before} alt="Pred" fill style={{ objectFit: 'cover' }} sizes={`${W}px`} />
+                    <Image src={card.before} alt={text.before} fill style={{ objectFit: 'cover' }} sizes={`${W}px`} />
                     <span style={{ ...LABEL_BASE, left: 8, color: '#C1A452', background: 'rgba(0,0,0,0.65)' }}>
-                      PRED
+                      {text.before}
                     </span>
                   </div>
                   <div style={{ position: 'relative', width: W, height: H, flexShrink: 0 }}>
-                    <Image src={card.after} alt="Po" fill style={{ objectFit: 'cover' }} sizes={`${W}px`} />
+                    <Image src={card.after} alt={text.after} fill style={{ objectFit: 'cover' }} sizes={`${W}px`} />
                     <span style={{ ...LABEL_BASE, right: 8, color: '#FAF8F5', background: 'rgba(193,164,82,0.85)' }}>
-                      PO
+                      {text.after}
                     </span>
                   </div>
                 </div>
               ) : (
                 /* ── Single card (oboje): one image, both labels ── */
                 <div style={{ position: 'relative', width: W * 2 + 2, height: H }}>
-                  <Image src={card.src} alt="Pred in Po" fill style={{ objectFit: 'cover' }} sizes={`${W * 2 + 2}px`} />
+                  <Image src={card.src} alt={`${text.before} / ${text.after}`} fill style={{ objectFit: 'cover' }} sizes={`${W * 2 + 2}px`} />
                   {/* gradient fade at bottom */}
                   <div style={{
                     position: 'absolute', inset: 0,
@@ -143,10 +153,10 @@ export default function BeforeAfterCarousel() {
                     pointerEvents: 'none',
                   }} />
                   <span style={{ ...LABEL_BASE, left: 10, color: '#C1A452', background: 'rgba(0,0,0,0.65)' }}>
-                    PRED
+                    {text.before}
                   </span>
                   <span style={{ ...LABEL_BASE, right: 10, color: '#FAF8F5', background: 'rgba(193,164,82,0.85)' }}>
-                    PO
+                    {text.after}
                   </span>
                 </div>
               )}
@@ -186,7 +196,7 @@ export default function BeforeAfterCarousel() {
             >
               <Image
                 src={src}
-                alt={idx === 0 ? 'Pred' : 'Po'}
+                alt={idx === 0 ? text.before : text.after}
                 fill
                 style={{ objectFit: 'contain' }}
                 sizes="90vw"
@@ -208,7 +218,7 @@ export default function BeforeAfterCarousel() {
                   background: idx === 0 ? 'rgba(0,0,0,0.7)' : 'rgba(193,164,82,0.85)',
                   backdropFilter: 'blur(6px)',
                 }}>
-                  {idx === 0 ? 'PRED' : 'PO'}
+                  {idx === 0 ? text.before : text.after}
                 </span>
               )}
             </div>
@@ -244,7 +254,7 @@ export default function BeforeAfterCarousel() {
               el.style.background = 'rgba(255,255,255,0.08)'
               el.style.color = 'rgba(255,255,255,0.8)'
             }}
-            aria-label="Zapri"
+            aria-label={text.close}
           >
             ✕
           </button>

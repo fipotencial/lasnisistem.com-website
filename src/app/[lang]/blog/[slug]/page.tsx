@@ -56,6 +56,13 @@ export default async function BlogArticleRoute({ params }: Props) {
   ].slice(0, 3)
 
   const BASE_URL = 'https://www.lasnisistem.com'
+  const schemaKeywords: Record<string, string[]> = {
+    sl: ['lasni sistem', 'izpadanje las', 'alopecija', 'Hollywood Hair System'],
+    hr: ['sustav za kosu', 'gubitak kose', 'alopecija', 'Hollywood Hair System'],
+    en: ['hair system', 'hair loss', 'alopecia', 'Hollywood Hair System'],
+    de: ['Haarsystem', 'Haarausfall', 'Alopezie', 'Hollywood Hair System'],
+    ru: ['система волос', 'выпадение волос', 'алопеция', 'Hollywood Hair System'],
+  }
 
   const articleSchema = {
     '@context': 'https://schema.org',
@@ -80,11 +87,12 @@ export default async function BlogArticleRoute({ params }: Props) {
       '@type': 'WebPage',
       '@id': `${BASE_URL}/${lang}/blog/${article.slug}`,
     },
-    keywords: ['lasni sistem', 'izpadanje las', 'alopecia', 'Hollywood Hair System'],
+    keywords: schemaKeywords[lang] || schemaKeywords.sl,
   }
 
   const breadcrumbLabels: Record<string, { home: string; blog: string }> = {
     sl: { home: 'Domov', blog: 'Blog' },
+    hr: { home: 'Početna', blog: 'Blog' },
     en: { home: 'Home', blog: 'Blog' },
     de: { home: 'Startseite', blog: 'Blog' },
     ru: { home: 'Главная', blog: 'Блог' },

@@ -46,8 +46,23 @@ export function FlagDE({ size = 20 }: FlagProps) {
   )
 }
 
+export function FlagHR({ size = 20 }: FlagProps) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 36 36" xmlns="http://www.w3.org/2000/svg" style={{ borderRadius: '50%', overflow: 'hidden' }}>
+      <rect width="36" height="36" rx="18" fill="#fff" />
+      <rect y="0" width="36" height="12" fill="#D2232C" />
+      <rect y="24" width="36" height="12" fill="#171796" />
+      <g transform="translate(13 8) scale(.5)">
+        <rect width="20" height="24" rx="1" fill="#fff" stroke="#D2232C" strokeWidth="1" />
+        <path d="M0 0h4v4H0zm8 0h4v4H8zm8 0h4v4h-4zM4 4h4v4H4zm8 0h4v4h-4zM0 8h4v4H0zm8 0h4v4H8zm8 0h4v4h-4zM4 12h4v4H4zm8 0h4v4h-4zM0 16h4v4H0zm8 0h4v4H8zm8 0h4v4h-4z" fill="#D2232C" />
+      </g>
+    </svg>
+  )
+}
+
 export const flagComponents: Record<string, React.FC<FlagProps>> = {
   sl: FlagSI,
+  hr: FlagHR,
   en: FlagGB,
   ru: FlagRU,
   de: FlagDE,

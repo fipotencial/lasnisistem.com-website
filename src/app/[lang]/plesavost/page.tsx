@@ -18,12 +18,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { lang } = await params
   const titles: Record<string, string> = {
     sl: 'Plešavost – vzroki, vrste in rešitve',
+    hr: 'Ćelavost – uzroci, vrste i rješenja',
     en: 'Baldness – Causes, Types and Solutions',
     de: 'Kahlheit – Ursachen, Formen und Lösungen',
     ru: 'Облысение – причины, виды и решения',
   }
   const descriptions: Record<string, string> = {
     sl: 'Kaj povzroča plešavost pri moških in ženskah? Norwood-Hamiltonova in Ludwigova lestvica, vzroki ter poštena primerjava rešitev: lasni sistem, lasulja ali presaditev las.',
+    hr: 'Što uzrokuje ćelavost kod muškaraca i žena? Norwood-Hamiltonova i Ludwigova ljestvica, uzroci te usporedba rješenja: sustav za kosu, perika ili presađivanje kose.',
     en: 'What causes baldness in men and women? The Norwood-Hamilton and Ludwig scales, causes and an honest comparison of solutions: hair system, wig or hair transplant.',
     de: 'Was verursacht Kahlheit bei Männern und Frauen? Norwood-Hamilton- und Ludwig-Skala, Ursachen und ein ehrlicher Vergleich der Lösungen: Haarsystem, Perücke oder Haartransplantation.',
     ru: 'Что вызывает облысение у мужчин и женщин? Шкалы Норвуда-Гамильтона и Людвига, причины и честное сравнение решений: система волос, парик или пересадка волос.',

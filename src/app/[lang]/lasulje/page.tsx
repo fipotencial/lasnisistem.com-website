@@ -3,7 +3,7 @@ import Footer from '@/components/Footer'
 import WigsPageContent from '@/components/WigsPageContent'
 import { translations, languages } from '@/lib/i18n/translations'
 import { buildAlternates } from '@/lib/seo'
-import { lasuljeFaq } from '@/lib/lasuljeFaq'
+import { lasuljeFaq, lasuljeFaqHr } from '@/lib/lasuljeFaq'
 import type { Metadata } from 'next'
 
 type Props = {
@@ -18,12 +18,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { lang } = await params
   const titles: Record<string, string> = {
     sl: 'Lasulja po meri iz evropskih las',
+    hr: 'Perike po mjeri od europske kose',
     en: 'Wigs – Custom European Hair',
     de: 'Perücken – Europäisches Echthaar',
     ru: 'Парики из европейских волос',
   }
   const descriptions: Record<string, string> = {
     sl: 'Vrhunska lasulja iz 100 % evropskih las – ženske lasulje, lasni vložki in baze po meri. Naraven videz in diskretno svetovanje v Kranju.',
+    hr: 'Vrhunske perike od 100 % europske kose – ženske perike, umetci za kosu i baze po mjeri. Prirodan izgled i diskretne konzultacije u Kranju.',
     en: 'European hair wigs, available in various models and bases. Elevate your look with our premium women\'s wigs and hair toppers.',
     de: 'Europäische Echthaarperücken, in verschiedenen Modellen und Basen erhältlich. Werten Sie Ihren Look mit unseren Premium-Perücken für Damen auf.',
     ru: 'Парики из европейских волос, доступны в различных моделях и основах. Подчеркните свой образ нашими премиальными женскими париками.',
@@ -41,10 +43,11 @@ export default async function WigsPage({ params }: Props) {
     ? (rawLang as keyof typeof translations)
     : 'sl'
   const t = translations[lang]
+  const faq = lang === 'hr' ? lasuljeFaqHr : lasuljeFaq
   const faqSchema = {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
-    mainEntity: lasuljeFaq.map((item) => ({
+    mainEntity: faq.map((item) => ({
       '@type': 'Question',
       name: item.question,
       acceptedAnswer: {
@@ -56,7 +59,7 @@ export default async function WigsPage({ params }: Props) {
 
   return (
     <main>
-      {lang === 'sl' && (
+      {(lang === 'sl' || lang === 'hr') && (
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}

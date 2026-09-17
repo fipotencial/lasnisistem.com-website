@@ -43,6 +43,16 @@ const faqData: Record<string, FAQEntry[]> = {
         'Svetovalni studio Fi Potencial d.o.o. se nahaja na naslovu Komenskega 1, 4000 Kranj, Slovenija. Konzultacije so izključno po predhodnem dogovoru za zagotovitev popolne zasebnosti.',
     },
   ],
+  hr: [
+    { question: 'Što je Hollywood Sustav za kosu®?', answer: 'Hollywood Sustav za kosu® prozirna je mikromrežica izrađena po mjeri s ručno pričvršćenom prirodnom kosom. Nije operacija ni perika, već nevidljivo rješenje za gubitak kose koje se nosi 24/7, uključujući tuširanje, plivanje i sport.' },
+    { question: 'Koliko dugo traje sustav za kosu?', answer: 'Uz pravilnu njegu i održavanje Hollywood Sustav za kosu® može trajati do četiri godine ili dulje. Svaki sustav ima šestomjesečno jamstvo.' },
+    { question: 'Je li sustav za kosu vidljiv?', answer: 'Ne. Mikromrežica je toliko tanka i prozirna da je rub nevidljiv čak i kada kosu počešljate ravno unatrag. Sustav izgleda prirodno cijeli dan.' },
+    { question: 'Koliko košta sustav za kosu?', answer: 'Cijena Hollywood Sustava za kosu® počinje od 935 EUR. Uključuje individualne konzultacije, uzimanje otiska glave te prilagodbu boje i gustoće kose.' },
+    { question: 'Je li postavljanje bolno?', answer: 'Ne. Postavljanje je potpuno bezbolno. Sustav se pričvršćuje medicinski ispitanim ljepljivim trakama – bez kirurškog zahvata, uboda i boli.' },
+    { question: 'Kako održavati sustav za kosu?', answer: 'Redovito ga perite blagim šamponima i regeneratorima za prirodnu kosu. Nosi se neprekidno nekoliko tjedana, zatim se u studiju ponovno prilagodi. Prirodna kosa zahtijeva sličnu njegu kao vaša kosa.' },
+    { question: 'Koja je razlika između sustava i perike?', answer: 'Hollywood Sustav za kosu® izrađuje se po mjeri, pričvršćuje medicinskim trakama i omogućuje nošenje 24/7, plivanje i sport. Perike su obično serijski izrađene i skidaju se svakodnevno.' },
+    { question: 'Gdje se nalazi savjetodavni studio?', answer: 'Studio Fi Potencial d.o.o. nalazi se na adresi Komenskega 1, 4000 Kranj, Slovenija. Konzultacije su isključivo prema prethodnom dogovoru kako bismo osigurali potpunu privatnost.' },
+  ],
   en: [
     {
       question: 'What is the Hollywood Hair System®?',

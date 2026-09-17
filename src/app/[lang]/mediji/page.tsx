@@ -17,12 +17,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { lang } = await params
   const titles: Record<string, string> = {
     sl: 'Mediji o nas',
+    hr: 'Mediji o nama',
     en: 'Media about us',
     de: 'Medien über uns',
     ru: 'СМИ о нас',
   }
   const descriptions: Record<string, string> = {
     sl: 'RTV Slovenija, TV prispevki in revije o Hollywood Lasnem sistemu®. Poglejte, kaj o rešitvah za izpadanje las poročajo mediji.',
+    hr: 'TV prilozi i časopisi o Hollywood Sustavu za kosu®. Pogledajte što mediji izvještavaju o rješenjima za gubitak kose.',
     en: 'TV features and magazine coverage of the Hollywood Hair System®. See what the media report about hair loss solutions.',
     de: 'TV-Beiträge und Magazine über das Hollywood Hair System®. Sehen Sie, was die Medien über Lösungen bei Haarausfall berichten.',
     ru: 'ТВ-сюжеты и журналы о Hollywood Hair System®. Узнайте, что СМИ сообщают о решениях при выпадении волос.',
@@ -36,17 +38,18 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 const pageTranslations: Record<string, any> = {
   sl: { title: 'Mediji o nas', videoTitle: 'Pojavljanje v medijih', eyebrow1: 'Galerija', eyebrow2: 'Video' },
+  hr: { title: 'Mediji o nama', videoTitle: 'Pojavljivanja u medijima', eyebrow1: 'Galerija', eyebrow2: 'Video' },
   en: { title: 'Media about us', videoTitle: 'Media Appearances', eyebrow1: 'Gallery', eyebrow2: 'Video' },
   de: { title: 'Medien über uns', videoTitle: 'Medienauftritte', eyebrow1: 'Galerie', eyebrow2: 'Video' },
   ru: { title: 'СМИ о нас', videoTitle: 'Появления в СМИ', eyebrow1: 'Галерея', eyebrow2: 'Видео' },
 }
 
 const videos = [
-  { id: 'je551_bWkXU', title: 'Alopecia areata – TV SLO 1 Tednik, 10 junij 2004' },
-  { id: '7dbMUjKnDJM', title: 'Hollywood vlasni sustav® – RTL Hrvatska' },
-  { id: 'LVAKSgAe1fw', title: 'Borza las iz katerih je narejen Hollywood lasni sistem®' },
-  { id: 's8SMTNYhRTE', title: 'Hollywood lasni sistem® prispevek iz oddaje "Z VAMI" (2007)' },
-  { id: 'cMMjmujwWGg', title: 'Vlasni sistem – prispevek v oddaji EXPLOZIV na RTL Hrvatska' },
+  { id: 'je551_bWkXU', title: 'Alopecia areata – TV SLO 1 Tednik, 10 junij 2004', titleHr: 'Alopecija areata – TV SLO 1 Tednik, 10. lipnja 2004.' },
+  { id: '7dbMUjKnDJM', title: 'Hollywood vlasni sustav® – RTL Hrvatska', titleHr: 'Hollywood vlasni sustav® – RTL Hrvatska' },
+  { id: 'LVAKSgAe1fw', title: 'Borza las iz katerih je narejen Hollywood lasni sistem®', titleHr: 'Burza kose od koje se izrađuje Hollywood vlasni sustav®' },
+  { id: 's8SMTNYhRTE', title: 'Hollywood lasni sistem® prispevek iz oddaje "Z VAMI" (2007)', titleHr: 'Prilog o Hollywood vlasnom sustavu® iz emisije "Z VAMI" (2007.)' },
+  { id: 'cMMjmujwWGg', title: 'Vlasni sistem – prispevek v oddaji EXPLOZIV na RTL Hrvatska', titleHr: 'Vlasni sustav – prilog u emisiji EXPLOZIV na RTL Hrvatska' },
 ]
 
 export default async function MediaPage({ params }: Props) {
@@ -97,7 +100,7 @@ export default async function MediaPage({ params }: Props) {
             }} />
           </div>
 
-          <MediaPageContent />
+          <MediaPageContent lang={lang} />
 
           <div style={{ marginTop: '8rem' }}>
             <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', marginBottom: '5rem' }}>
@@ -135,7 +138,9 @@ export default async function MediaPage({ params }: Props) {
               gap: '3rem 2rem',
               alignItems: 'start',
             }}>
-              {videos.map((vid, i) => (
+              {videos.map((vid, i) => {
+                const videoTitle = lang === 'hr' ? vid.titleHr : vid.title
+                return (
                 <div key={i} className="group flex flex-col items-center">
                   <div className="relative w-full rounded-lg overflow-hidden bg-white group-hover:shadow-2xl transition-all duration-300 group-hover:-translate-y-1" style={{
                     boxShadow: '0 10px 30px rgba(0,0,0,0.06)',
@@ -144,7 +149,7 @@ export default async function MediaPage({ params }: Props) {
                   }}>
                     <iframe
                       src={`https://www.youtube-nocookie.com/embed/${vid.id}`}
-                      title={vid.title}
+                      title={videoTitle}
                       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                       allowFullScreen
                       style={{ width: '100%', height: '100%', border: 'none' }}
@@ -160,10 +165,11 @@ export default async function MediaPage({ params }: Props) {
                     padding: '0 0.5rem',
                     maxWidth: '90%',
                   }}>
-                    {vid.title}
+                    {videoTitle}
                   </h3>
                 </div>
-              ))}
+                )
+              })}
             </div>
           </div>
 

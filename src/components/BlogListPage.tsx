@@ -11,10 +11,10 @@ type Props = {
 }
 
 const categoryLabels: Record<string, Record<LangCode, string>> = {
-  'lasni-sistem': { sl: 'Lasni sistem', en: 'Hair System', de: 'Haarsystem', ru: 'Система волос' },
-  'izpadanje-las': { sl: 'Izpadanje las', en: 'Hair Loss', de: 'Haarausfall', ru: 'Выпадение волос' },
-  'produkti': { sl: 'Produkti', en: 'Products', de: 'Produkte', ru: 'Продукты' },
-  'skupnost': { sl: 'Skupnost', en: 'Community', de: 'Gemeinschaft', ru: 'Сообщество' },
+  'lasni-sistem': { sl: 'Lasni sistem', hr: 'Sustav za kosu', en: 'Hair System', de: 'Haarsystem', ru: 'Система волос' },
+  'izpadanje-las': { sl: 'Izpadanje las', hr: 'Gubitak kose', en: 'Hair Loss', de: 'Haarausfall', ru: 'Выпадение волос' },
+  'produkti': { sl: 'Produkti', hr: 'Proizvodi', en: 'Products', de: 'Produkte', ru: 'Продукты' },
+  'skupnost': { sl: 'Skupnost', hr: 'Zajednica', en: 'Community', de: 'Gemeinschaft', ru: 'Сообщество' },
 }
 
 const pageLabels: Record<LangCode, { title: string; subtitle: string; readMore: string; minRead: string; featured: string }> = {
@@ -24,6 +24,13 @@ const pageLabels: Record<LangCode, { title: string; subtitle: string; readMore: 
     readMore: 'Preberi članek',
     minRead: 'min',
     featured: 'Izpostavljeno',
+  },
+  hr: {
+    title: 'Članci',
+    subtitle: 'Stručni članci o gubitku kose, Sustavu za kosu® i njezi',
+    readMore: 'Pročitaj članak',
+    minRead: 'min',
+    featured: 'Istaknuto',
   },
   en: {
     title: 'Articles',

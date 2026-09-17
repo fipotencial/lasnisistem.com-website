@@ -456,6 +456,58 @@ export const blogArticles: BlogArticle[] = [
 <p>Raziskave alopecije areate so pokazale povezave z več genetskimi območji, ki sodelujejo pri delovanju imunskega sistema. Nova spoznanja pomagajo pri razvoju in izbiri sodobnejših zdravljenj.</p>`,
   },
   {
+    slug: 'lasni-sistem-cena-zivljenjska-doba-vzdrzevanje',
+    title: 'Lasni sistem: cena, življenjska doba in stroški vzdrževanja',
+    oldUrl: '',
+    excerpt: 'Koliko stane lasni sistem, kaj vpliva na končno ceno in kakšni so stroški skozi leta? Pregleden vodič za realno primerjavo ponudb.',
+    category: 'lasni-sistem',
+    publishDate: '2026-09-17',
+    author: 'Uredništvo Lasni Sistem®',
+    readTime: 8,
+    image: '/images/blog/hair-system-comparison.png',
+    content: `<h2>Koliko stane lasni sistem?</h2>
+<p>Cena Hollywood Lasnega sistema® se začne pri <strong>935 EUR</strong>. To ni serijski izdelek s police, ampak rešitev, izdelana po meri posameznika. Končna cena je zato odvisna od obsega izgube las, velikosti osnove, dolžine in gostote las ter izbrane izvedbe.</p>
+<p>Pri primerjavi ponudb ni dovolj pogledati samo začetne številke. Pomembni so tudi kakovost las in osnove, pričakovana življenjska doba, garancija, način pritrditve, pogostost servisov ter podpora po nakupu.</p>
+
+<h2>Kaj je vključeno v vrednost sistema?</h2>
+<p>Hollywood Lasni sistem® je individualno prilagojen obliki glave, barvi, dolžini in želeni pričeski. Izdelan je iz kakovostnih naravnih las na lahki, zračni mikromrežici in pritrjen z medicinsko testiranimi trakovi. Omogoča vsakodnevne dejavnosti, spanje, prhanje in šport.</p>
+<p>Pred naročilom je potreben osebni posvet, na katerem ocenimo izhodišče, predstavimo možnosti ter pripravimo konkretno ponudbo. Tako kupec še pred odločitvijo ve, katera izvedba je zanj primerna in kakšni bodo predvideni nadaljnji stroški.</p>
+
+<h2>Kaj vpliva na končno ceno?</h2>
+<ul>
+<li><strong>Velikost in oblika sistema:</strong> manjši lasni vložek in sistem za večji del lasišča nista enaka izdelka.</li>
+<li><strong>Dolžina in gostota las:</strong> daljši lasje in zahtevnejša gostota praviloma pomenijo več materiala in dela.</li>
+<li><strong>Barva, tekstura in pričeska:</strong> cilj je čim bolj naraven prehod med sistemom in lastnimi lasmi.</li>
+<li><strong>Način pritrditve:</strong> izbere se glede na kožo, obseg izgube in življenjski slog.</li>
+<li><strong>Individualne prilagoditve:</strong> posebne zahteve lahko vplivajo na obseg izdelave.</li>
+</ul>
+
+<h2>Kako dolgo zdrži lasni sistem?</h2>
+<p>Ob pravilni uporabi in negi lahko Hollywood Lasni sistem® zdrži <strong>do štiri leta</strong>. To je zgornja pričakovana življenjska doba, ne jamstvo za vsakega uporabnika. Dejanska trajnost je odvisna od pogostosti nošenja, ravnanja z lasmi, nege, potenja, športa, izpostavljenosti soncu in rednosti strokovnega vzdrževanja.</p>
+<p>Agresivno česanje, neprimerni izdelki, previsoka toplota in zanemarjanje pritrdilnih mest lahko življenjsko dobo skrajšajo. Pravilna rutina pa pomaga ohraniti mehkobo las, stabilnost osnove in naraven videz.</p>
+
+<h2>Kateri stroški nastanejo po nakupu?</h2>
+<p>Poleg začetnega nakupa je smiselno načrtovati:</p>
+<ul>
+<li>redno ponovno pritrjevanje oziroma servis,</li>
+<li>profesionalno čiščenje in prilagajanje, kadar je potrebno,</li>
+<li>trakove in druge pripomočke za pritrditev,</li>
+<li>primerne izdelke za nego in zaščito las,</li>
+<li>morebitna popravila zaradi obrabe ali poškodbe.</li>
+</ul>
+<p>Pogostost servisa ni pri vseh enaka. Odvisna je od načina pritrditve, hitrosti rasti lastnih las, kože in aktivnosti uporabnika. Zato univerzalni mesečni strošek brez pregleda ne bi bil pošten podatek.</p>
+
+<h2>Kako pravilno primerjati lasni sistem in lasuljo?</h2>
+<p>Cenejša rešitev ob nakupu ni nujno cenejša skozi več let. Če je treba lasuljo ali nadomestek pogosto zamenjati, je treba sešteti vse nakupe, nego in prilagoditve v istem časovnem obdobju. Pri tem upoštevajte tudi udobje, zračnost, stabilnost pri gibanju ter to, ali lahko izdelek nosite ponoči in med športom.</p>
+<p>Več razlik najdete v vodiču <a href="/sl/blog/hollywood-lasni-sistem-lasulje-in-tupeji">Lasni sistem, lasulje in tupeji</a>, praktične napotke pa v članku o <a href="/sl/blog/nega-in-vzdrzevanje-lasnega-sistema">negi in vzdrževanju lasnega sistema</a>.</p>
+
+<h2>Kako do natančne ponudbe?</h2>
+<p>Najbolj zanesljiv prvi korak je diskreten osebni posvet. Ogledamo si obseg izgube las, vaše želje in življenjski slog, nato pa pojasnimo primerno izvedbo, začetno ceno ter pričakovano rutino vzdrževanja. Posvet vas ne zavezuje k nakupu.</p>
+<p><a href="/sl/kontakt"><strong>Rezervirajte posvet</strong></a> in pridobite ponudbo, pripravljeno za vaš primer.</p>
+
+<div class="article-note"><strong>Povzetek:</strong> Cena se začne pri 935 EUR, sistem pa lahko ob pravilni negi zdrži do štiri leta. Končni strošek je odvisen od individualne izdelave, uporabe in potrebnega vzdrževanja.</div>`,
+  },
+  {
     slug: 'kako-je-lasni-sistem-prisel-v-slovenijo',
     title: 'Kako je Lasni sistem® prišel v Slovenijo',
     oldUrl: '',
@@ -581,8 +633,10 @@ export const blogArticles: BlogArticle[] = [
 import { articlesEN } from './articles-en'
 import { articlesDE } from './articles-de'
 import { articlesRU } from './articles-ru'
+import { articlesHR } from './articles-hr'
 
 export function getArticlesByLang(lang: string): BlogArticle[] {
+  if (lang === 'hr') return articlesHR;
   if (lang === 'en') return articlesEN;
   if (lang === 'de') return articlesDE;
   if (lang === 'ru') return articlesRU;

@@ -195,5 +195,53 @@ export const articlesEN: BlogArticle[] = [
     content: `<h2>Support Group</h2>
 <p>Everyone facing hair loss finally has a dedicated <strong>support group</strong> available. Here, information is shared on the most modern methods for overcoming aesthetic and psychological trauma, helping members forge lasting friendships and realize they are not alone.</p>
 <p>Through shared experiences, education, and organized meetups, our community fosters confidence and mutual support, turning a challenging condition into an empowered journey.</p>`,
+  },
+  {
+    slug: 'hair-system-cost-lifespan-maintenance',
+    title: 'Hair system cost, lifespan and maintenance expenses',
+    oldUrl: '',
+    excerpt: 'How much does a hair system cost, what determines the final price and which ongoing expenses should you expect? A practical guide to comparing offers.',
+    category: 'lasni-sistem',
+    publishDate: '2026-09-17',
+    author: 'Lasni Sistem® Editorial Team',
+    readTime: 8,
+    image: '/images/blog/hair-system-comparison.png',
+    content: `<h2>How much does a hair system cost?</h2>
+<p>The price of a Hollywood Hair System® starts at <strong>EUR 935</strong>. It is not a ready-made product, but a solution made for the individual wearer. The final price therefore depends on the area of hair loss, the size of the base, hair length and density, and the selected design.</p>
+<p>When comparing offers, the initial figure is only one part of the calculation. Hair and base quality, expected lifespan, warranty, attachment method, service frequency and aftercare all affect the real value.</p>
+
+<h2>What determines the final price?</h2>
+<ul>
+<li><strong>Size and shape:</strong> a small hairpiece and a system covering most of the scalp require different construction.</li>
+<li><strong>Hair length and density:</strong> longer hair and greater density generally require more material and work.</li>
+<li><strong>Colour, texture and style:</strong> the system is matched for a natural transition to any existing hair.</li>
+<li><strong>Attachment method:</strong> this is selected according to the skin, extent of hair loss and lifestyle.</li>
+<li><strong>Individual adjustments:</strong> special requirements can affect the scope of production.</li>
+</ul>
+
+<h2>How long does a hair system last?</h2>
+<p>With proper use and care, a Hollywood Hair System® can last <strong>up to four years</strong>. This is a maximum expected lifespan, not a guarantee for every wearer. Actual durability depends on frequency of wear, handling, care, perspiration, sport, sun exposure and regular professional maintenance.</p>
+<p>Harsh brushing, unsuitable products, excessive heat and neglected attachment areas can shorten its life. A suitable routine helps preserve the softness of the hair, the stability of the base and a natural appearance.</p>
+
+<h2>Which costs arise after purchase?</h2>
+<p>In addition to the initial purchase, plan for:</p>
+<ul>
+<li>regular reattachment or servicing,</li>
+<li>professional cleaning and adjustment when required,</li>
+<li>tapes and other attachment supplies,</li>
+<li>suitable care and protection products,</li>
+<li>possible repairs caused by wear or damage.</li>
+</ul>
+<p>Service frequency differs from person to person. It depends on the attachment method, growth of existing hair, skin and activity level. Quoting one universal monthly cost without an assessment would therefore be misleading.</p>
+
+<h2>How should you compare a hair system with a wig?</h2>
+<p>A lower purchase price does not necessarily mean a lower multi-year cost. If a wig or hair replacement must be replaced frequently, add every purchase, care product and adjustment over the same period. Also compare comfort, breathability, security during movement, and whether the product can be worn while sleeping or exercising.</p>
+<p>Read more in our comparison of <a href="/en/blog/hollywood-hair-system-vs-wigs-and-toupees">hair systems, wigs and toupees</a> and our guide to <a href="/en/blog/care-and-maintenance">hair system care and maintenance</a>.</p>
+
+<h2>How do you get an accurate quote?</h2>
+<p>A discreet personal consultation is the most reliable first step. We assess the extent of hair loss, your preferences and lifestyle, then explain the suitable design, starting price and expected maintenance routine. The consultation does not commit you to a purchase.</p>
+<p><a href="/en/kontakt"><strong>Book a consultation</strong></a> to receive a quote prepared for your individual needs.</p>
+
+<div class="article-note"><strong>Summary:</strong> The price starts at EUR 935, and with proper care the system can last up to four years. The final cost depends on its individual construction, use and maintenance requirements.</div>`,
   }
 ]

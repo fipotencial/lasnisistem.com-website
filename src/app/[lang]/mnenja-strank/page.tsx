@@ -17,12 +17,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { lang } = await params
   const titles: Record<string, string> = {
     sl: 'Mnenja strank',
+    hr: 'Iskustva klijenata',
     en: 'Customer Testimonials',
     de: 'Kundenmeinungen',
     ru: 'Отзывы клиентов',
   }
   const descriptions: Record<string, string> = {
     sl: 'Preberite resnične zgodbe naših strank, ki so z Lasnim sistemom® ponovno zaživele.',
+    hr: 'Pročitajte stvarne priče naših klijenata kojima je Sustav za kosu® promijenio život.',
     en: 'Read real stories from our clients whose lives were transformed by the Hair System®.',
     de: 'Lesen Sie wahre Geschichten unserer Kunden, deren Leben durch das Haarsystem® verändert wurde.',
     ru: 'Читайте реальные истории наших клиентов, чью жизнь изменила Система Волос®.',

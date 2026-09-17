@@ -191,5 +191,52 @@ export const articlesDE: BlogArticle[] = [
     content: `<h2>Selbsthilfegruppe</h2>
 <p>Für jeden, der mit Haarverlust zu kämpfen hat, steht nun eine engagierte <strong>Selbsthilfegruppe</strong> zur Verfügung. Hier werden Informationen über die modernsten Methoden zur Überwindung von Trauma ausgetauscht.</p>
 <p>Durch gemeinsame Erfahrungen, Bildung und organisierte Treffen fördert unsere Gemeinschaft Selbstvertrauen und gegenseitige Unterstützung.</p>`,
+  },
+  {
+    slug: 'haarsystem-kosten-lebensdauer-pflege',
+    title: 'Haarsystem: Kosten, Lebensdauer und Pflegeaufwand',
+    oldUrl: '',
+    excerpt: 'Was kostet ein Haarsystem, wovon hängt der Endpreis ab und welche laufenden Ausgaben entstehen? Ein transparenter Leitfaden zum Angebotsvergleich.',
+    category: 'lasni-sistem',
+    publishDate: '2026-09-17',
+    author: 'Redaktion Lasni Sistem®',
+    readTime: 8,
+    image: '/images/blog/hair-system-comparison.png',
+    content: `<h2>Was kostet ein Haarsystem?</h2>
+<p>Der Preis für ein Hollywood Haarsystem® beginnt bei <strong>935 EUR</strong>. Es handelt sich nicht um ein seriengefertigtes Produkt, sondern um eine individuell angefertigte Lösung. Der Endpreis hängt deshalb von der Fläche des Haarverlusts, der Größe der Basis, Haarlänge und -dichte sowie der gewählten Ausführung ab.</p>
+<p>Beim Vergleich von Angeboten zählt nicht nur der Einstiegspreis. Qualität von Haar und Basis, erwartete Lebensdauer, Garantie, Befestigungsart, Servicehäufigkeit und Betreuung nach dem Kauf bestimmen den tatsächlichen Wert.</p>
+
+<h2>Was beeinflusst den Endpreis?</h2>
+<ul>
+<li><strong>Größe und Form:</strong> Ein kleines Haarteil und ein System für einen großen Teil der Kopfhaut sind unterschiedlich aufgebaut.</li>
+<li><strong>Haarlänge und -dichte:</strong> Längeres und dichteres Haar erfordert in der Regel mehr Material und Arbeit.</li>
+<li><strong>Farbe, Struktur und Frisur:</strong> Das Ziel ist ein möglichst natürlicher Übergang zum Eigenhaar.</li>
+<li><strong>Befestigungsart:</strong> Sie wird passend zu Haut, Haarverlust und Lebensstil ausgewählt.</li>
+<li><strong>Individuelle Anpassungen:</strong> Besondere Wünsche können den Herstellungsaufwand beeinflussen.</li>
+</ul>
+
+<h2>Wie lange hält ein Haarsystem?</h2>
+<p>Bei richtiger Anwendung und Pflege kann ein Hollywood Haarsystem® <strong>bis zu vier Jahre</strong> halten. Das ist eine maximale erwartete Lebensdauer und keine Garantie für jeden Träger. Die tatsächliche Haltbarkeit hängt von Tragehäufigkeit, Umgang, Pflege, Schweiß, Sport, Sonneneinstrahlung und regelmäßiger professioneller Wartung ab.</p>
+<p>Aggressives Bürsten, ungeeignete Produkte, übermäßige Hitze und vernachlässigte Befestigungsstellen können die Lebensdauer verkürzen.</p>
+
+<h2>Welche Kosten entstehen nach dem Kauf?</h2>
+<ul>
+<li>regelmäßige Neubefestigung beziehungsweise Service,</li>
+<li>professionelle Reinigung und Anpassung bei Bedarf,</li>
+<li>Klebestreifen und anderes Befestigungsmaterial,</li>
+<li>geeignete Pflege- und Schutzprodukte,</li>
+<li>eventuelle Reparaturen bei Verschleiß oder Beschädigung.</li>
+</ul>
+<p>Die Servicehäufigkeit ist individuell. Sie hängt von Befestigungsart, Wachstum des Eigenhaars, Haut und Aktivitätsniveau ab. Ein einheitlicher Monatsbetrag ohne persönliche Beurteilung wäre daher keine seriöse Angabe.</p>
+
+<h2>Wie vergleicht man Haarsystem und Perücke richtig?</h2>
+<p>Ein niedrigerer Kaufpreis ist über mehrere Jahre nicht automatisch günstiger. Muss eine Perücke oder ein Haarersatz häufig ersetzt werden, sollten sämtliche Käufe, Pflegeprodukte und Anpassungen im gleichen Zeitraum addiert werden. Berücksichtigen Sie außerdem Komfort, Atmungsaktivität und sicheren Halt bei Bewegung.</p>
+<p>Weitere Informationen finden Sie im Vergleich <a href="/de/blog/hollywood-haarsystem-vs-peruecken-und-toupets">Haarsystem, Perücken und Toupets</a> und im Leitfaden zur <a href="/de/blog/pflege-und-wartung">Pflege und Wartung</a>.</p>
+
+<h2>Wie erhält man ein genaues Angebot?</h2>
+<p>Ein diskretes persönliches Beratungsgespräch ist der zuverlässigste erste Schritt. Wir beurteilen den Haarverlust, Ihre Wünsche und Ihren Lebensstil und erläutern anschließend die geeignete Ausführung, den Einstiegspreis und den voraussichtlichen Pflegeablauf.</p>
+<p><a href="/de/kontakt"><strong>Vereinbaren Sie eine Beratung</strong></a> und erhalten Sie ein individuelles Angebot.</p>
+
+<div class="article-note"><strong>Kurz gesagt:</strong> Der Preis beginnt bei 935 EUR; bei richtiger Pflege kann das System bis zu vier Jahre halten. Die Gesamtkosten hängen von individueller Anfertigung, Nutzung und Wartung ab.</div>`,
   }
 ]

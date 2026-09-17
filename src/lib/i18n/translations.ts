@@ -1,5 +1,6 @@
 export const languages = [
   { code: 'sl', label: 'SLO', flag: '🇸🇮' },
+  { code: 'hr', label: 'HRV', flag: '🇭🇷' },
   { code: 'en', label: 'ENG', flag: '🇬🇧' },
   { code: 'ru', label: 'RUS', flag: '🇷🇺' },
   { code: 'de', label: 'DEU', flag: '🇩🇪' },
@@ -169,6 +170,88 @@ export const translations: Record<LangCode, Translation> = {
     videoSection: {
       headline: 'Lasje, ki vam vrnejo samozavest.',
       body: 'Preverite neverjetne transformacije in odkrijte, kako lahko Lasni Sistem® spremeni vaš vsakdan z naravnim izgledom.',
+    },
+  },
+
+  hr: {
+    nav: {
+      lasniSistem: 'Sustav za kosu',
+      izpadanjeLas: 'Gubitak kose',
+      hollywoodHybrid: 'Hollywood Hybrid',
+      oNas: 'O nama',
+      kontakt: 'Kontakt',
+    },
+    hero: {
+      headline: 'Rješenje za gubitak kose kojem vjeruje Hollywood.',
+      tagline: 'Rješenje koje osjećate kao vlastitu kosu.',
+      body: 'Ekskluzivna tehnologija vodeće američke kuće Hairart.\nVeć 25 godina postavljamo standarde prirodnog izgleda.',
+      cta: 'Rezervirajte konzultacije',
+    },
+    logoBanner: {
+      label: 'Vjeruju nam',
+    },
+    credibility: {
+      kicker: 'Ekskluzivni europski distributer',
+      subtitle: 'Već više od 25 godina pomažemo ljudima najboljim rješenjima za gubitak kose na tržištu, u suradnji s Hairart Inc. – vodećim svjetskim proizvođačem sustava za kosu od 1977. godine.',
+      years: '25',
+      yearsLabel: 'godina poslovanja',
+      experience: '40',
+      experienceLabel: 'godina iskustva',
+      partnersLabel: 'Američki partneri',
+    },
+    empathy: {
+      headline: 'Gubitak kose mijenja sve.',
+      body: 'Samopouzdanje, društveni život, pogled u ogledalo. Razumijemo koliko duboko to utječe na kvalitetu života – zato već 25 godina tražimo rješenja koja doista djeluju i pomažu.',
+    },
+    product: {
+      super: 'Inovacija',
+      headline: 'Hollywood sustav za kosu®',
+      subtitle: 'Najsuvremenija alternativa presađivanju kose koja iz SAD-a dolazi u Europu i mijenja živote osoba koje pate od gubitka kose.',
+      introText: 'Nije ni kirurški zahvat ni perika. Riječ je o prozirnoj mikromrežici izrađenoj po mjeri u Švicarskoj ili Njemačkoj.',
+      feature1Title: 'Neka gubitak kose postane prošlost',
+      feature1Desc: 'Prozirna mikromrežica s ručno pričvršćenom kosom – vlas po vlas, patentiranim čvorićima. Rezultat je prirodna gustoća koju perike ne mogu postići.',
+      feature1Bullet1: 'Do 8 puta dulji vijek trajanja od najboljih perika',
+      feature1Bullet2: 'Uz pravilnu njegu do četiri godine ili više bezbrižnog korištenja',
+      feature1Bullet3: 'Patentirani čvorići za prirodnu gustoću kose',
+      feature1Bullet4: 'Mikromrežica izrađena u Švicarskoj ili Njemačkoj i oblikovana po mjeri u Hollywoodu',
+      feature1Bullet5: 'Bez kirurškog zahvata – bez rizika i oporavka',
+      feature2Title: 'Jedinstvena tehnologija nošenja',
+      feature2Desc: 'Nosite ga 24/7, do tri tjedna bez skidanja. Mrežasta osnova omogućuje koži da diše – bez znojenja, svrbeži i osipa.',
+      feature2Bullet1: 'Nosite 24/7, do tri tjedna bez skidanja',
+      feature2Bullet2: 'Neograničene sportske aktivnosti: plivanje, jedrenje i ronjenje',
+      feature2Bullet3: 'Izgleda i osjeća se kao 100 % vaša prirodna kosa',
+      feature2Bullet4: 'Preporučuju ga dermatolozi i estetski kirurzi',
+      feature2Bullet5: 'Vodootporno pričvršćivanje medicinskim trakama',
+      learnMore: 'Više o sustavu',
+    },
+    ctaStrip: {
+      headline: 'Spremni za promjenu?',
+      cta: 'Rezervirajte stručne konzultacije',
+    },
+    testimonials: {
+      sectionTitle: 'Vjeruju nam najbolji',
+      sectionSubtitle: 'Svjetski priznati stilisti o našim proizvodima',
+      carouselSubtitle: 'Iskustva klijenata kod nas i u svijetu',
+      mark: {
+        title: 'Hollywoodski frizer i stilist',
+        quote: 'Hairart sustavi za kosu najbolji su koje sam ikada koristio. Kvaliteta mrežice i kose iznimna je – moji klijenti iz svijeta mode i filma ne prihvaćaju ništa manje.',
+      },
+      jimmy: {
+        title: 'Frizer i stilist slavnih',
+        quote: 'Kada radim s najboljima na svijetu, trebam besprijekorne proizvode. Hairart sustavi za kosu moj su prvi izbor – nevidljivi, prirodni i potpuno pouzdani.',
+      },
+    },
+    contact: {
+      headline: 'Kontaktirajte nas',
+      description: 'Povjerite nam svoje želje i zajedno ćemo pronaći najbolje rješenje za vas.',
+      name: 'Ime i prezime',
+      email: 'Adresa e-pošte',
+      message: 'Poruka',
+      submit: 'Pošaljite poruku',
+    },
+    videoSection: {
+      headline: 'Kosa koja vraća samopouzdanje.',
+      body: 'Pogledajte nevjerojatne transformacije i otkrijte kako Sustav za kosu® može promijeniti vašu svakodnevicu prirodnim izgledom.',
     },
   },
 

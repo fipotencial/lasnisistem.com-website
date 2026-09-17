@@ -18,7 +18,7 @@ const brands = [
 export default function LogoBanner({ t }: Props) {
   return (
     <motion.div
-      aria-label="Zaupanja vredni partnerji"
+      aria-label={t.logoBanner.label}
       style={{
         position: 'absolute',
         bottom: '2rem',

@@ -5,7 +5,7 @@ import Link from 'next/link'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useState, useCallback, useRef } from 'react'
 import type { LangCode } from '@/lib/i18n/translations'
-import { lasuljeFaq } from '@/lib/lasuljeFaq'
+import { lasuljeFaq, lasuljeFaqHr } from '@/lib/lasuljeFaq'
 
 /* ─── Image data ─── */
 
@@ -58,6 +58,21 @@ const t = {
     houseOfEuropeanHair: 'House of European Hair',
     partnerLink: 'Oglejte si modele →',
     partnerCta: 'Ko izberete lasuljo, ki vam je všeč, nas kontaktirajte in pomagali vam bomo pri naročilu ali izbiri najprimernejše za vas.',
+    contactUs: 'Kontaktirajte nas',
+  },
+  hr: {
+    heroSuperTitle: 'Perike',
+    heroTitle: 'Samo najbolje perike',
+    heroSubtitle: 'Naše perike od europske kose dostupne su u različitim modelima i bazama.',
+    introTitle: 'Vrhunske značajke naših perika',
+    introP1: 'Perike od europske kose dostupne su u različitim modelima i bazama. Možete ih nositi preko vlastite kose, dok su modeli sa silikonskim trakama prikladni za osobe s vrlo malo kose ili bez nje. Sve na vrhu imaju ručno obrađenu vrhunsku francusku mrežicu za optimalno prirodan izgled kose i vlasišta.',
+    introP2: 'Unaprijedite svoj izgled našim vrhunskim ženskim perikama i umetcima za kosu. Svaki je komad izrađen od najkvalitetnije ljudske kose kako bi pružio prirodan izgled i osjećaj. Kolekcija uključuje različite djelomične umetke, među njima modele French top i Silk top, za dodatni volumen i prekrivanje. Odaberite model sa zalihe ili istražite mogućnosti izrade po mjeri.',
+    introP3: 'Dostupne su perike s klasičnom bazom, kombinacijom silikona i mrežice te mrežicom sprijeda i elastikom straga.',
+    galleryTitle: 'Galerija perika i baza',
+    partnerText: 'Za detaljnije informacije o svim dostupnim modelima posjetite web-stranicu našeg partnera',
+    houseOfEuropeanHair: 'House of European Hair',
+    partnerLink: 'Pogledajte modele →',
+    partnerCta: 'Kada odaberete periku koja vam se sviđa, kontaktirajte nas i pomoći ćemo vam pri narudžbi ili odabiru najprikladnijeg modela.',
     contactUs: 'Kontaktirajte nas',
   },
   en: {
@@ -291,6 +306,7 @@ function GoldDot() {
 
 export default function WigsPageContent({ lang }: { lang: LangCode }) {
   const labels = t[lang] || t.sl
+  const faq = lang === 'hr' ? lasuljeFaqHr : lasuljeFaq
 
   return (
     <>
@@ -706,7 +722,7 @@ export default function WigsPageContent({ lang }: { lang: LangCode }) {
         </div>
       </section>
 
-      {lang === 'sl' && (
+      {(lang === 'sl' || lang === 'hr') && (
         <section style={{ background: '#FEFEFE' }}>
           <div style={{
             width: '88%', maxWidth: 900, margin: '0 auto',
@@ -720,10 +736,10 @@ export default function WigsPageContent({ lang }: { lang: LangCode }) {
               lineHeight: 1.15,
               marginBottom: '2rem',
             }}>
-              Pogosta vprašanja o lasuljah
+              {lang === 'hr' ? 'Česta pitanja o perikama' : 'Pogosta vprašanja o lasuljah'}
             </h2>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-              {lasuljeFaq.map((item) => (
+              {faq.map((item) => (
                 <div key={item.question} style={{
                   background: '#F5F2ED',
                   borderRadius: '1rem',

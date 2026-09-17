@@ -1,5 +1,6 @@
 const productDescriptions: Record<string, string> = {
   sl: 'Najsodobnejša alternativa presajanju las – prozorna mikromrežica, narejena po meri, z ročno pritrjenimi naravnimi lasmi (virgin hair). Nosi se 24/7, zdrži do 4 leta, pritrjena z medicinsko testiranimi trakovi.',
+  hr: 'Najsuvremenija alternativa presađivanju kose – prozirna mikromrežica izrađena po mjeri s ručno pričvršćenom prirodnom kosom. Nosi se 24/7, traje do četiri godine i pričvršćuje medicinski ispitanim trakama.',
   en: 'The most advanced alternative to hair transplants – a transparent micro-mesh, custom-made, with hand-attached natural virgin hair. Wear 24/7, lasts up to 4 years, secured with medically tested adhesive tapes.',
   de: 'Die modernste Alternative zu Haartransplantationen – ein transparentes Mikronetz, individuell angefertigt, mit handgefertigten Naturhaaren (Virgin Hair). 24/7 tragbar, hält bis zu 4 Jahre, mit medizinisch geprüften Klebestreifen befestigt.',
   ru: 'Самая современная альтернатива пересадке волос – прозрачная микросетка, изготовленная на заказ, с вручную прикреплёнными натуральными волосами. Носится 24/7, служит до 4 лет, крепится медицинскими лентами.',

@@ -48,17 +48,17 @@ export default function Navigation({ lang, t, variant = 'dark' }: Props) {
     return () => document.removeEventListener('click', handleClick)
   }, [])
 
-  const oNasLabel: Record<string, string> = { sl: 'O nas', en: 'About', de: 'Über uns', ru: 'О нас' }
-  const clankiLabel: Record<string, string> = { sl: 'Blog', en: 'Articles', de: 'Artikel', ru: 'Статьи' }
-  const mediciLabel: Record<string, string> = { sl: 'Mediji', en: 'Media', de: 'Medien', ru: 'СМИ' }
-  const studioLabel: Record<string, string> = { sl: 'Svetovalni studio', en: 'Consulting Studio', de: 'Beratungsstudio', ru: 'Консультационная студия' }
-  const poslanstvoLabel: Record<string, string> = { sl: 'Kdo smo / Naše poslanstvo', en: 'Who We Are / Our Mission', de: 'Wer Wir Sind / Unsere Mission', ru: 'Кто Мы / Наша миссия' }
-  const mnenjaLabel: Record<string, string> = { sl: 'Mnenja strank', en: 'Testimonials', de: 'Kundenmeinungen', ru: 'Отзывы клиентов' }
-  const lasniSistemLabel: Record<string, string> = { sl: 'Lasni sistem', en: 'Hair System', de: 'Haarsystem', ru: 'Система волос' }
-  const hibridniLabel: Record<string, string> = { sl: 'Hibridni sistemi', en: 'Hybrid Systems', de: 'Hybridsysteme', ru: 'Гибридные системы' }
-  const lasuljeLabel: Record<string, string> = { sl: 'Lasulje', en: 'Wigs', de: 'Perücken', ru: 'Парики' }
-  const plesavostLabel: Record<string, string> = { sl: 'Plešavost', en: 'Baldness', de: 'Kahlheit', ru: 'Облысение' }
-  const kontaktLabel: Record<string, string> = { sl: 'Kontakt', en: 'Contact', de: 'Kontakt', ru: 'Контакт' }
+  const oNasLabel: Record<string, string> = { sl: 'O nas', hr: 'O nama', en: 'About', de: 'Über uns', ru: 'О нас' }
+  const clankiLabel: Record<string, string> = { sl: 'Blog', hr: 'Članci', en: 'Articles', de: 'Artikel', ru: 'Статьи' }
+  const mediciLabel: Record<string, string> = { sl: 'Mediji', hr: 'Mediji', en: 'Media', de: 'Medien', ru: 'СМИ' }
+  const studioLabel: Record<string, string> = { sl: 'Svetovalni studio', hr: 'Savjetodavni studio', en: 'Consulting Studio', de: 'Beratungsstudio', ru: 'Консультационная студия' }
+  const poslanstvoLabel: Record<string, string> = { sl: 'Kdo smo / Naše poslanstvo', hr: 'Tko smo / Naša misija', en: 'Who We Are / Our Mission', de: 'Wer Wir Sind / Unsere Mission', ru: 'Кто Мы / Наша миссия' }
+  const mnenjaLabel: Record<string, string> = { sl: 'Mnenja strank', hr: 'Iskustva klijenata', en: 'Testimonials', de: 'Kundenmeinungen', ru: 'Отзывы клиентов' }
+  const lasniSistemLabel: Record<string, string> = { sl: 'Lasni sistem', hr: 'Sustav za kosu', en: 'Hair System', de: 'Haarsystem', ru: 'Система волос' }
+  const hibridniLabel: Record<string, string> = { sl: 'Hibridni sistemi', hr: 'Hibridni sustavi', en: 'Hybrid Systems', de: 'Hybridsysteme', ru: 'Гибридные системы' }
+  const lasuljeLabel: Record<string, string> = { sl: 'Lasulje', hr: 'Perike', en: 'Wigs', de: 'Perücken', ru: 'Парики' }
+  const plesavostLabel: Record<string, string> = { sl: 'Plešavost', hr: 'Ćelavost', en: 'Baldness', de: 'Kahlheit', ru: 'Облысение' }
+  const kontaktLabel: Record<string, string> = { sl: 'Kontakt', hr: 'Kontakt', en: 'Contact', de: 'Kontakt', ru: 'Контакт' }
 
   const isLandingPage = pathname === `/${lang}` || pathname === `/${lang}/`
 
@@ -356,7 +356,7 @@ export default function Navigation({ lang, t, variant = 'dark' }: Props) {
           </a>
           <span style={{ width: 1, height: 16, background: 'rgba(176,145,64,0.35)' }} />
           {languages.map(l => {
-            const label = l.code === 'sl' ? 'SLO' : l.code === 'en' ? 'ENG' : l.code === 'de' ? 'GER' : 'RUS'
+            const label = l.code === 'sl' ? 'SLO' : l.code === 'hr' ? 'HRV' : l.code === 'en' ? 'ENG' : l.code === 'de' ? 'GER' : 'RUS'
             return (
               <button
                 key={l.code}
@@ -542,7 +542,7 @@ export default function Navigation({ lang, t, variant = 'dark' }: Props) {
 
               <div style={{ display: 'flex', gap: '16px', paddingTop: '0.5rem' }}>
                 {languages.map(l => {
-                  const label = l.code === 'sl' ? 'SLO' : l.code === 'en' ? 'ENG' : l.code === 'de' ? 'GER' : 'RUS'
+                  const label = l.code === 'sl' ? 'SLO' : l.code === 'hr' ? 'HRV' : l.code === 'en' ? 'ENG' : l.code === 'de' ? 'GER' : 'RUS'
                   return (
                     <button
                       key={l.code}

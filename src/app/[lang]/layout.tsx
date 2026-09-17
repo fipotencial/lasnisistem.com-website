@@ -40,6 +40,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   const langLabels: Record<string, string> = {
     sl: 'sl_SI',
+    hr: 'hr_HR',
     en: 'en_US',
     de: 'de_DE',
     ru: 'ru_RU',
@@ -48,18 +49,27 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const locale = langLabels[lang] || 'sl_SI'
   const titles: Record<string, string> = {
     sl: 'Lasni Sistem® | Ekskluzivna rešitev za izpadanje las v Sloveniji',
+    hr: 'Hollywood Sustav za kosu® | Rješenja za gubitak kose',
     en: 'Hollywood Hair System® | Hair Loss Solutions in Slovenia',
     de: 'Hollywood Haarsystem® | Lösungen bei Haarausfall in Slowenien',
     ru: 'Hollywood Hair System® | Решения при выпадении волос в Словении',
   }
   const descriptions: Record<string, string> = {
     sl: 'Že 25 let zagotavljamo diskretne rešitve za izpadanje las, plešavost in alopecijo: lasni sistemi, lasulje in individualno svetovanje v Kranju.',
+    hr: 'Diskretna rješenja za gubitak kose, ćelavost i alopeciju: sustavi za kosu, perike i individualne konzultacije u Kranju.',
     en: 'Discreet solutions for hair loss, baldness and alopecia: custom hair systems, wigs and individual consultations in Kranj, Slovenia.',
     de: 'Diskrete Lösungen bei Haarausfall, Kahlheit und Alopezie: Haarsysteme, Perücken und individuelle Beratung in Kranj, Slowenien.',
     ru: 'Деликатные решения при выпадении волос, облысении и алопеции: системы волос, парики и индивидуальные консультации в Словении.',
   }
   const title = titles[lang] || titles.sl
   const description = descriptions[lang] || descriptions.sl
+  const keywordsByLang: Record<string, string[]> = {
+    sl: ['lasni sistem', 'izpadanje las', 'plešavost', 'alopecija', 'lasulja', 'HairArt', 'Slovenija'],
+    hr: ['sustav za kosu', 'gubitak kose', 'ćelavost', 'alopecija', 'perika', 'HairArt', 'Hrvatska', 'Slovenija'],
+    en: ['hair system', 'hair loss', 'baldness', 'alopecia', 'wigs', 'HairArt', 'Slovenia'],
+    de: ['Haarsystem', 'Haarausfall', 'Kahlheit', 'Alopezie', 'Perücke', 'HairArt', 'Slowenien'],
+    ru: ['система волос', 'выпадение волос', 'облысение', 'алопеция', 'парик', 'HairArt', 'Словения'],
+  }
 
   return {
     metadataBase: new URL('https://www.lasnisistem.com'),
@@ -68,15 +78,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       template: '%s | Lasni Sistem®',
     },
     description,
-    keywords: [
-      'lasni sistem',
-      'izpadanje las',
-      'plešavost',
-      'alopecija',
-      'lasulja',
-      'HairArt',
-      'Slovenija',
-    ],
+    keywords: keywordsByLang[lang] || keywordsByLang.sl,
     authors: [{ name: 'Lasni Sistem®' }],
     robots: {
       index: true,
@@ -99,7 +101,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       title,
       description,
       locale,
-      alternateLocale: ['sl_SI', 'en_US', 'de_DE', 'ru_RU'].filter((l) => l !== locale),
+      alternateLocale: ['sl_SI', 'hr_HR', 'en_US', 'de_DE', 'ru_RU'].filter((l) => l !== locale),
       images: [
         {
           url: '/og-image.jpg',

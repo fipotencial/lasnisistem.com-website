@@ -16,12 +16,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { lang } = await params
   const titles: Record<string, string> = {
     sl: 'Pravno obvestilo',
+    hr: 'Pravna obavijest',
     en: 'Legal Notice',
     de: 'Rechtlicher Hinweis',
     ru: 'Правовое уведомление',
   }
   const descriptions: Record<string, string> = {
     sl: 'Pravno obvestilo, nakup in vračilo lasnega sistema, odstop od pogodbe in pogoji uporabe.',
+    hr: 'Pravna obavijest, kupnja i povrat sustava za kosu, pravo na odustajanje i uvjeti korištenja.',
     en: 'Legal notice, purchasing and returns, withdrawal rights and terms of use for Lasni Sistem® services and products.',
     de: 'Rechtliche Hinweise, Kauf und Rückgabe, Widerrufsrecht und Nutzungsbedingungen für Lasni Sistem® Produkte und Dienstleistungen.',
     ru: 'Правовая информация, покупка и возврат, право на отказ и условия использования продуктов и услуг Lasni Sistem®.',
@@ -32,6 +34,52 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     description: descriptions[lang] || descriptions.sl,
     alternates: buildAlternates(lang, '/pravno-obvestilo'),
   }
+}
+
+const legalHeadingStyle = {
+  fontFamily: 'var(--font-cormorant), Georgia, serif',
+  fontSize: '1.8rem',
+  fontWeight: 600,
+  color: '#1A1A1A',
+  marginBottom: '1.2rem',
+} as const
+
+function CroatianLegalContent() {
+  return (
+    <>
+      <h2 style={{ ...legalHeadingStyle, marginTop: 0 }}>KUPNJA ILI POVRAT SUSTAVA ZA KOSU</h2>
+      <p style={{ marginBottom: '1rem' }}>Narudžbu je potrebno preuzeti u roku od 15 radnih dana od primitka obavijesti o preuzimanju.</p>
+      <p style={{ marginBottom: '1rem' }}>Ako proizvode ne preuzmete u tom roku, zbog ograničenog skladišnog kapaciteta pošiljku moramo vratiti proizvođaču, koji cijeli sustav ili njegov dio može upotrijebiti za izradu novog sustava za drugu osobu.</p>
+      <p style={{ marginBottom: '1rem' }}>Uplaćeni iznosi, predujmovi ili plaćanja računa za prvi dio Sustava za kosu tada dospijevaju i kupac <strong>NEMA PRAVO</strong> na povrat uplaćenog iznosa, koji predstavlja potvrdu usmenog ugovora o isporuci. Plaćanjem stranka izričito naručuje proizvod po mjeri, prema točnim specifikacijama oblika, boje, kvalitete i duljine kose koje se šalju proizvođaču.</p>
+      <p style={{ marginBottom: '1rem' }}>Savjetujemo da naručene proizvode pregledate odmah nakon primitka i o svakoj nepravilnosti obavijestite nas u roku od dva dana.</p>
+      <p style={{ marginBottom: '3rem' }}>Hvala na kupnji. Veselimo se vašem ponovnom posjetu.</p>
+
+      <h2 style={legalHeadingStyle}>Odustajanje potrošača od ugovora</h2>
+      <p style={{ marginBottom: '1rem' }}>Potrošač, odnosno fizička osoba koja robu nabavlja izvan svoje gospodarske djelatnosti, ima pravo u roku od 14 dana od preuzimanja proizvoda obavijestiti poduzeće na adresi <a href="mailto:info@fi-potencial.com" style={{ color: '#B09140', textDecoration: 'none' }}>info@fi-potencial.com</a> da odustaje od ugovora bez navođenja razloga. Rok počinje teći dan nakon preuzimanja. Trošak povrata proizvoda snosi potrošač. Proizvod je potrebno vratiti prodavatelju najkasnije u roku od 30 dana od obavijesti o odustajanju.</p>
+      <p style={{ marginBottom: '1rem' }}>Potrošač nema pravo na odustajanje ako je proizvod izrađen prema njegovim točnim uputama, prilagođen osobnim potrebama ili zbog svoje prirode nije prikladan za povrat.</p>
+      <p style={{ marginBottom: '1rem' }}>Proizvod mora biti vraćen neoštećen i u nepromijenjenoj količini. Potrošač ga smije pregledati i isprobati samo u mjeri nužnoj za utvrđivanje njegove prirode, svojstava i djelovanja.</p>
+      <p style={{ marginBottom: '1rem' }}>Ako je Sustav za kosu isproban i postavljen na glavu ili vlasište, povrat iz higijenskih razloga <strong>NIJE MOGUĆ</strong>.</p>
+      <p style={{ marginBottom: '1rem' }}>Povrat također nije moguć ako je <strong>VEĆ UKLONJENA</strong> prednja mrežica proizvoda.</p>
+      <p style={{ marginBottom: '3rem' }}>Potrošač odgovara za smanjenje vrijednosti robe ako je ono posljedica postupanja koje nije bilo nužno za utvrđivanje prirode, svojstava i djelovanja robe.</p>
+
+      <h2 style={legalHeadingStyle}>Obrazac za odustajanje od ugovora</h2>
+      <div style={{ background: '#F9F8F6', padding: '1.5rem', borderRadius: '0.8rem', marginBottom: '3rem', border: '1px solid rgba(0,0,0,0.04)' }}>
+        <p style={{ marginBottom: '0.5rem', fontWeight: 500, color: '#1A1A1A' }}>Odustajanje od ugovora – povrat u roku od 14 dana</p>
+        <p style={{ fontStyle: 'italic', fontSize: '0.85rem', marginBottom: '1.2rem' }}>(Ispunite i vratite ovaj obrazac samo ako želite odustati od ugovora.)</p>
+        <p style={{ marginBottom: '1.5rem' }}><strong>Primatelj:</strong> Fi Potencial d.o.o., Komenskega 1, 4000 Kranj</p>
+        <p style={{ marginBottom: '1.5rem' }}>Obavješćujem vas da odustajem od ugovora za sljedeće proizvode:</p>
+        <a href="/Obrazec%20za%20odstop%20potrošnika%20od%20pogodbe.pdf" download target="_blank" rel="noopener noreferrer" style={{ display: 'inline-flex', color: '#B09140', border: '1px solid #B09140', padding: '0.8rem 1.5rem', borderRadius: '2rem', textDecoration: 'none', fontSize: '0.8rem', fontWeight: 600, textTransform: 'uppercase' }}>Preuzmite obrazac</a>
+      </div>
+
+      <h2 style={legalHeadingStyle}>ŠIŠANJE I OBLIKOVANJE SUSTAVA ZA KOSU</h2>
+      <p style={{ marginBottom: '1rem' }}>Obavještavamo vas da DAMJANA STARMAN više nije ovlaštena za dodavanje kose ili popravke Sustava za kosu. To znači da više nema pristup posebno pripremljenoj kosi koja se ne petlja i ne uzrokuje ubrzano lomljenje ili zapletanje s postojećom kosom.</p>
+      <p style={{ marginBottom: '1rem' }}>Vrhunski proizvod izrađen po mjeri smiju šišati samo stručno osposobljene osobe s dopuštenjem odnosno licencom proizvođača.</p>
+      <p style={{ marginBottom: '1rem' }}>Ovlaštene osobe završile su odgovarajuću obuku i pohađaju seminare potrebne za obnovu licence.</p>
+      <p style={{ marginBottom: '1rem' }}>Osoblje Sustav za kosu uvijek šiša postupno i prema željama klijenta, koji sam odabire stil frizure i duljinu kose. Stručno osposobljeni frizer savjetuje što je izvedivo.</p>
+      <p style={{ marginBottom: '1rem' }}>Reklamaciju na uslugu šišanja ili oblikovanja potrebno je <strong>usmeno podnijeti odmah na mjestu izvršenja usluge</strong>, a zatim u roku od 24 sata poslati pisanu reklamaciju na adresu poduzeća.</p>
+      <p style={{ marginBottom: 0 }}>Ako Sustav za kosu šiša frizer bez potrebnog znanja, licence ili dopuštenja, ne preuzimamo odgovornost za nastale pogreške ili oštećenja.</p>
+    </>
+  )
 }
 
 export default async function LegalPage({ params }: Props) {
@@ -67,7 +115,7 @@ export default async function LegalPage({ params }: Props) {
                 marginBottom: '1.5rem',
               }}
             >
-              Pravno obvestilo
+              {lang === 'hr' ? 'Pravna obavijest' : 'Pravno obvestilo'}
             </h1>
             <div className="w-16 h-[2px] bg-[#B09140] opacity-80 mx-auto rounded-full" />
           </div>
@@ -99,6 +147,7 @@ export default async function LegalPage({ params }: Props) {
               fontSize: '0.95rem',
             }}
           >
+            {lang === 'hr' ? <CroatianLegalContent /> : <>
             {/* Section 1 */}
             <h2 style={{ fontFamily: 'var(--font-cormorant), Georgia, serif', fontSize: '1.8rem', fontWeight: 600, color: '#1A1A1A', marginBottom: '1.2rem', marginTop: 0 }}>
               NAKUP ALI VRAČILO LASNEGA SISTEMA
@@ -214,6 +263,7 @@ export default async function LegalPage({ params }: Props) {
             <p style={{ marginBottom: '0' }}>
               V primeru, da se Lasni sistem striže pri frizerju ki nima potrebnih znanj – licence ali dovoljenja – ne prevzemamo odgovornosti za nastale napake ali poškodbe Lasnega sistema.
             </p>
+            </>}
           </div>
         </div>
       </section>

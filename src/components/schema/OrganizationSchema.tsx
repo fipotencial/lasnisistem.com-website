@@ -1,5 +1,6 @@
 const descriptionByLang: Record<string, string> = {
   sl: 'Ekskluzivna rešitev za izpadanje las v Sloveniji. Že 25 let zagotavljamo diskretne in tehnološko najnaprednejše rešitve za izpadanje las – Lasni Sistem® iz Hollywooda.',
+  hr: 'Ekskluzivno rješenje za gubitak kose. Već 25 godina nudimo diskretna i tehnološki napredna rješenja – Hollywood Sustav za kosu®.',
   en: 'Exclusive hair loss solution in Slovenia. 25 years of providing discreet and technologically advanced solutions for hair loss – the Hollywood Hair System®.',
   de: 'Exklusive Lösung für Haarausfall in Slowenien. Seit 25 Jahren bieten wir diskrete und technologisch fortschrittliche Lösungen – das Hollywood Haarsystem®.',
   ru: 'Эксклюзивное решение от выпадения волос в Словении. 25 лет дискретных и технологически продвинутых решений – Hollywood Hair System®.',
@@ -67,7 +68,7 @@ export default function OrganizationSchema({ lang }: { lang: string }) {
         url: 'https://www.lasnisistem.com',
         name: 'Lasni Sistem®',
         publisher: { '@id': 'https://www.lasnisistem.com/#organization' },
-        inLanguage: ['sl-SI', 'en-US', 'de-DE', 'ru-RU'],
+        inLanguage: ['sl-SI', 'hr-HR', 'en-US', 'de-DE', 'ru-RU'],
       },
     ],
   }
