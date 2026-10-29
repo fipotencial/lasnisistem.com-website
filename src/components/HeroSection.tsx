@@ -2,7 +2,7 @@
 
 import Image from 'next/image'
 import Link from 'next/link'
-import { motion } from 'framer-motion'
+import { useState } from 'react'
 import type { Translation, LangCode } from '@/lib/i18n/translations'
 
 type Props = {
@@ -13,9 +13,7 @@ type Props = {
 function AnimatedHeadline({ text }: { text: string }) {
   const words = text.split(' ')
   return (
-    <motion.h1
-      initial="hidden"
-      animate="visible"
+    <h1
       style={{
         fontFamily: 'var(--font-cormorant), Georgia, serif',
         fontSize: 'clamp(2.8rem, 5.5vw, 5rem)',
@@ -27,31 +25,21 @@ function AnimatedHeadline({ text }: { text: string }) {
       }}
     >
       {words.map((word, i) => (
-        <motion.span
+        <span
           key={i}
-          className="inline-block"
-          style={{ marginRight: '0.28em' }}
-          variants={{
-            hidden: { opacity: 0, y: 18 },
-            visible: {
-              opacity: 1,
-              y: 0,
-              transition: {
-                duration: 0.65,
-                delay: 0.55 + i * 0.07,
-                ease: [0.22, 1, 0.36, 1],
-              },
-            },
-          }}
+          className="inline-block hero-content-enter"
+          style={{ marginRight: '0.28em', animationDelay: `${Math.min(i * 25, 150)}ms` }}
         >
           {word}
-        </motion.span>
+        </span>
       ))}
-    </motion.h1>
+    </h1>
   )
 }
 
 export default function HeroSection({ lang, t }: Props) {
+  const [videoReady, setVideoReady] = useState(false)
+
   return (
     <section
       className="relative w-full overflow-hidden bg-black"
@@ -60,20 +48,44 @@ export default function HeroSection({ lang, t }: Props) {
       }}
       aria-label="Hero"
     >
-      {/* Background video */}
-      <video
-        src="/hero%20video_slow%20(2)%20compresed.mp4"
-        className="absolute inset-0 w-full h-full object-cover"
-        style={{ 
-          pointerEvents: 'none', 
-          transform: 'scaleX(-1)', 
-          filter: 'contrast(1.1)' 
-        }}
-        muted
-        loop
-        playsInline
-        autoPlay
-      />
+      {/* Paint the first frame before the video is ready, including when autoplay is blocked. */}
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{ transform: 'scaleX(-1)', filter: 'contrast(1.1)' }}
+        aria-hidden="true"
+      >
+        <Image
+          src="/images/hero-poster-v1.webp"
+          alt=""
+          fill
+          priority
+          unoptimized
+          sizes="100vw"
+          className="object-cover"
+        />
+        <video
+          className="hero-background-video absolute inset-0 w-full h-full object-cover"
+          style={{ opacity: videoReady ? 1 : 0 }}
+          poster="/images/hero-poster-v1.webp"
+          muted
+          loop
+          playsInline
+          autoPlay
+          preload="auto"
+          onPlaying={event => {
+            const video = event.currentTarget
+            if ('requestVideoFrameCallback' in video) {
+              video.requestVideoFrameCallback(() => setVideoReady(true))
+            } else {
+              setVideoReady(true)
+            }
+          }}
+          onError={() => setVideoReady(false)}
+        >
+          <source src="/videos/hero-mobile-v1.mp4" media="(max-width: 767px)" type="video/mp4" />
+          <source src="/videos/hero-desktop-v1.mp4" type="video/mp4" />
+        </video>
+      </div>
 
       {/* Gentle warm wash over entire video (blur removed for maximum sharpness) */}
       <div
@@ -123,19 +135,18 @@ export default function HeroSection({ lang, t }: Props) {
           paddingTop: 'calc(72px + 26vh)',
         }}
       >
-        <motion.div
+        <div
           className="flex flex-col items-start"
           style={{ maxWidth: 720 }}
-          initial={{ opacity: 0, y: 28 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.9, delay: 0.35, ease: [0.22, 1, 0.36, 1] }}
         >
           {/* Main headline — gold */}
           <AnimatedHeadline text={t.hero.headline} />
 
           {/* Tagline — light for contrast on dark video */}
-          <motion.h2
+          <h2
+            className="hero-content-enter"
             style={{
+              animationDelay: '80ms',
               fontFamily: 'var(--font-cormorant), Georgia, serif',
               fontSize: 'clamp(1.1rem, 1.8vw, 1.45rem)',
               fontWeight: 400,
@@ -146,19 +157,14 @@ export default function HeroSection({ lang, t }: Props) {
               margin: '1.6rem 0 0 0',
               textShadow: '0 2px 10px rgba(0,0,0,0.5)',
             }}
-            initial={{ opacity: 0, y: 12 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 1.0, ease: [0.22, 1, 0.36, 1] }}
           >
             {t.hero.tagline}
-          </motion.h2>
+          </h2>
 
           {/* CTA — ghost button */}
-          <motion.div
-            style={{ marginTop: '3.5rem' }}
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 1.2 }}
+          <div
+            className="hero-content-enter"
+            style={{ marginTop: '3.5rem', animationDelay: '120ms' }}
           >
             <Link
               href={`/${lang}/kontakt`}
@@ -193,8 +199,8 @@ export default function HeroSection({ lang, t }: Props) {
             >
               {t.hero.cta}
             </Link>
-          </motion.div>
-        </motion.div>
+          </div>
+        </div>
       </div>
 
     </section>
