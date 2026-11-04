@@ -29,30 +29,25 @@ const featuredTestimonials = [
 type ShortTestimonial = { name: string; quote: string; fullId?: string }
 
 // Verbatim excerpt from Danica's message; appointment details and email signature omitted.
-const danicaTestimonial: Record<LangCode, ShortTestimonial & { title: string }> = {
+const danicaTestimonial: Record<LangCode, ShortTestimonial> = {
   sl: {
     name: 'Danica Prnaver',
-    title: '4 leta in pol z lasnim sistemom',
     quote: 'Sem zelo srečna Danica Prnaver, ki že 4 leta in pol z največjim veseljem nosim lasni sistem.',
   },
   hr: {
     name: 'Danica Prnaver',
-    title: 'Četiri i pol godine sa sustavom za kosu',
     quote: 'Ja sam vrlo sretna Danica Prnaver, koja već četiri i pol godine s najvećim veseljem nosi sustav za kosu.',
   },
   en: {
     name: 'Danica Prnaver',
-    title: 'Four and a half years with a hair system',
     quote: 'I am a very happy Danica Prnaver, and I have been wearing a hair system with the greatest joy for four and a half years.',
   },
   de: {
     name: 'Danica Prnaver',
-    title: 'Viereinhalb Jahre mit einem Haarsystem',
     quote: 'Ich bin eine sehr glückliche Danica Prnaver und trage seit viereinhalb Jahren mit größter Freude ein Haarsystem.',
   },
   ru: {
     name: 'Danica Prnaver',
-    title: 'Четыре с половиной года с системой волос',
     quote: 'Я очень счастливая Даница Прнавер, и уже четыре с половиной года с огромной радостью ношу систему волос.',
   },
 }
@@ -314,7 +309,7 @@ function GlowCard({ children }: { children: React.ReactNode }) {
 
 /* ── Featured card with glow (using CSS custom props for simplicity) ── */
 function FeaturedGlowCard({ testimonial, title, quote }: {
-  testimonial: { name: string; image?: string; instagram?: string; clients?: string }
+  testimonial: typeof featuredTestimonials[0]
   title: string
   quote: string
 }) {
@@ -391,25 +386,23 @@ function FeaturedGlowCard({ testimonial, title, quote }: {
       />
 
       {/* Image — left side */}
-      {testimonial.image && (
-        <div
-          className="sm:w-[38%] w-full"
-          style={{
-            position: 'relative',
-            minHeight: 200,
-            flexShrink: 0,
-            zIndex: 2,
-          }}
-        >
-          <Image
-            src={testimonial.image}
-            alt={testimonial.name}
-            fill
-            style={{ objectFit: 'cover' }}
-            sizes="(max-width: 640px) 100vw, 180px"
-          />
-        </div>
-      )}
+      <div
+        className="sm:w-[38%] w-full"
+        style={{
+          position: 'relative',
+          minHeight: 200,
+          flexShrink: 0,
+          zIndex: 2,
+        }}
+      >
+        <Image
+          src={testimonial.image}
+          alt={testimonial.name}
+          fill
+          style={{ objectFit: 'cover' }}
+          sizes="(max-width: 640px) 100vw, 180px"
+        />
+      </div>
 
       {/* Content — right side */}
       <div
@@ -482,21 +475,19 @@ function FeaturedGlowCard({ testimonial, title, quote }: {
         </p>
 
         {/* Clients */}
-        {testimonial.clients && (
-          <p
-            style={{
-              fontFamily: 'var(--font-inter), system-ui, sans-serif',
-              fontSize: '0.75rem',
-              fontWeight: 300,
-              lineHeight: 1.5,
-              color: '#BDB4A6',
-              margin: 0,
-              marginTop: 'auto',
-            }}
-          >
-            {testimonial.clients}
-          </p>
-        )}
+        <p
+          style={{
+            fontFamily: 'var(--font-inter), system-ui, sans-serif',
+            fontSize: '0.75rem',
+            fontWeight: 300,
+            lineHeight: 1.5,
+            color: '#BDB4A6',
+            margin: 0,
+            marginTop: 'auto',
+          }}
+        >
+          {testimonial.clients}
+        </p>
       </div>
     </div>
   )
@@ -673,7 +664,6 @@ function TestimonialCarousel({ lang }: { lang: LangCode }) {
 
 export default function TestimonialsSection({ lang, t }: Props) {
   const ts = t.testimonials
-  const danica = danicaTestimonial[lang]
 
   return (
     <section
@@ -741,11 +731,6 @@ export default function TestimonialsSection({ lang, t }: Props) {
             quote={ts.jimmy.quote}
           />
         </motion.div>
-        <FeaturedGlowCard
-          testimonial={danica}
-          title={danica.title}
-          quote={danica.quote}
-        />
       </div>
 
       {/* Testimonial slider subtitle */}
