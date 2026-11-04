@@ -1,8 +1,10 @@
 import type { LangCode } from '@/lib/i18n/translations'
+import { danicaTestimonials } from '@/lib/danicaTestimonial'
 
 export type Testimonial = {
   id: string
   name: string
+  source?: 'email'
   image?: string
   beforeImage?: string
   afterImage?: string
@@ -145,12 +147,17 @@ export const testimonialsRU: Testimonial[] = [
   { ...testimonialsSL[12], name: 'Миха из Любляны', quote: 'Мысли об облысении меня угнетали. В Fi Potencial d.o.o. я нашел идеальное решение. Теперь я могу уверенно играть в футбол и плавать!' },
 ]
 
+function withDanicaEmail(stories: Testimonial[], lang: LangCode): Testimonial[] {
+  const middle = Math.ceil(stories.length / 2)
+  return [...stories.slice(0, middle), danicaTestimonials[lang], ...stories.slice(middle)]
+}
+
 export const testimonialsByLang: Record<LangCode, Testimonial[]> = {
-  sl: testimonialsSL,
-  hr: testimonialsHR,
-  en: testimonialsEN,
-  de: testimonialsDE,
-  ru: testimonialsRU,
+  sl: withDanicaEmail(testimonialsSL, 'sl'),
+  hr: withDanicaEmail(testimonialsHR, 'hr'),
+  en: withDanicaEmail(testimonialsEN, 'en'),
+  de: withDanicaEmail(testimonialsDE, 'de'),
+  ru: withDanicaEmail(testimonialsRU, 'ru'),
 }
 
 // For backward compatibility (pages not yet updated)

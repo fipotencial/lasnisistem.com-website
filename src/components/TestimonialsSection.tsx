@@ -5,6 +5,7 @@ import Link from 'next/link'
 import { motion } from 'framer-motion'
 import { useRef, useCallback, useState } from 'react'
 import type { Translation, LangCode } from '@/lib/i18n/translations'
+import { danicaTestimonials } from '@/lib/danicaTestimonial'
 
 type Props = {
   lang: LangCode
@@ -26,31 +27,7 @@ const featuredTestimonials = [
   },
 ]
 
-type ShortTestimonial = { name: string; quote: string; fullId?: string }
-
-// Verbatim excerpt from Danica's message; appointment details and email signature omitted.
-const danicaTestimonial: Record<LangCode, ShortTestimonial> = {
-  sl: {
-    name: 'Danica Prnaver',
-    quote: 'Sem zelo srečna Danica Prnaver, ki že 4 leta in pol z največjim veseljem nosim lasni sistem.',
-  },
-  hr: {
-    name: 'Danica Prnaver',
-    quote: 'Ja sam vrlo sretna Danica Prnaver, koja već četiri i pol godine s najvećim veseljem nosi sustav za kosu.',
-  },
-  en: {
-    name: 'Danica Prnaver',
-    quote: 'I am a very happy Danica Prnaver, and I have been wearing a hair system with the greatest joy for four and a half years.',
-  },
-  de: {
-    name: 'Danica Prnaver',
-    quote: 'Ich bin eine sehr glückliche Danica Prnaver und trage seit viereinhalb Jahren mit größter Freude ein Haarsystem.',
-  },
-  ru: {
-    name: 'Danica Prnaver',
-    quote: 'Я очень счастливая Даница Прнавер, и уже четыре с половиной года с огромной радостью ношу систему волос.',
-  },
-}
+type ShortTestimonial = { name: string; quote: string; fullId?: string; source?: 'email' }
 
 const readMoreLabel: Record<LangCode, string> = {
   sl: 'Preberite celotno mnenje',
@@ -494,21 +471,103 @@ function FeaturedGlowCard({ testimonial, title, quote }: {
 }
 
 function TestimonialCarousel({ lang }: { lang: LangCode }) {
-  const testimonials = [danicaTestimonial[lang], ...(shortTestimonialsMap[lang] || shortTestimonialsMap.sl)]
+  const danica = danicaTestimonials[lang]
+  const existingTestimonials = shortTestimonialsMap[lang] || shortTestimonialsMap.sl
+  const middle = Math.ceil(existingTestimonials.length / 2)
+  const testimonials: ShortTestimonial[] = [
+    ...existingTestimonials.slice(0, middle),
+    { name: danica.name, quote: danica.excerpt, fullId: danica.id, source: danica.source },
+    ...existingTestimonials.slice(middle),
+  ]
   const items = [...testimonials, ...testimonials, ...testimonials]
   const rmLabel = readMoreLabel[lang] || readMoreLabel.sl
   const [paused, setPaused] = useState(false)
+  const [dragging, setDragging] = useState(false)
+  const trackRef = useRef<HTMLDivElement>(null)
+  const suppressClickRef = useRef(false)
+  const dragRef = useRef<{
+    pointerId: number
+    startX: number
+    startTime: number
+    cycleWidth: number
+    duration: number
+    animation: Animation
+    moved: boolean
+  } | null>(null)
+
+  const finishDrag = (event: React.PointerEvent<HTMLDivElement>) => {
+    if (dragRef.current?.pointerId !== event.pointerId) return
+    dragRef.current = null
+    setDragging(false)
+    if (event.currentTarget.hasPointerCapture(event.pointerId)) {
+      event.currentTarget.releasePointerCapture(event.pointerId)
+    }
+  }
 
   return (
     <div
-      style={{ width: '100%', overflow: 'hidden', position: 'relative' }}
+      className="testimonial-carousel"
+      style={{ width: '100%', overflow: 'hidden', position: 'relative', cursor: dragging ? 'grabbing' : 'grab', userSelect: 'none' }}
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
+      onPointerDown={event => {
+        if (event.pointerType !== 'mouse' || event.button !== 0 || !event.isPrimary) return
+        suppressClickRef.current = false
+        const track = trackRef.current
+        const animation = track?.getAnimations().find(item =>
+          'animationName' in item && item.animationName === 'testimonial-scroll',
+        )
+        const first = track?.children[0] as HTMLElement | undefined
+        const next = track?.children[testimonials.length] as HTMLElement | undefined
+        const duration = animation?.effect?.getTiming().duration
+        if (!animation || !first || !next || typeof duration !== 'number' || duration <= 0) return
+        const cycleWidth = next.offsetLeft - first.offsetLeft
+        if (cycleWidth <= 0) return
+        dragRef.current = {
+          pointerId: event.pointerId,
+          startX: event.clientX,
+          startTime: Number(animation.currentTime) || 0,
+          cycleWidth,
+          duration,
+          animation,
+          moved: false,
+        }
+        setDragging(true)
+      }}
+      onPointerMove={event => {
+        const drag = dragRef.current
+        if (!drag || drag.pointerId !== event.pointerId) return
+        const distance = event.clientX - drag.startX
+        if (!drag.moved && Math.abs(distance) < 6) return
+        if (!drag.moved) {
+          drag.moved = true
+          suppressClickRef.current = true
+          event.currentTarget.setPointerCapture(event.pointerId)
+        }
+        const time = drag.startTime - distance / drag.cycleWidth * drag.duration
+        // Scrub the same CSS animation, wrapping exactly one repeated set of cards.
+        drag.animation.currentTime = ((time % drag.duration) + drag.duration) % drag.duration
+        event.preventDefault()
+      }}
+      onPointerUp={finishDrag}
+      onPointerCancel={finishDrag}
+      onLostPointerCapture={finishDrag}
+      onDragStartCapture={event => event.preventDefault()}
+      onClickCapture={event => {
+        if (suppressClickRef.current && event.detail !== 0) {
+          event.preventDefault()
+          event.stopPropagation()
+        }
+      }}
     >
       <style>{`
         @keyframes testimonial-scroll {
           from { transform: translateX(0); }
-          to   { transform: translateX(-33.333%); }
+          to   { transform: translateX(calc(-100% / 3 - 0.5rem)); }
+        }
+        .testimonial-carousel a { cursor: inherit; }
+        @media (prefers-reduced-motion: reduce) {
+          .testimonial-track { animation-play-state: paused !important; }
         }
       `}</style>
       <div
@@ -527,13 +586,15 @@ function TestimonialCarousel({ lang }: { lang: LangCode }) {
       />
 
       <div
+        ref={trackRef}
+        className="testimonial-track"
         style={{
           display: 'flex',
           alignItems: 'flex-start',
           gap: '1.5rem',
           width: 'max-content',
           animation: 'testimonial-scroll 120s linear infinite',
-          animationPlayState: paused ? 'paused' : 'running',
+          animationPlayState: paused || dragging ? 'paused' : 'running',
         }}
       >
         {items.map((item, i) => {
@@ -623,6 +684,7 @@ function TestimonialCarousel({ lang }: { lang: LangCode }) {
                   }}
                 >
                   {item.name}
+                  {item.source && <span style={{ textTransform: 'none', fontWeight: 400 }}> · {item.source}</span>}
                 </span>
               </div>
             </Link>

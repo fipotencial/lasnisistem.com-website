@@ -2,7 +2,7 @@
 
 import Image from 'next/image'
 import { motion, AnimatePresence } from 'framer-motion'
-import { useState, useCallback } from 'react'
+import { useState, useCallback, useEffect } from 'react'
 import { testimonialsByLang, testimonialsPageLabels } from '@/lib/testimonials'
 import type { LangCode } from '@/lib/i18n/translations'
 
@@ -62,6 +62,7 @@ function TestimonialCard({
         boxShadow: '0 2px 20px rgba(140,120,60,0.05)',
         breakInside: 'avoid' as const,
         marginBottom: 'clamp(1.2rem, 2vw, 1.8rem)',
+        scrollMarginTop: '100px',
         transition: 'box-shadow 0.3s ease, border-color 0.3s ease, transform 0.25s ease',
         cursor: needsTruncation ? 'pointer' : 'default',
       }}
@@ -158,6 +159,11 @@ function TestimonialCard({
         >
           {t.name}
         </h2>
+        {t.source && (
+          <span style={{ fontSize: '0.75rem', color: '#78716C', fontStyle: 'normal' }}>
+            {t.source}
+          </span>
+        )}
       </div>
 
       {/* Quote text */}
@@ -186,6 +192,7 @@ function TestimonialCard({
                     lineHeight: 1.7,
                     color: '#44403C',
                     margin: '0 0 0.8rem 0',
+                    whiteSpace: t.source === 'email' ? 'pre-wrap' : undefined,
                   }}
                 >
                   {pIdx === 0 && (
@@ -389,6 +396,17 @@ export default function TestimonialsPageContent({ lang }: Props) {
       return next
     })
   }, [])
+
+  useEffect(() => {
+    const expandLinkedStory = () => {
+      const id = window.location.hash.slice(1)
+      if (!(testimonialsByLang[lang] || testimonialsByLang.sl).some(story => story.id === id)) return
+      setExpandedIds(previous => previous.has(id) ? previous : new Set([...previous, id]))
+    }
+    expandLinkedStory()
+    window.addEventListener('hashchange', expandLinkedStory)
+    return () => window.removeEventListener('hashchange', expandLinkedStory)
+  }, [lang])
 
   const currentTestimonials = testimonialsByLang[lang] || testimonialsByLang.sl
   const leftCol = currentTestimonials.filter((_, i) => i % 2 === 0)
